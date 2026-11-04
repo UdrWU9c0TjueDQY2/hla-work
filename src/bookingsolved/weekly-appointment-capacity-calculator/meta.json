@@ -1,0 +1,15 @@
+{
+  "title": "Weekly Appointment Capacity Calculator: Slots and Buffers",
+  "description": "Calculate bookable appointment slots across separate daily windows. Include service time, buffers and blocked minutes without carrying leftover time into another day.",
+  "appSlug": "bookingsolved",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Weekly Appointment Capacity Calculator: Slots and Buffers",
+  "tags": [
+    "bookingsolved",
+    "capacity",
+    "interactive tool"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
