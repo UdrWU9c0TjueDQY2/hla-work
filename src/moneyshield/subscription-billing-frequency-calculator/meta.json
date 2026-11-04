@@ -1,0 +1,15 @@
+{
+  "title": "Subscription Cost Calculator: Weekly, Monthly and Yearly",
+  "description": "Convert a recurring subscription price to an annualized estimate and monthly equivalent. Compare weekly, every-two-weeks, four-weekly and calendar-month billing.",
+  "appSlug": "moneyshield",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Subscription Cost Calculator: Weekly, Monthly and Yearly",
+  "tags": [
+    "moneyshield",
+    "billing",
+    "interactive tool"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
