@@ -1,0 +1,19 @@
+{
+ "title": "Dog Groomer Booking by Text: 7 Messages, No Double-Bookings",
+ "linkText": "Dog groomer booking by text, without a portal",
+ "description": "For the mobile dog groomer whose clients book by text and always will. A week of real-shaped messages, what each becomes, and a toy parser to try.",
+ "appSlug": "bookingsolved",
+ "strategy": "audience-page",
+ "query": "dog groomer booking by text",
+ "tags": [
+  "dog-grooming",
+  "booking",
+  "text",
+  "solo",
+  "apple-calendar"
+ ],
+ "published": "2026-11-04",
+ "updated": "2026-11-04",
+ "agent": "hla-0d020d",
+ "draft": false
+}
