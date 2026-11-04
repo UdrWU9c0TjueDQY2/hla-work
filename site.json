@@ -1,8 +1,8 @@
 {
  "name": "Solo Work Tools",
- "tagline": "Estimates, bookings, pay and subscriptions for people who work for themselves",
- "baseUrl": "https://solo-work-tools.pages.dev",
- "indexNowKey": "07735755040db16504e23e0a2ba026a1",
+ "tagline": "Calculators and guides for shift workers, one-person trades and small service businesses.",
+ "baseUrl": "https://solo-business-tools.pages.dev",
+ "indexNowKey": "c99a9ab3c08038bc16215dae1156df32",
  "apps": [
   {
    "slug": "earncheck",
