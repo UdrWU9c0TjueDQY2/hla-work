@@ -165,6 +165,7 @@
       $("bar-before").style.width=`${before}%`;$("bar-after").style.width=`${after}%`;setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));
       const signal=$("signal");signal.className="signal neutral";
       if(r.price<=0){signal.textContent="Enter a customer price above zero to calculate margin."}
+      else if(r.discountedPrice<=0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
       else if(r.discountedProfit<0){signal.className="signal warn";signal.textContent=`After the discount, the price is ${money(Math.abs(r.discountedProfit))} below the direct cost entered.`}
       else if(r.discountedMargin!==null&&r.discountedMargin<r.target){signal.className="signal warn";signal.textContent=`The discounted quote is ${(r.target-r.discountedMargin).toFixed(1)} percentage points below your ${r.target.toFixed(1)}% target.`}
       else{signal.className="signal good";signal.textContent=`The discounted quote remains ${(r.discountedMargin-r.target).toFixed(1)} percentage points above your selected target.`}
