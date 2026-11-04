@@ -11,7 +11,8 @@ const site = JSON.parse(fs.readFileSync(path.join(ROOT, 'site.json'), 'utf8'));
 const BASE = site.baseUrl.replace(/\/$/, '');
 // HLA patch (hla-0d020d): when the site lives under a path prefix (GitHub Pages project sites), rewrite root-relative URLs.
 const PREFIX = new URL(BASE).pathname.replace(/\/$/, '');
-const pre = p => PREFIX + p;
+// Absolute generated URLs avoid applying the project prefix twice.
+const pre = p => BASE + p;
 const esc = s => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const warn = m => console.log('WARN', m);
  
