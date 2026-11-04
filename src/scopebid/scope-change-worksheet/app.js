@@ -1,0 +1,7 @@
+import {buildNote} from './model.mjs';
+const ids=['job','added','removed','kept','open'];const fields=ids.map(id=>document.getElementById(id));const note=document.getElementById('note'),progress=document.getElementById('progress'),copy=document.getElementById('copy'),status=document.getElementById('status');
+function render(){const r=buildNote(fields.map(f=>f.value));note.value=r.text;progress.textContent=r.count+' of 4 categories filled';copy.disabled=!r.count;status.textContent='';}
+fields.forEach(f=>f.addEventListener('input',render));
+document.getElementById('example').addEventListener('click',()=>{['Kitchen repaint — revision 2','Paint the pantry wall.','Do not paint the ceiling.','Keep the agreed wall finish and preparation plan.','Confirm pantry colour, wall measurements and whether an extra visit is needed.'].forEach((v,i)=>fields[i].value=v);render();status.textContent='Fictional example loaded. Replace it with your own details.';});
+document.getElementById('clear').addEventListener('click',()=>{fields.forEach(f=>f.value='');render();fields[0].focus();});
+copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(note.value);status.textContent='Review note copied. Check it before sharing.';}catch{note.focus();note.select();status.textContent='Automatic copy is unavailable. Your note is selected; copy it with your browser or keyboard.';}});render();
