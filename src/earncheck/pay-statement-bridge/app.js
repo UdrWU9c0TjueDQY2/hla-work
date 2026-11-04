@@ -12,5 +12,5 @@ for(const key of ['gross','deductions','additions','expected'])document.querySel
 output.hidden=false;document.querySelector('#print').disabled=false;output.focus();
 }catch(e){error.textContent=e.message; const invalid=fields.find(x=>!/^\d{1,7}(\.\d{1,2})?$/.test(x.value.trim()));invalid?.focus();}});
 document.querySelector('#example').addEventListener('click',()=>{['1500','310','45','1235'].forEach((x,i)=>fields[i].value=x);form.requestSubmit();});
-document.querySelector('#reset').addEventListener('click',()=>{form.reset();clear();fields[0].focus();});
+document.querySelector('#reset').addEventListener('click',()=>{fields.forEach(field=>field.value='');clear();fields[0].focus();});
 document.querySelector('#print').addEventListener('click',()=>window.print());
