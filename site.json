@@ -1,0 +1,28 @@
+{
+ "name": "Solo Work Tools",
+ "tagline": "Estimates, bookings, pay and subscriptions for people who work for themselves",
+ "baseUrl": "https://solo-work-tools.pages.dev",
+ "indexNowKey": "07735755040db16504e23e0a2ba026a1",
+ "apps": [
+  {
+   "slug": "earncheck",
+   "name": "EarnCheck: Shift & Pay Tracker",
+   "id": 6798048163
+  },
+  {
+   "slug": "moneyshield",
+   "name": "MoneyShield: Sub Tracker",
+   "id": 6787559121
+  },
+  {
+   "slug": "scopebid",
+   "name": "ScopeBid: Estimate & Invoice",
+   "id": 6796729890
+  },
+  {
+   "slug": "bookingsolved",
+   "name": "BookingSolved: Client Booking",
+   "id": 6800187784
+  }
+ ]
+}
