@@ -1,0 +1,15 @@
+{
+  "title": "Appointment Buffer Calculator: How Many Sessions Fit?",
+  "description": "Calculate capacity, start times and unused minutes for equal-length appointments with buffers. Free, no signup.",
+  "appSlug": "bookingsolved",
+  "strategy": "interactive-calculator",
+  "query": "appointment buffer time calculator",
+  "tags": [
+    "booking",
+    "appointments",
+    "calculator"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
