@@ -1,0 +1,11 @@
+{
+  "title": "Flooring Box Calculator: Coverage, Allowance and Whole-Box Material Cost",
+  "description": "Calculate whole flooring boxes from up to three room areas, your chosen allowance and coverage per box. See purchased coverage and optional materials cost.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-tool",
+  "query": "flooring box calculator with waste allowance",
+  "tags": [],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
