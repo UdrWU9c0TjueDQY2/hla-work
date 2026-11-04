@@ -1,0 +1,15 @@
+{
+  "title": "Overnight Shift Hours Calculator with Unpaid Breaks",
+  "description": "Calculate hours worked across midnight. Choose the end day, subtract unpaid breaks, and see hours, minutes and decimal hours with a worked example.",
+  "appSlug": "earncheck",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Overnight Shift Hours Calculator with Unpaid Breaks",
+  "tags": [
+    "earncheck",
+    "shift",
+    "interactive tool"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-04",
+  "draft": false
+}
