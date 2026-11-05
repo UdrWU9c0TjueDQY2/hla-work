@@ -1,8 +1,21 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Appointment Buffer Calculator: How Many Sessions Fit?</title><meta name="description" content="Calculate how many appointments fit between opening and closing, including buffer time. See each start time, unused minutes and a copyable schedule."><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:title" content="Leave room between the bookings."><meta property="og:description" content="Free appointment buffer calculator with a visual capacity plan."><meta property="og:type" content="website"><meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/appointment-cleanup-capacity.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Three morning hours fit six 30-minute visits back to back, or four visits with 10-minute cleanup gaps."><meta name="twitter:card" content="summary_large_image"><meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/"><meta name="apple-itunes-app" content="app-id=6800187784"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Appointment Buffer Calculator","url":"https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Honest Little Apps"}}</script><style>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Appointment Buffer Calculator: How Many Sessions Fit?</title><meta name="description" content="Calculate how many appointments fit before and after a fixed break. Enter service and buffer times to get exact start times and a schedule you can copy."><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/"><meta name="robots" content="index,follow,max-image-preview:large"><meta property="og:title" content="Leave room between the bookings."><meta property="og:description" content="Free appointment buffer calculator with a visual capacity plan."><meta property="og:type" content="website"><meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/appointment-cleanup-capacity.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Three morning hours fit six 30-minute visits back to back, or four visits with 10-minute cleanup gaps."><meta name="twitter:card" content="summary_large_image"><meta property="og:image:type" content="image/png"><meta name="twitter:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/appointment-cleanup-capacity.png"><meta name="twitter:image:alt" content="Three morning hours fit six 30-minute visits back to back, or four visits with 10-minute cleanup gaps."><meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/"><meta name="apple-itunes-app" content="app-id=6800187784"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Appointment Buffer Calculator","url":"https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/","applicationCategory":"BusinessApplication","operatingSystem":"Any","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Honest Little Apps"}}</script><style>
 :root{--ink:#163e4a;--paper:#f5f0e6;--mint:#bce5d0;--orange:#edb579;--line:#b8c6c3}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.65 Arial,sans-serif}a{color:inherit}nav,main,footer{max-width:1120px;margin:auto;padding:25px}nav{display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.13em}nav a{text-decoration:none}h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.035em}h1{font-size:clamp(48px,6.8vw,82px);margin:18px 0 25px;max-width:12ch}h2{font-size:clamp(32px,4vw,48px)}h3{font-size:25px}.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:50px;align-items:center;padding:35px 0 65px}.lead{font-size:20px;max-width:41ch}.eyebrow{font-size:11px;letter-spacing:.17em;font-weight:bold}.note{font-size:13px;color:#536c73}.button,button{display:inline-block;padding:15px 22px;background:var(--ink);color:white;border:1px solid var(--ink);border-radius:4px;font:700 15px/1.4 Arial,sans-serif;cursor:pointer;text-decoration:none}.light{background:transparent;color:var(--ink)}:focus-visible{outline:3px solid #b75b25;outline-offset:4px}.poster{padding:30px;background:var(--ink);color:white;transform:rotate(2deg);box-shadow:13px 13px 0 #ddd6c5}.poster span{display:block;padding:18px;border-radius:4px;background:var(--mint);color:var(--ink);margin:7px 0;font-size:17px}.poster i{display:block;padding:8px 18px;background:var(--orange);color:var(--ink);font-size:13px;font-style:normal}.poster small{display:block;margin-top:20px}.panel{background:#fffdf7;border:1px solid var(--line);padding:30px;border-radius:8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}section{border-top:1px solid var(--line);padding:40px 0}label{display:block;font-size:14px;font-weight:bold}input:not([type=checkbox]){display:block;width:100%;min-width:0;padding:13px;margin:7px 0 18px;border:1px solid #8da3a8;background:white;color:var(--ink);font:17px Arial,sans-serif}input[type=checkbox]{width:20px;height:20px;vertical-align:middle;margin-right:8px;accent-color:var(--ink)}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}.result{padding-top:25px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.stats strong{display:block;font:48px Georgia,serif;line-height:1.2}.stats span{font-size:13px}.bar{display:flex;height:30px;background:#dfe2dc;margin-top:25px;border-radius:4px;overflow:hidden}.bar span{flex-basis:0;min-width:0}.bar .service{background:#296775}.bar .gaps{background:var(--orange)}.bar .spare{background:#dfe2dc}.slots{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.slots li{padding:16px;background:#fffdf7;border-left:4px solid #296775}.slots span{display:block;font-size:13px}.slot-details{border:0;padding:0}.slot-details summary{padding:12px 0}.copy-fallback{margin:16px 0}.copy-fallback textarea{display:block;width:100%;min-height:12rem;margin-top:6px;padding:12px;font:16px/1.45 monospace;color:var(--ink);background:white;border:1px solid var(--line)}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}.app{background:var(--ink);color:white;padding:35px;border-radius:8px}.app p{max-width:64ch}.app .button{background:var(--mint);color:var(--ink)}.app .note{color:#cedbdc}details{padding:17px 0;border-top:1px solid var(--line)}summary{font-weight:bold;cursor:pointer}.formula{font:18px/1.7 monospace;background:#e1e8e2;padding:20px;overflow-wrap:anywhere}.hla-links{list-style:none;padding:0}.hla-links li{margin:18px 0}.hla-links span{display:block;font-size:13px}footer{font-size:13px;color:#536c73}[hidden]{display:none!important}
 @media(max-width:700px){nav,main,footer{padding:20px}.hero,.grid,.three{grid-template-columns:1fr;gap:25px}.hero{padding:20px 0 40px}.poster{margin:10px}.panel,.app{padding:22px}.stats{gap:12px}.stats strong{font-size:32px}.slots{grid-template-columns:1fr}.actions button{flex:1}nav{font-size:9px}}
-</style></head><body><nav><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/">HONEST LITTLE APPS / SOLO WORK</a><span>THE SPACE BETWEEN</span></nav><main><header class="hero"><div><p class="eyebrow">APPOINTMENT BUFFER CALCULATOR</p><h1>Leave room<br>between the bookings.</h1><p class="lead">See how many appointments fit when you include the time between them. Turn a working window into a realistic capacity sketch.</p><a class="button" href="#calculator">Calculate my window ↘</a><p class="note">Free browser tool · No calendar connection · No signup</p></div><div class="poster" role="img" aria-label="Illustrative schedule with appointments separated by fifteen-minute buffers"><p class="eyebrow">A LITTLE SPACE CHANGES THE DAY</p><span>09:00–10:00 · Appointment</span><i>15 minutes · Reset the space</i><span>10:15–11:15 · Appointment</span><i>15 minutes · Prepare for the next</i><small>Illustration, not a recommended buffer length.</small></div></header>
-<section id="calculator"><p class="eyebrow">ONE SERVICE · ONE WORKING WINDOW</p><h2>What fits, with breathing room?</h2><div class="grid"><form class="panel" id="form"><div class="grid"><label for="start">Window starts<input id="start" type="time" value="09:00" required></label><label for="end">Window ends<input id="end" type="time" value="17:00" required></label></div><div class="grid"><label for="duration">Appointment length (minutes)<input id="duration" type="number" min="1" max="720" step="1" value="60" required></label><label for="buffer">Buffer length (minutes)<input id="buffer" type="number" min="0" max="240" step="1" value="15" required></label></div><label><input type="checkbox" id="finalbuffer">Include a buffer after the last appointment too</label><div class="actions"><button type="submit">Calculate capacity</button><button type="button" id="restore" class="light">Reset example</button></div></form><aside><h3>Start with a window that is actually available.</h3><p>This model assumes an empty, uninterrupted block and appointments of equal length. It starts the first session at the opening time.</p><p>If you take lunch, calculate the morning and afternoon separately. If you need setup before the first appointment, move the start time forward. Use the final-buffer option for cleanup after the last session.</p><p class="note">Same-day, 24-hour clock. No overnight sessions, existing bookings, mixed service lengths, breaks or travel are inferred. No appointments are created.</p></aside></div><p id="status" role="status"></p><div class="result" id="result" hidden><div class="stats"><div><strong id="count"></strong><span>appointments fit</span></div><div><strong id="finish"></strong><span>occupied time ends</span></div><div><strong id="spare"></strong><span>unused at the end</span></div></div><div class="bar" aria-hidden="true"><span class="service" id="servicebar"></span><span class="gaps" id="gapbar"></span><span class="spare" id="sparebar"></span></div><p class="note" id="legend"></p><button id="copy" type="button">Copy this plan</button><div class="copy-fallback" id="copy-fallback" hidden><label for="plain-plan">Full plan for manual copying</label><textarea id="plain-plan" readonly spellcheck="false"></textarea></div><h3>Your example start times</h3><ol class="slots" id="slots"></ol><details class="slot-details" id="more-slots" hidden><summary id="more-label"></summary><ol class="slots" id="remaining-slots" start="9"></ol></details><p id="empty" hidden>The appointment and required buffer do not fit. Try a longer window or different durations.</p></div><noscript><p>Enable JavaScript to calculate. The formula and worked example below remain readable without it.</p></noscript></section>
+.break-options { margin: 14px 0; }
+.break-fields { margin: 10px 0; padding: 14px; border: 1px solid var(--line); border-radius: 4px; }
+.break-fields input { margin-bottom: 0; }
+.bar .reserved { background: repeating-linear-gradient(135deg,#5d6b68 0 3px,#c7d2cd 3px 7px); }
+.worked-card { display:block; max-width:100%; height:auto; margin:18px 0; border-radius:4px; }
+</style></head><body><nav><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/">HONEST LITTLE APPS / SOLO WORK</a><span>THE SPACE BETWEEN</span></nav><main><header class="hero"><div><p class="eyebrow">APPOINTMENT BUFFER CALCULATOR</p><h1>Leave room<br>between the bookings.</h1><p class="lead">See which appointments fit around lunch. Enter your working hours, service length and reset time to get a schedule with exact start times.</p><a class="button" href="#calculator">Calculate my window ↘</a><p class="note">Free browser tool · No calendar connection · No signup</p></div><div class="poster" role="img" aria-label="Illustrative schedule with appointments separated by fifteen-minute buffers"><p class="eyebrow">A LITTLE SPACE CHANGES THE DAY</p><span>09:00–10:00 · Appointment</span><i>15 minutes · Reset the space</i><span>10:15–11:15 · Appointment</span><i>15 minutes · Prepare for the next</i><small>Illustration, not a recommended buffer length.</small></div></header>
+<section id="calculator"><p class="eyebrow">ONE SERVICE · ONE WORKING WINDOW</p><h2>What fits, with breathing room?</h2><div class="grid"><form class="panel" id="form"><div class="grid"><label for="start">Window starts<input id="start" type="time" value="09:00" required></label><label for="end">Window ends<input id="end" type="time" value="17:00" required></label></div><div class="grid"><label for="duration">Appointment length (minutes)<input id="duration" type="number" min="1" max="720" step="1" value="60" required></label><label for="buffer">Buffer length (minutes)<input id="buffer" type="number" min="0" max="240" step="1" value="15" required></label></div><div class="break-options">
+<label><input type="checkbox" id="use-break" aria-controls="break-fields">Protect a fixed break</label>
+<fieldset id="break-fields" class="break-fields" hidden disabled>
+<legend>Unavailable time</legend>
+<div class="grid">
+<label for="break-start">Break starts<input type="time" id="break-start" value="12:00" required></label>
+<label for="break-end">Break ends<input type="time" id="break-end" value="13:00" required></label>
+</div></fieldset></div>
+<label><input type="checkbox" id="finalbuffer">Include a buffer after the last appointment in each work block</label><div class="actions"><button type="submit">Calculate capacity</button><button type="button" id="restore" class="light">Reset example</button></div></form><aside><h3>Start with a window that is actually available.</h3><p>Enter one service length. For a fixed lunch, select “Protect a fixed break” and enter its start and end. The calculator fits whole appointments on each side.</p><p>When cleanup must finish before lunch or closing, include the last buffer in each block. For setup before opening, move the start time forward.</p><p class="note">Same-day, 24-hour clock. Check existing bookings and travel time against your own calendar.</p></aside></div><p id="status" role="status"></p><div class="result" id="result" hidden><div class="stats"><div><strong id="count"></strong><span>appointments fit</span></div><div><strong id="finish"></strong><span>occupied time ends</span></div><div><strong id="spare"></strong><span id="spare-label">unused at the end</span></div></div><div class="bar" aria-hidden="true"><span class="service" id="servicebar"></span><span class="gaps" id="gapbar"></span><span class="reserved" id="breakbar"></span><span class="spare" id="sparebar"></span></div><p class="note" id="legend"></p><p id="break-result" hidden></p><button id="copy" type="button">Copy this plan</button><div class="copy-fallback" id="copy-fallback" hidden><label for="plain-plan">Full plan for manual copying</label><textarea id="plain-plan" readonly spellcheck="false"></textarea></div><h3>Your example start times</h3><ol class="slots" id="slots"></ol><details class="slot-details" id="more-slots" hidden><summary id="more-label"></summary><ol class="slots" id="remaining-slots" start="9"></ol></details><p id="empty" hidden>The appointment and required buffer do not fit. Try a longer window or different durations.</p></div><noscript><p>Enable JavaScript to calculate. The formula and worked example below remain readable without it.</p></noscript></section>
 <section><div class="app"><p class="eyebrow">WHEN A REAL CLIENT REQUEST ARRIVES</p><h2>Take the next step<br>with your actual calendar.</h2><p>BookingSolved turns selected client requests into proposed Apple Calendar appointments and editable replies. Service presets include durations and buffers; you review changes before approving them.</p><a class="button" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784?ct=work-buffer-calculator&mt=8">Explore BookingSolved on the App Store ↗</a><p class="note">First three completed actions are free; Pro is an optional auto-renewing subscription for unlimited actions. Check the listing for current details. This browser calculator does not access Calendar, contact clients or sync a plan into the app.</p></div></section>
 <section><h2>One cancellation, three requests</h2><p><a href="waitlist-window.html">Check which waitlist requests fit the opening</a> using each person’s available window, the service length and the cleanup time. The worksheet doesn’t book or contact anyone.</p></section><section id="cleanup-demo" aria-labelledby="cleanup-title"><h2 id="cleanup-title">Can a fifth visit fit before noon?</h2>
 <details id="cleanup-example"><summary>Watch the calculator compare two schedules (18 seconds)</summary>
@@ -10,11 +23,21 @@
 <div id="cleanup-player"></div><template id="cleanup-template"><video controls playsinline preload="none" width="512" height="744" style="display:block;width:min(100%,24rem);height:auto" poster="cleanup-buffer-poster.webp" aria-label="Appointment capacity with and without a ten-minute cleanup buffer"><source src="cleanup-buffer.mp4" type="video/mp4"></video></template>
 <p><a href="cleanup-buffer.mp4">Open the MP4</a> · <a href="cleanup-buffer.vtt">Download timed captions</a></p></details>
 <details><summary>Read the example</summary><p>From 9 a.m. to noon, six 30-minute visits fit back to back. Change the buffer to 10 minutes between visits, leaving the box for a final buffer unchecked. Four visits now fit. They start at 9:00, 9:40, 10:20 and 11:00. The last ends at 11:30.</p><p>Those remaining 30 minutes are shorter than the 40 needed for another visit: 10 minutes to clean up after the fourth client and 30 minutes for the fifth. This example assumes an otherwise empty shift.</p></details></section>
-<section><p class="eyebrow">THE ARITHMETIC, IN PLAIN SIGHT</p><h2>Why eight hours is not<br>eight one-hour bookings.</h2><p>From 09:00 to 17:00, you have 480 minutes. Six 60-minute appointments and five 15-minute gaps use 435 minutes, ending at 16:15. A seventh appointment would need 510 minutes with its preceding gap, so it does not fit.</p><div class="formula">Between appointments only:<br>count = floor((window + buffer) ÷ (appointment + buffer))<br><br>Buffer after every appointment:<br>count = floor(window ÷ (appointment + buffer))</div><p class="note">“Floor” means round down to a whole appointment. If nothing fits, the count is zero and the entire window remains unused. The calculator applies the same formula to your inputs.</p></section>
-<section class="three"><article><h3>Preparation is time.</h3><p>Use a buffer that represents the work between clients: resetting tools, writing notes or getting ready. The example's 15 minutes is a starting input, not advice for your service.</p></article><article><h3>A break is its own block.</h3><p>A gap after every client is not the same as lunch. Split your available window around fixed breaks to avoid implying that a continuous day is available.</p></article><article><h3>Capacity is not availability.</h3><p>A tidy sketch still needs checking against the real calendar. Existing appointments and different service lengths can change which times are usable.</p></article></section>
+<section><p class="eyebrow">THE ARITHMETIC, IN PLAIN SIGHT</p><h2>Why eight hours is not<br>eight one-hour bookings.</h2><p>From 09:00 to 17:00, you have 480 minutes. Six 60-minute appointments and five 15-minute gaps use 435 minutes, ending at 16:15. A seventh appointment would need 510 minutes with its preceding gap, so it does not fit.</p><div class="formula">Between appointments only:<br>count = floor((window + buffer) ÷ (appointment + buffer))<br><br>Buffer after every appointment:<br>count = floor(window ÷ (appointment + buffer))</div><p class="note">Round down to a whole appointment in each available block. Minutes left before lunch and after the last appointment stay separate.</p>
+<details><summary>See a schedule with lunch protected</summary>
+<p>With the same hours and a noon–13:00 break, two appointments fit before lunch and three after it. The last one ends at 16:30. The gap from 11:15 to noon is too short for another 60-minute appointment.</p>
+<img class="worked-card" width="1200" height="630" loading="lazy" decoding="async" src="appointment-buffer-protected-lunch.png" alt="Five 60-minute visits fit between 09:00 and 17:00 with 15-minute gaps and lunch from noon to 13:00. Start times are 09:00, 10:15, 13:00, 14:15 and 15:30. The final visit ends at 16:30."></details></section>
+<section class="three"><article><h3>Preparation is time.</h3><p>Use a buffer that represents the work between clients: resetting tools, writing notes or getting ready. The example's 15 minutes is a starting input, not advice for your service.</p></article><article><h3>A break is its own block.</h3><p>Protect lunch at its actual time. A free half-hour on either side of lunch cannot be combined into one uninterrupted hour for a client.</p></article><article><h3>Capacity is not availability.</h3><p>A tidy sketch still needs checking against the real calendar. Existing appointments and different service lengths can change which times are usable.</p></article></section>
 <section><h2>Questions before you plan.</h2><details><summary>Why is there no buffer before the first appointment?</summary><p>The window is assumed ready for work at its starting time. Reserve initial setup by moving that time forward before calculating.</p></details><details><summary>Can I use different appointment lengths?</summary><p>Not in one calculation. This simple model repeats one duration. For a mixed day, check each service and its actual calendar position separately.</p></details><details><summary>Is unused time enough for another booking?</summary><p>Only if the next appointment and any required buffer fit. A remainder is not automatically a usable appointment slot.</p></details><details><summary>Are my inputs stored?</summary><p>No. This page does not save or send your inputs. Copy the plan before refreshing or leaving.</p></details></section></main><footer><p>Honest Little Apps publishes BookingSolved and created this separate planning calculator. No tracking scripts on this page; standard hosting request logs may apply.</p><!--HLA:RELATED:3--></footer><script>const $=id=>document.getElementById(id);
 function minutes(v){if(!/^\d{2}:\d{2}$/.test(v))return null;const [h,m]=v.split(':').map(Number);return h<24&&m<60?h*60+m:null}
-function calc(start,end,duration,buffer,final){if(!Number.isInteger(start)||!Number.isInteger(end)||end<=start||!Number.isInteger(duration)||duration<1||!Number.isInteger(buffer)||buffer<0)return null;const span=end-start,n=Math.max(0,Math.floor((span+(final?0:buffer))/(duration+buffer)));const occupied=n? n*duration+(n-1+(final?1:0))*buffer:0;return {n,occupied,spare:span-occupied,service:n*duration,gaps:n?((n-1)+(final?1:0))*buffer:0,finish:start+occupied};}
+function slotsInBlock(start, end, duration, buffer, finalBuffer) {
+  const slots = [];
+  for (let from = start; from + duration + (finalBuffer ? buffer : 0) <= end; from += duration + buffer) {
+    slots.push({start: from, end: from + duration, buffer});
+  }
+  if (slots.length && !finalBuffer) slots[slots.length - 1].buffer = 0;
+  return slots;
+}
 function time(n){return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')}
 const previewLimit = 8;
 let resultText = '';
@@ -51,19 +74,91 @@ function clearCopyFallback() {
   $('plain-plan').value = '';
 }
 
-function build(e){if(e)e.preventDefault();clearCopyFallback();resultText='';const start=minutes($('start').value),end=minutes($('end').value),d=Number($('duration').value),b=Number($('buffer').value),final=$('finalbuffer').checked;const r=$('duration').value!==''&&$('buffer').value!==''&&d<=720&&b<=240?calc(start,end,d,b,final):null;if(!r){$('result').hidden=true;$('status').textContent='Use a same-day window with end after start, a whole-number service length of 1–720 minutes, and a buffer of 0–240 minutes.';return;}
-$('result').hidden=false;$('count').textContent=String(r.n);$('finish').textContent=r.n?time(r.finish):'No session fits';$('spare').textContent=r.spare+' min';$('servicebar').style.flexGrow=r.service;$('gapbar').style.flexGrow=r.gaps;$('sparebar').style.flexGrow=r.spare;$('legend').textContent=r.service+' min appointments · '+r.gaps+' min buffers · '+r.spare+' min unused';
-schedule = Array.from({length:r.n}, (_,i) => {
-  const from = start + i * (d + b);
-  return {start:from, end:from + d, buffer:(i < r.n - 1 || final) ? b : 0};
-});
-renderSchedule();
-const lines = schedule.map((slot,i) => time(slot.start) + '–' + time(slot.end) + ' Appointment ' + (i+1) + (slot.buffer ? '; buffer until ' + time(slot.end + slot.buffer) : ''));
-$('empty').hidden=r.n>0;$('status').textContent='Calculated. This is capacity in an empty working window, not confirmed availability.';
-resultText='APPOINTMENT CAPACITY PLAN\n'+time(start)+'–'+time(end)+' · '+d+' min service · '+b+' min buffer\nBuffer '+(final?'between appointments and after the last.':'between appointments only.')+'\n\n'+(lines.join('\n')||'No session fits.')+'\n\n'+r.spare+' minutes unused. No breaks, existing bookings or travel included unless already represented in the chosen window or buffer.';
+function syncBreakFields() {
+  const enabled = $('use-break').checked;
+  $('break-fields').disabled = !enabled;
+  $('break-fields').hidden = !enabled;
 }
-['start','end','duration','buffer','finalbuffer'].forEach(id=>$(id).addEventListener('input',()=>{resultText='';clearCopyFallback();$('result').hidden=true;$('status').textContent='Values changed. Calculate again to refresh the plan.';}));
-$('form').addEventListener('submit',build);$('restore').addEventListener('click',()=>{HTMLFormElement.prototype.reset.call($('form'));build();});
+function build(event) {
+  if (event) event.preventDefault();
+  clearCopyFallback();
+  resultText = '';
+  schedule = [];
+  $('result').hidden = true;
+  const start = minutes($('start').value);
+  const end = minutes($('end').value);
+  const duration = $('duration').valueAsNumber;
+  const buffer = $('buffer').valueAsNumber;
+  const finalBuffer = $('finalbuffer').checked;
+  if (start === null || end === null || start >= end
+      || !Number.isInteger(duration) || duration < 1 || duration > 720
+      || !Number.isInteger(buffer) || buffer < 0 || buffer > 240) {
+    $('status').textContent = 'Use a same-day window with end after start, a service of 1–720 whole minutes and a buffer of 0–240 whole minutes.';
+    return;
+  }
+  const useBreak = $('use-break').checked;
+  const breakStart = minutes($('break-start').value);
+  const breakEnd = minutes($('break-end').value);
+  if (useBreak && (breakStart === null || breakEnd === null || breakEnd <= breakStart
+      || breakStart < start || breakEnd > end)) {
+    $('status').textContent = 'Keep the break inside the working window and end it after it starts.';
+    return;
+  }
+  const blocks = useBreak ? [[start, breakStart], [breakEnd, end]] : [[start, end]];
+  schedule = blocks.flatMap(([from, to]) => slotsInBlock(from, to, duration, buffer, finalBuffer));
+  const reserved = useBreak ? breakEnd - breakStart : 0;
+  const service = schedule.length * duration;
+  const gaps = schedule.reduce((total, slot) => total + slot.buffer, 0);
+  const spare = end - start - reserved - service - gaps;
+  const last = schedule.at(-1);
+
+  $('count').textContent = String(schedule.length);
+  $('finish').textContent = last ? time(last.end + last.buffer) : 'No session fits';
+  $('spare').textContent = spare + ' min';
+  $('spare-label').textContent = useBreak ? 'unused across work blocks' : 'unused at the end';
+  $('servicebar').style.flexGrow = service;
+  $('gapbar').style.flexGrow = gaps;
+  $('breakbar').style.flexGrow = reserved;
+  $('sparebar').style.flexGrow = spare;
+  $('legend').textContent = service + ' min appointments · ' + gaps + ' min buffers · '
+    + (useBreak ? reserved + ' min break · ' : '') + spare + ' min unused';
+  const breakLine = useBreak ? time(breakStart) + '–' + time(breakEnd) + ' Protected break' : '';
+  $('break-result').hidden = !useBreak;
+  $('break-result').textContent = breakLine;
+  renderSchedule();
+  $('empty').hidden = schedule.length > 0;
+  $('result').hidden = false;
+  $('status').textContent = schedule.length + (schedule.length === 1 ? ' appointment fits.' : ' appointments fit.');
+
+  const lines = schedule.map((slot, i) => time(slot.start) + '–' + time(slot.end) + ' Appointment ' + (i + 1)
+    + (slot.buffer ? '; buffer until ' + time(slot.end + slot.buffer) : ''));
+  if (useBreak) {
+    const countBeforeBreak = schedule.filter(slot => slot.start < breakStart).length;
+    lines.splice(countBeforeBreak, 0, breakLine);
+  }
+  if (!schedule.length) lines.push('No session fits.');
+  resultText = [
+    'APPOINTMENT CAPACITY PLAN',
+    time(start) + '–' + time(end) + ' · ' + duration + ' min service · ' + buffer + ' min buffer',
+    finalBuffer ? 'Buffer between appointments and after the last of each work block.' : 'Buffer between appointments within each work block.',
+    '', ...lines, '',
+    spare + ' minutes unused' + (useBreak ? ' across the two work blocks.' : '.'),
+    'Check existing bookings and travel against your calendar.'
+  ].join('\n');
+}
+$('form').addEventListener('input', () => {
+  syncBreakFields();
+  resultText = '';
+  clearCopyFallback();
+  $('result').hidden = true;
+  $('status').textContent = 'Values changed. Calculate again to refresh the plan.';
+});
+$('form').addEventListener('submit', build);
+$('restore').addEventListener('click', () => {
+  HTMLFormElement.prototype.reset.call($('form'));
+  syncBreakFields();
+  build();
+});
 $('copy').addEventListener('click', async () => {
   const plan = resultText;
   if (!plan) return;
@@ -89,4 +184,5 @@ document.getElementById('cleanup-example').addEventListener('toggle', function (
     slot.firstElementChild.pause();
   }
 });
+syncBreakFields();
 build();</script></body></html>
