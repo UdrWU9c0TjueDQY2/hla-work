@@ -76,7 +76,7 @@
           <div class="currency"><label for="currency"><strong>Currency</strong></label><select id="currency"><option value="CAD">CAD</option><option value="USD">USD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="AUD">AUD</option></select></div>
           <div class="control"><label for="price"><span>Customer price</span><small>before tax</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="price" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="1200"></div></div>
           <div class="control"><label for="cost"><span>Direct cost</span><small>labour + materials</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="cost" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="650"></div></div>
-          <div class="control"><label for="discount"><span>Proposed discount</span><small>optional</small></label><div class="unit-input"><input class="plain-input" id="discount" type="number" min="0" max="100" step="0.5" inputmode="decimal" value="10"><span aria-hidden="true">%</span></div></div>
+          <div class="control"><label for="discount"><span>Proposed discount</span><small>optional</small></label><div class="unit-input"><input class="plain-input" id="discount" type="number" min="0" max="100" step="0.1" inputmode="decimal" value="10"><span aria-hidden="true">%</span></div></div>
           <div class="control"><label for="target"><span>Target gross margin</span><small>your own threshold</small></label><div class="unit-input"><input class="plain-input" id="target" type="number" min="0" max="99.9" step="0.5" inputmode="decimal" value="35"><span aria-hidden="true">%</span></div></div>
           <p class="input-note">Enter non-negative amounts up to 1 trillion. Discount: 0–100%. Target margin: 0–99.9%. Blank or invalid inputs do not produce a result.</p>
           <div class="presets" aria-label="Example quote presets"><button type="button" data-preset="painter">Painter example</button><button type="button" data-preset="cleaner">Cleaner example</button><button type="button" data-preset="landscaper">Landscaper example</button><button type="button" data-preset="detailer">Detailer example</button></div>
@@ -107,9 +107,10 @@
             <div class="bar-label"><span>After discount</span><strong id="bar-after-label">—</strong></div><div class="track"><div class="fill after" id="bar-after"></div></div>
           </div>
           <div class="rows">
-            <div class="row"><span>Price for target margin</span><strong id="out-target-price">—</strong></div>
-            <div class="row"><span>Maximum discount at target</span><strong id="out-max-discount">—</strong></div>
+            <div class="row"><span>Minimum price at target</span><strong id="out-target-price">—</strong></div>
+            <div class="row"><span>Maximum discount at target (0.1% steps)</span><strong id="out-max-discount">—</strong></div>
           </div>
+          <p class="fine">The minimum price rounds up to a whole cent. The discount limit rounds down to a tenth of a percent so the quote stays at or above that minimum.</p>
           <p class="formula"><code>gross margin = gross profit ÷ customer price</code><br><code>markup = gross profit ÷ direct cost</code></p>
         </div>
       </div>
@@ -169,7 +170,7 @@
       <details><summary>Why can a 10% discount cut margin by more than 10%?</summary><p>The discount comes entirely out of the price, while the labour and materials may be unchanged. On the sample $1,200 quote with $650 direct cost, a 10% discount changes price to $1,080 and profit from $550 to $430. Gross margin falls from 45.8% to 39.8%—a drop of 6 percentage points.</p></details>
       <details><summary>Does the calculator include overhead or take-home pay?</summary><p>No. “Gross profit” here means price before tax minus the direct cost entered. It is not net profit or take-home pay. Rent, insurance, travel, admin time, tools, payment fees and income tax may still need to be covered.</p></details>
       <details><summary>Does it calculate sales tax or GST/HST?</summary><p>No. Enter the customer price before tax. Sales tax is not treated as gross profit. You set and remain responsible for your own tax rates and compliance.</p></details>
-      <details><summary>Is the target-margin price a recommended quote?</summary><p>No. It is the price at which gross profit, divided by that price, equals the chosen gross-margin percentage. With zero direct cost, every positive price has 100% gross margin, so a lower target has no exact solution. It does not know your overhead, local market, minimum charge, scope risk, contract, tax obligations or business goals.</p></details>
+      <details><summary>Is the target-margin price a recommended quote?</summary><p>No. The minimum price is the first whole-cent amount at or above the chosen gross-margin percentage. With zero direct cost, every positive price has 100% gross margin, so a lower target has no exact solution. It does not know your overhead, local market, minimum charge, scope risk, contract, tax obligations or business goals.</p></details>
     </section>
 
     <section class="app">
@@ -215,6 +216,33 @@
   function pct(value){return value===null||!Number.isFinite(value)?"Not defined":value.toFixed(1)+"%"}
   function setText(id,value){$(id).textContent=value}
   function clearSelected(){document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed","false"))}
+  // Use exact decimal fractions when rounding a one-sided quote limit.
+  function decimalRatio(value){
+    const [mantissa, exponent="0"] = String(value).toLowerCase().split("e");
+    const [whole, fraction=""] = mantissa.split(".");
+    const places = fraction.length - Number(exponent);
+    return {n:BigInt(whole+fraction)*10n**BigInt(Math.max(0,-places)), d:10n**BigInt(Math.max(0,places))};
+  }
+  function quoteLimits({price, cost, target, discount}){
+    const p=decimalRatio(price), c=decimalRatio(cost), t=decimalRatio(target), d=decimalRatio(discount);
+    const numerator=c.n*100n*t.d, denominator=c.d*(100n*t.d-t.n);
+    const minimumCents=(numerator*100n+denominator-1n)/denominator;
+    const listCents=p.n*100n;
+    const minimumBillableCents = minimumCents>0n ? minimumCents : 1n;
+    const room=listCents-minimumBillableCents*p.d;
+    const discountTenths=listCents>0n && room>=0n ? Number(1000n*room/listCents) : null;
+    // Sign of (discounted price - exact target price), without floating-point ties.
+    const balance=p.n*(100n*d.d-d.n)*denominator - 100n*d.d*p.d*numerator;
+    return {minimumCents, discountTenths, balance};
+  }
+  function moneyFromCents(cents){
+    const formatter=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,minimumFractionDigits:2,maximumFractionDigits:2});
+    const fraction=Number(cents%100n).toLocaleString(undefined,{minimumIntegerDigits:2,useGrouping:false});
+    return formatter.formatToParts(cents/100n).map(part=>part.type==="fraction"?fraction:part.value).join("");
+  }
+  function pointGap(gap){
+    return gap<0.1 ? "less than 0.1 percentage point" : gap.toFixed(1)+" percentage points";
+  }
   function render(){
     Object.keys(fields).forEach(k=>{controls[k].setCustomValidity("");controls[k].removeAttribute("aria-invalid")});
     const symbol=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value}).formatToParts(1).find(p=>p.type==="currency").value;
@@ -228,16 +256,17 @@
     }
     setText("out-price",money(r.price));setText("out-cost",money(r.cost));setText("out-profit",money(r.profit));setText("out-margin",pct(r.margin));setText("out-markup",pct(r.markup));
     setText("out-discount-price",money(r.discountedPrice));setText("out-discount-profit",money(r.discountedProfit));setText("out-discount-margin",pct(r.discountedMargin));setText("out-margin-change",r.marginChange===null?"Not defined":r.marginChange.toFixed(1)+" points");
-    setText("out-target-price",r.targetPrice===null?"No exact price at zero cost":money(r.targetPrice));
-    setText("out-max-discount",r.price===0?"Not defined":r.cost===0?"Less than 100% — keep price above zero":r.rawMaxDiscount<0?"0% — current price is below target":pct(r.maxDiscount));
+    const limits=quoteLimits(r);
+    setText("out-target-price",r.targetPrice===null?"No exact price at zero cost":moneyFromCents(limits.minimumCents));
+    setText("out-max-discount",r.price===0?"Not defined":limits.discountTenths===null?"0% — current price is below the minimum":(limits.discountTenths/10).toFixed(1)+"%"+(r.cost===0?" — keep at least one cent":""));
     $("bar-before").style.width=Math.max(0,Math.min(100,r.margin||0))+"%";$("bar-after").style.width=Math.max(0,Math.min(100,r.discountedMargin||0))+"%";
     setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));signal.className="signal neutral";
     if(r.price===0){signal.textContent="Enter a customer price above zero to calculate margin."}
     else if(r.discountedPrice===0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
     else if(r.discountedProfit<0){signal.className="signal warn";signal.textContent="After the discount, the price is "+money(Math.abs(r.discountedProfit))+" below the direct cost entered."}
-    else if(r.discountedMargin<r.target){signal.className="signal warn";signal.textContent="The discounted quote is "+(r.target-r.discountedMargin).toFixed(1)+" percentage points below your "+r.target.toFixed(1)+"% target."}
-    else if(Math.abs(r.discountedMargin-r.target)<1e-9){signal.className="signal good";signal.textContent="The discounted quote meets your selected target."}
-    else{signal.className="signal good";signal.textContent="The discounted quote remains "+(r.discountedMargin-r.target).toFixed(1)+" percentage points above your selected target."}
+    else if(limits.balance<0n){signal.className="signal warn";signal.textContent="The discounted quote is "+pointGap(r.target-r.discountedMargin)+" below your "+r.target.toFixed(1)+"% target."}
+    else if(limits.balance===0n){signal.className="signal good";signal.textContent="The discounted quote meets your selected target."}
+    else{signal.className="signal good";signal.textContent="The discounted quote remains "+pointGap(r.discountedMargin-r.target)+" above your selected target."}
   }
   function updateExampleLink(){
     const key=$("share-example").value,url=exampleUrl(key);
@@ -265,3 +294,4 @@
 </script>
 </body>
 </html>
+
