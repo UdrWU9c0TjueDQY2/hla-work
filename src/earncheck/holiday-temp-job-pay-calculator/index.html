@@ -68,6 +68,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 .cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font:700 1.05rem Sora,sans-serif;padding:14px 22px;border-radius:999px;margin:8px 0}
 .end{background:var(--navy);color:#fff;border-radius:18px;padding:22px 18px;margin:28px 0 18px;text-align:center}.end h2{color:#ffd9b8}.end .hla-badge{display:inline-block;margin-top:8px}
 .limits{font-size:.95rem;color:var(--mute)}
+.night-shift-help{margin:16px 0}.night-shift-help summary{cursor:pointer;padding:10px 0;font-weight:700}.night-shift-help video{display:block;max-width:100%;height:auto;margin:12px 0}.night-shift-help a{text-decoration:underline}
 </style>
 </head>
 <body>
@@ -89,6 +90,15 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <div><label for="prem">Premium hours per week (optional)</label><input id="prem" type="number" inputmode="decimal" value="0" min="0" max="168" step="any"></div>
 <div><label for="premr">Premium extra per hour</label><input id="premr" type="number" inputmode="decimal" value="0" min="0" step="any"></div>
 </div>
+<details class="night-shift-help" id="hours-from-shifts">
+<summary>Worked overnight? Turn one shift into weekly hours</summary>
+<p>From 10 pm to 6 am is eight hours. Subtract a 30-minute unpaid break and the shift contributes 7 hours 30 minutes, or <strong>7.5 hours</strong>. If three such shifts fit wholly inside the same workweek and there are no other shifts, enter <strong>22.5</strong> in Hours per week.</p>
+<video controls playsinline preload="none" width="216" height="384" aria-label="13-second walkthrough of the overnight shift calculator">
+<source src="../overnight-shift-hours-calculator/overnight-shift.mp4" type="video/mp4">
+<track kind="captions" srclang="en" label="English" src="../overnight-shift-hours-calculator/overnight-shift.vtt" default>
+</video>
+<p>Try different start times or breaks in the <a href="../overnight-shift-hours-calculator/#shift-video">overnight shift calculator and transcript</a>. Count only the part of each shift inside the workweek you are estimating.</p>
+</details>
 <div class="out" role="status" aria-live="polite"><div class="big" id="total">—</div><p id="totalp"></p><div class="math" id="math"></div></div>
 <p class="limits">A simplified estimate that repeats one identical workweek. Enter paid hours for that workweek after any genuinely unpaid breaks. This tool has no workweek-start selector and does not split shifts. It uses the entered hourly rate for overtime; premiums and bonuses can affect the legally required regular rate, which it does not calculate. Check eligibility and exceptions before using a preset. Sources: <a href="https://www.dol.gov/agencies/whd/fact-sheets/23-flsa-overtime-pay" rel="noopener">U.S. Department of Labor</a>, <a href="https://www.ontario.ca/document/your-guide-employment-standards-act-0/overtime-pay" rel="noopener">Ontario Employment Standards Act</a>. Not legal advice.</p>
 </div>
