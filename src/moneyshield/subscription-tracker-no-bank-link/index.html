@@ -136,7 +136,7 @@ details{background:var(--paper);border:1px solid var(--line);border-radius:12px;
 <div class="card"><h3>Bank-linked (Rocket Money, Hiatus, Feenko)</h3><ul class="tight"><li>Describes finding recurring charges from connected transactions</li><li>Requires financial-account access through the app's connection flow</li><li>May bundle budgeting, credit or bill-negotiation features; check the current listing</li><li>Review the current price and data disclosures before connecting</li></ul></div>
 <div class="card"><h3>Manual (MoneyShield, Bobby, Subscription Manager, Subpilot, MonoBoost)</h3><ul class="tight"><li>Does not require a linked bank feed according to the listings checked</li><li>Requires manual entry up front; reminders only cover items you supplied</li><li>Can record a future deadline, such as a return window or trial end, before a charge appears</li><li>Misses anything you forget to enter; check each app's privacy disclosures separately</li></ul></div>
 </div>
-<p>A fair summary: bank-linked apps are better at discovery, manual apps are better at privacy and at deadlines that are not yet charges. Pick by which failure annoys you more.</p>
+<p>A fair summary: bank-linked listings emphasize automatic discovery from connected transactions. Manual listings emphasize user-entered items and can record a future deadline before a charge appears. Compare each app's current privacy disclosures and features.</p>
 </section>
 
 <section class="chooser" id="chooser">
@@ -193,7 +193,7 @@ details{background:var(--paper);border:1px solid var(--line);border-radius:12px;
   manual_returns:'A manual tracker that handles return and refund windows: MoneyShield is built for exactly that (its deadline types include Return, Refund and Warranty). Bobby and Subscription Manager focus on subscriptions only.',
   manual_forget:'A manual tracker with reminders set from the next charge date. MoneyShield, Bobby and Subscription Manager all do this; MoneyShield adds trial end dates, cancel-by dates and a follow-up reminder after you cancel.',
   manual_total:'A manual tracker with monthly and yearly totals: Subscription Manager, Bobby and MoneyShield all show these. If you have no idea what you pay, expect the first session to take a while whichever you choose.',
-  bank_many:'A bank-linked tracker: Rocket Money, Hiatus or Feenko will surface recurring charges you forgot existed. Read each app\'s privacy terms before linking; the convenience is real and so is the access.',
+  bank_many:'A bank-linked tracker: Rocket Money, Hiatus or Feenko describes scanning connected transactions and may surface recurring charges you forgot. Read each app\'s privacy terms before linking.',
   bank_few:'You could go either way. A shorter list makes manual entry a smaller job, while a connected app can help discover charges you forgot. Compare current features, prices and privacy disclosures.'
  };
  function show(){ if(!(ans.n&&ans.bank&&ans.worry)) return; var k; if(ans.bank==='no'){ k='manual_'+ans.worry; } else { k = (ans.n==='many') ? 'bank_many' : (ans.worry==='returns' ? 'manual_returns' : 'bank_few'); } out.innerHTML='<strong>Best fit:</strong> '+texts[k]+' <a href="https://apps.apple.com/app/id6787559121?ct=work-subscription-tracker-no-b&mt=8" rel="noopener">MoneyShield is free on the App Store</a> if you want to try the manual route.'; }

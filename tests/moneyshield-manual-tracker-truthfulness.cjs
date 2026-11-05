@@ -27,6 +27,8 @@ for (const unsupported of [
   'under a minute',
   'takes five minutes to set up',
   'faster and keeps the proof',
+  'will surface recurring charges you forgot existed',
+  'manual apps are better at privacy',
   'can always be cancelled from iPhone Settings'
 ]) {
   check(!html.includes(unsupported), `unsupported claim remains: ${unsupported}`);
@@ -44,6 +46,8 @@ for (const required of [
   'reminders only cover items you supplied',
   'Start with one subscription, then add the others at your own pace',
   'Compare current features, prices and privacy disclosures',
+  'may surface recurring charges you forgot',
+  "Compare each app's current privacy disclosures and features",
   'Apple publishes current steps for cancelling Apple-billed subscriptions in iPhone Settings'
 ]) {
   check(html.includes(required), `required qualification missing: ${required}`);
