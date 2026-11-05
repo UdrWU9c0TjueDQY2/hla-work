@@ -37,6 +37,7 @@
     footer{background:var(--ink);color:#d8d1c6;padding:28px clamp(18px,5vw,64px);font-size:13px}footer nav{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}footer a{color:#fff}
     @media(max-width:850px){.hero,.lab,.app{grid-template-columns:1fr}.hero{padding-top:36px}.stamp{max-width:420px}.steps{grid-template-columns:1fr 1fr}.lab{gap:30px}.receipt{padding-left:18px;padding-right:18px}}
     @media(max-width:520px){.topbar{align-items:flex-start;flex-direction:column}.hero h1{font-size:58px}.steps,.boundaries{grid-template-columns:1fr}.step{margin-top:12px}.presets{grid-template-columns:1fr}.row.big{font-size:18px}.lab{padding-left:14px;padding-right:22px}.panel{box-shadow:6px 6px 0 var(--ink)}.compare{font-size:13px}.compare th,.compare td{padding:8px 6px}.app h2,.guide h2,.faq h2{font-size:42px}}
+    .input-note{font-size:12px;color:var(--muted)}.share-examples{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 clamp(18px,5vw,64px) 54px;border:2px solid var(--ink);padding:24px;background:var(--paper2);box-shadow:8px 8px 0 var(--blue)}.share-examples h2{font:clamp(30px,4vw,48px)/1 Impact,sans-serif;text-transform:uppercase;margin:8px 0 18px}.share-examples p{font-size:14px}.share-privacy{border-left:4px solid var(--orange);padding-left:12px}.share-controls{min-width:0}.share-controls label{display:block;font-size:14px;font-weight:800;margin-bottom:6px}.share-controls select,.share-controls input{display:block;width:100%;max-width:100%;border:2px solid var(--ink);padding:10px;background:white;margin-bottom:16px;font-size:14px}.share-controls button{display:block;border:2px solid var(--ink);background:var(--lime);padding:12px;font-weight:800;cursor:pointer;margin-bottom:14px}.share-controls a{font-weight:700;font-size:14px}input[aria-invalid="true"]{box-shadow:inset 0 0 0 2px var(--red)}@media(max-width:700px){.share-examples{grid-template-columns:1fr;margin-left:14px;margin-right:22px;padding:18px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fill{transition:none}}
   </style>
 </head>
@@ -54,10 +55,11 @@
         <div class="panel-head"><h2 id="lab-title">Quote inputs</h2><span>Nothing is saved</span></div>
         <div class="controls">
           <div class="currency"><label for="currency"><strong>Currency</strong></label><select id="currency"><option value="CAD">CAD</option><option value="USD">USD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="AUD">AUD</option></select></div>
-          <div class="control"><label for="price"><span>Customer price</span><small>before tax</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="price" type="number" min="0" step="1" inputmode="decimal" value="1200"></div></div>
-          <div class="control"><label for="cost"><span>Direct cost</span><small>labour + materials</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="cost" type="number" min="0" step="1" inputmode="decimal" value="650"></div></div>
+          <div class="control"><label for="price"><span>Customer price</span><small>before tax</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="price" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="1200"></div></div>
+          <div class="control"><label for="cost"><span>Direct cost</span><small>labour + materials</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="cost" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="650"></div></div>
           <div class="control"><label for="discount"><span>Proposed discount</span><small>optional</small></label><div class="unit-input"><input class="plain-input" id="discount" type="number" min="0" max="100" step="0.5" inputmode="decimal" value="10"><span aria-hidden="true">%</span></div></div>
           <div class="control"><label for="target"><span>Target gross margin</span><small>your own threshold</small></label><div class="unit-input"><input class="plain-input" id="target" type="number" min="0" max="99.9" step="0.5" inputmode="decimal" value="35"><span aria-hidden="true">%</span></div></div>
+          <p class="input-note">Enter non-negative amounts up to 1 trillion. Discount: 0–100%. Target margin: 0–99.9%. Blank or invalid inputs do not produce a result.</p>
           <div class="presets" aria-label="Example quote presets"><button type="button" data-preset="painter">Painter example</button><button type="button" data-preset="cleaner">Cleaner example</button><button type="button" data-preset="landscaper">Landscaper example</button><button type="button" data-preset="detailer">Detailer example</button></div>
           <button class="reset" id="reset" type="button">Reset to the sample quote</button>
         </div>
@@ -94,6 +96,11 @@
       </div>
     </section>
 
+    <section class="share-examples" aria-labelledby="share-title">
+      <div><p class="section-label">Make the math easier to explain</p><h2 id="share-title">Share a worked example.</h2><p>Send a fictional quote to a colleague learning the difference between markup and margin. The link opens the same example, ready to calculate.</p><p class="share-privacy"><strong>Your figures stay out of the link.</strong> Only the example name is shared. These made-up amounts are teaching examples, not trade prices or recommended margins.</p></div>
+      <div class="share-controls"><label for="share-example">Choose an example to share</label><select id="share-example"><option value="painter">Painter · $1,200 price / $650 cost</option><option value="cleaner">Cleaner · $480 price / $260 cost</option><option value="landscaper">Landscaper · $2,150 price / $1,250 cost</option><option value="detailer">Detailer · $350 price / $165 cost</option></select><label for="share-url">Example link</label><input id="share-url" type="url" readonly><button type="button" id="copy-example">Copy example link</button><a id="open-example" href="#example=painter">Open painter example</a><p id="share-status" role="status" aria-live="polite"></p><p class="input-note">All shared examples open in CAD. The recipient can change the currency and numbers. No exchange-rate conversion is performed.</p></div>
+    </section>
+
     <section class="guide">
       <p class="section-label">How to use the result</p><h2>Price first. Discount second.</h2>
       <div class="steps">
@@ -108,7 +115,7 @@
       </table>
       <p class="example">Why the numbers differ: markup uses the $100 cost as its denominator; margin uses the larger customer price.</p>
       <div class="boundaries">
-        <article class="boundary"><h3>This calculator does</h3><p>Show estimating arithmetic for one proposed quote. Values stay in this browser page and disappear when it closes or refreshes.</p></article>
+        <article class="boundary"><h3>This calculator does</h3><p>Show estimating arithmetic for one proposed quote. Your entered figures stay in this browser page. They are not saved or included in example links. Refreshing restores the default or the fictional example named in the link.</p></article>
         <article class="boundary warn"><h3>This calculator does not</h3><p>Set a profitable price, allocate overhead, calculate tax, replace bookkeeping, or confirm that a quote or discount is appropriate.</p></article>
       </div>
     </section>
@@ -119,7 +126,7 @@
       <details><summary>Why can a 10% discount cut margin by more than 10%?</summary><p>The discount comes entirely out of the price, while the labour and materials may be unchanged. On the sample $1,200 quote with $650 direct cost, a 10% discount changes price to $1,080 and profit from $550 to $430. Gross margin falls from 45.8% to 39.8%—a drop of 6 percentage points.</p></details>
       <details><summary>Does the calculator include overhead or take-home pay?</summary><p>No. “Gross profit” here means price before tax minus the direct cost entered. It is not net profit or take-home pay. Rent, insurance, travel, admin time, tools, payment fees and income tax may still need to be covered.</p></details>
       <details><summary>Does it calculate sales tax or GST/HST?</summary><p>No. Enter the customer price before tax. Sales tax is not treated as gross profit. You set and remain responsible for your own tax rates and compliance.</p></details>
-      <details><summary>Is the target-margin price a recommended quote?</summary><p>No. It is the price that makes the entered direct cost equal the chosen gross-margin percentage. It does not know your overhead, local market, minimum charge, scope risk, contract, tax obligations or business goals.</p></details>
+      <details><summary>Is the target-margin price a recommended quote?</summary><p>No. It is the price at which gross profit, divided by that price, equals the chosen gross-margin percentage. With zero direct cost, every positive price has 100% gross margin, so a lower target has no exact solution. It does not know your overhead, local market, minimum charge, scope risk, contract, tax obligations or business goals.</p></details>
     </section>
 
     <section class="app">
@@ -130,52 +137,88 @@
   <footer><nav aria-label="Related ScopeBid resources"><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/scope-change-worksheet/">Scope change worksheet</a><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/estimate-app-vs-spreadsheet-vs-paper/">Estimate app vs spreadsheet vs paper</a><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/">More work tools</a></nav><p>Published by Honest Little Apps · App facts checked against the current Canadian and US App Store listings on November 4, 2026 · Apple and App Store are trademarks of Apple Inc.</p></footer>
 </div>
 <script>
-  (function(){
-    function finiteNumber(value, fallback){const n=Number(value);return Number.isFinite(n)?n:fallback}
-    function computeQuoteMath(input){
-      const price=Math.max(0,finiteNumber(input.price,0));
-      const cost=Math.max(0,finiteNumber(input.cost,0));
-      const discount=Math.min(100,Math.max(0,finiteNumber(input.discount,0)));
-      const target=Math.min(99.9,Math.max(0,finiteNumber(input.target,0)));
-      const profit=price-cost;
-      const margin=price>0?profit/price*100:null;
-      const markup=cost>0?profit/cost*100:null;
-      const discountedPrice=price*(1-discount/100);
-      const discountedProfit=discountedPrice-cost;
-      const discountedMargin=discountedPrice>0?discountedProfit/discountedPrice*100:null;
-      const targetPrice=cost/(1-target/100);
-      const rawMaxDiscount=price>0?(1-targetPrice/price)*100:null;
-      const maxDiscount=rawMaxDiscount===null?null:Math.min(100,Math.max(0,rawMaxDiscount));
-      const marginChange=margin===null||discountedMargin===null?null:discountedMargin-margin;
-      return{price,cost,discount,target,profit,margin,markup,discountedPrice,discountedProfit,discountedMargin,targetPrice,rawMaxDiscount,maxDiscount,marginChange};
+(function(){
+  const fields={price:"Customer price",cost:"Direct cost",discount:"Proposed discount",target:"Target gross margin"};
+  function computeQuoteMath(input){
+    const values={};
+    for(const key of Object.keys(fields)){
+      const raw=input[key];
+      if(raw===null||raw===undefined||typeof raw==="boolean"||String(raw).trim()===""||!Number.isFinite(Number(raw))){
+        return {error:fields[key]+" must be a finite number.",field:key};
+      }
+      values[key]=Number(raw);
+      const max=key==="target"?99.9:key==="discount"?100:1000000000000;
+      if(values[key]<0||values[key]>max)return {error:fields[key]+" must be between 0 and "+max.toLocaleString("en-US")+".",field:key};
     }
-
-    const $=id=>document.getElementById(id);
-    const controls={price:$("price"),cost:$("cost"),discount:$("discount"),target:$("target"),currency:$("currency")};
-    const presets={painter:{price:1200,cost:650,discount:10,target:35},cleaner:{price:480,cost:260,discount:5,target:35},landscaper:{price:2150,cost:1250,discount:7.5,target:32},detailer:{price:350,cost:165,discount:10,target:40}};
-    function money(value){try{return new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,maximumFractionDigits:2}).format(value)}catch(_){return value.toFixed(2)}}
-    function pct(value){return value===null||!Number.isFinite(value)?"Not defined":`${value.toFixed(1)}%`}
-    function setText(id,value){$(id).textContent=value}
-    function render(){
-      const r=computeQuoteMath({price:controls.price.value,cost:controls.cost.value,discount:controls.discount.value,target:controls.target.value});
-      setText("out-price",money(r.price));setText("out-cost",money(r.cost));setText("out-profit",money(r.profit));setText("out-margin",pct(r.margin));setText("out-markup",pct(r.markup));
-      setText("out-discount-price",money(r.discountedPrice));setText("out-discount-profit",money(r.discountedProfit));setText("out-discount-margin",pct(r.discountedMargin));setText("out-margin-change",r.marginChange===null?"Not defined":`${r.marginChange.toFixed(1)} points`);
-      setText("out-target-price",money(r.targetPrice));setText("out-max-discount",r.rawMaxDiscount===null?"Not defined":r.rawMaxDiscount<0?"0% — current price is below target":pct(r.maxDiscount));
-      const before=Math.max(0,Math.min(100,r.margin||0)),after=Math.max(0,Math.min(100,r.discountedMargin||0));
-      $("bar-before").style.width=`${before}%`;$("bar-after").style.width=`${after}%`;setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));
-      const signal=$("signal");signal.className="signal neutral";
-      if(r.price<=0){signal.textContent="Enter a customer price above zero to calculate margin."}
-      else if(r.discountedPrice<=0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
-      else if(r.discountedProfit<0){signal.className="signal warn";signal.textContent=`After the discount, the price is ${money(Math.abs(r.discountedProfit))} below the direct cost entered.`}
-      else if(r.discountedMargin!==null&&r.discountedMargin<r.target){signal.className="signal warn";signal.textContent=`The discounted quote is ${(r.target-r.discountedMargin).toFixed(1)} percentage points below your ${r.target.toFixed(1)}% target.`}
-      else{signal.className="signal good";signal.textContent=`The discounted quote remains ${(r.discountedMargin-r.target).toFixed(1)} percentage points above your selected target.`}
+    const {price,cost,discount,target}=values;
+    const profit=price-cost,margin=price>0?profit/price*100:null,markup=cost>0?profit/cost*100:null;
+    const discountedPrice=price*(1-discount/100),discountedProfit=discountedPrice-cost;
+    const discountedMargin=discountedPrice>0?discountedProfit/discountedPrice*100:null;
+    const targetPrice=cost>0?cost/(1-target/100):null;
+    const rawMaxDiscount=price>0&&targetPrice!==null?(1-targetPrice/price)*100:null;
+    const maxDiscount=rawMaxDiscount===null?null:Math.min(100,Math.max(0,rawMaxDiscount));
+    const marginChange=margin===null||discountedMargin===null?null:discountedMargin-margin;
+    return {price,cost,discount,target,profit,margin,markup,discountedPrice,discountedProfit,discountedMargin,targetPrice,rawMaxDiscount,maxDiscount,marginChange};
+  }
+  const $=id=>document.getElementById(id);
+  const controls={price:$("price"),cost:$("cost"),discount:$("discount"),target:$("target"),currency:$("currency")};
+  const presets={painter:{price:1200,cost:650,discount:10,target:35},cleaner:{price:480,cost:260,discount:5,target:35},landscaper:{price:2150,cost:1250,discount:7.5,target:32},detailer:{price:350,cost:165,discount:10,target:40}};
+  const names={painter:"painter",cleaner:"cleaner",landscaper:"landscaper",detailer:"detailer"};
+  const baseUrl="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/";
+  const outputs=["out-price","out-cost","out-profit","out-margin","out-markup","out-discount-price","out-discount-profit","out-discount-margin","out-margin-change","out-target-price","out-max-discount","bar-before-label","bar-after-label"];
+  function exampleKey(hash){const match=/^#example=(painter|cleaner|landscaper|detailer)$/.exec(hash);return match?match[1]:null}
+  function exampleUrl(key){return baseUrl+"#example="+(Object.hasOwn(presets,key)?key:"painter")}
+  function money(value){return new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,maximumFractionDigits:2}).format(value)}
+  function pct(value){return value===null||!Number.isFinite(value)?"Not defined":value.toFixed(1)+"%"}
+  function setText(id,value){$(id).textContent=value}
+  function clearSelected(){document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed","false"))}
+  function render(){
+    Object.keys(fields).forEach(k=>{controls[k].setCustomValidity("");controls[k].removeAttribute("aria-invalid")});
+    const symbol=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value}).formatToParts(1).find(p=>p.type==="currency").value;
+    document.querySelectorAll(".money-input > span").forEach(el=>el.textContent=symbol);
+    const r=computeQuoteMath({price:controls.price.value,cost:controls.cost.value,discount:controls.discount.value,target:controls.target.value});
+    const signal=$("signal");
+    if(r.error){
+      outputs.forEach(id=>setText(id,"—"));$("bar-before").style.width="0%";$("bar-after").style.width="0%";
+      controls[r.field].setCustomValidity(r.error);controls[r.field].setAttribute("aria-invalid","true");
+      signal.className="signal warn";signal.textContent=r.error+" Correct the input to calculate.";return;
     }
-    Object.values(controls).forEach(el=>el.addEventListener("input",render));
-    document.querySelectorAll("[data-preset]").forEach(button=>button.addEventListener("click",()=>{const p=presets[button.dataset.preset];Object.keys(p).forEach(k=>controls[k].value=p[k]);document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));render();controls.price.focus()}));
-    $("reset").addEventListener("click",()=>{const p=presets.painter;Object.keys(p).forEach(k=>controls[k].value=p[k]);controls.currency.value="CAD";document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed","false"));render();controls.price.focus()});
-    render();
-    window.computeQuoteMath=computeQuoteMath;
-  })();
+    setText("out-price",money(r.price));setText("out-cost",money(r.cost));setText("out-profit",money(r.profit));setText("out-margin",pct(r.margin));setText("out-markup",pct(r.markup));
+    setText("out-discount-price",money(r.discountedPrice));setText("out-discount-profit",money(r.discountedProfit));setText("out-discount-margin",pct(r.discountedMargin));setText("out-margin-change",r.marginChange===null?"Not defined":r.marginChange.toFixed(1)+" points");
+    setText("out-target-price",r.targetPrice===null?"No exact price at zero cost":money(r.targetPrice));
+    setText("out-max-discount",r.price===0?"Not defined":r.cost===0?"Less than 100% — keep price above zero":r.rawMaxDiscount<0?"0% — current price is below target":pct(r.maxDiscount));
+    $("bar-before").style.width=Math.max(0,Math.min(100,r.margin||0))+"%";$("bar-after").style.width=Math.max(0,Math.min(100,r.discountedMargin||0))+"%";
+    setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));signal.className="signal neutral";
+    if(r.price===0){signal.textContent="Enter a customer price above zero to calculate margin."}
+    else if(r.discountedPrice===0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
+    else if(r.discountedProfit<0){signal.className="signal warn";signal.textContent="After the discount, the price is "+money(Math.abs(r.discountedProfit))+" below the direct cost entered."}
+    else if(r.discountedMargin<r.target){signal.className="signal warn";signal.textContent="The discounted quote is "+(r.target-r.discountedMargin).toFixed(1)+" percentage points below your "+r.target.toFixed(1)+"% target."}
+    else if(Math.abs(r.discountedMargin-r.target)<1e-9){signal.className="signal good";signal.textContent="The discounted quote meets your selected target."}
+    else{signal.className="signal good";signal.textContent="The discounted quote remains "+(r.discountedMargin-r.target).toFixed(1)+" percentage points above your selected target."}
+  }
+  function updateExampleLink(){
+    const key=$("share-example").value,url=exampleUrl(key);
+    $("share-url").value=url;$("open-example").href=url;
+    $("open-example").textContent="Open "+names[key]+" example";setText("share-status","");
+  }
+  function applyPreset(key,focus){
+    const p=presets[key];Object.keys(p).forEach(k=>controls[k].value=p[k]);controls.currency.value="CAD";
+    document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.preset===key)));
+    $("share-example").value=key;updateExampleLink();render();if(focus)controls.price.focus();
+  }
+  Object.values(controls).forEach(el=>el.addEventListener("input",()=>{clearSelected();render()}));
+  document.querySelectorAll("[data-preset]").forEach(button=>button.addEventListener("click",()=>applyPreset(button.dataset.preset,true)));
+  $("reset").addEventListener("click",()=>{applyPreset("painter",true);clearSelected()});
+  $("share-example").addEventListener("change",updateExampleLink);
+  $("copy-example").addEventListener("click",async()=>{
+    const url=exampleUrl($("share-example").value);
+    try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Unavailable");await navigator.clipboard.writeText(url);setText("share-status","Copied the fictional example link. Your entered figures are not included.")}
+    catch(_){$("share-url").focus();$("share-url").select();setText("share-status","Select and copy the example link above. Your entered figures are not included.")}
+  });
+  window.addEventListener("hashchange",()=>{const key=exampleKey(window.location.hash);if(key)applyPreset(key,false)});
+  const initial=exampleKey(window.location.hash);if(initial)applyPreset(initial,false);else{updateExampleLink();render()}
+  window.computeQuoteMath=computeQuoteMath;
+})();
 </script>
 </body>
 </html>

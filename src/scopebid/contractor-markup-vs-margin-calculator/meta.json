@@ -1,13 +1,19 @@
 {
   "title": "Contractor Markup vs Margin Calculator | Discount Impact",
   "linkText": "Contractor markup vs margin calculator",
-  "description": "A free quote math lab for gross margin, markup, discount impact and target-margin pricing.",
+  "description": "Check gross margin, markup and discount impact, then share a fictional worked example without including your business figures.",
   "appSlug": "scopebid",
   "strategy": "interactive-calculator",
   "query": "contractor markup vs margin calculator",
-  "tags": ["contractor", "markup", "gross-margin", "discount", "estimating"],
+  "tags": [
+    "contractor",
+    "markup",
+    "gross-margin",
+    "discount",
+    "estimating"
+  ],
   "published": "2026-11-04",
-  "updated": "2026-11-04",
+  "updated": "2026-11-05",
   "agent": "codex",
   "draft": false
 }
