@@ -55,7 +55,7 @@ if(typeof document!=='undefined'){
 let cardIndex=0;
 const bars=items=>'<div class="bars">'+items.map(x=>'<span style="flex:'+x[1]+';background:'+x[2]+'">'+x[0]+'</span>').join('')+'</div>';
 function render(){try{
-if(![...document.querySelectorAll('input')].every(e=>e.checkValidity()&&e.value!==''))throw Error('Complete each field using a value within its shown range.');
+if(![...$('inputs').querySelectorAll('input')].every(e=>e.checkValidity()&&e.value!==''))throw Error('Complete each field using a value within its shown range.');
 let main='',detail='',visual='';
 if(kind==='shift'){const r=shift($('start').value,$('end').value,num('day'),num('pause'));main=Math.floor(r.net/60)+' hours '+r.net%60+' minutes';detail=r.gross+' elapsed minutes − '+num('pause')+' unpaid break minutes = '+r.net+' minutes. Decimal hours: '+(r.net/60).toFixed(2)+'.';visual=bars([['Worked',Math.max(r.net,1),'var(--accent)'],['Break',num('pause'),'#b4bcc9']]);}
 if(kind==='capacity'){const days=Array.from({length:7},(_,i)=>num('d'+i));const r=capacity(days,num('service'),num('buffer'));main=r.reduce((a,x)=>a+x.slots,0)+' appointments';detail='Each slot reserves '+(num('service')+num('buffer'))+' minutes. Daily remainders are not carried into another day.';visual='<table><caption>Separate daily windows</caption><tr><th>Day</th><th>Slots</th><th>Unused minutes</th></tr>'+r.map((x,i)=>'<tr><th>'+['Mon','Tue','Wed','Thu','Fri','Sat','Sun'][i]+'</th><td>'+x.slots+'</td><td>'+x.left+'</td></tr>').join('')+'</table>';}
