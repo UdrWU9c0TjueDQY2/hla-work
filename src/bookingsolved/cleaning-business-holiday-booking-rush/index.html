@@ -84,7 +84,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <p class="upd">Fictional worked example · Holiday cleaning bookings</p>
 <h1>Eleven texts.<span class="l2">One cleaning calendar.</span></h1>
 <p class="sub">Follow Dana, a fictional solo house cleaner. Move the slider to compare eleven sample client messages with the appointments she confirms.</p>
-<div class="badge-row"><a class="hla-badge" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a><small>BookingSolved · Free on iPhone</small></div>
+<div class="badge-row"><a class="cta" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784">See BookingSolved on the App Store</a><small>First three completed actions free. Pro unlocks unlimited bookings, reschedules and cancellations.</small></div>
 </header>
 
 <div class="compare-shortcuts"><button type="button" id="show-messages">Read all 11 messages</button><button type="button" id="show-calendar">Read the weekly calendar</button></div>
@@ -169,7 +169,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <div class="end">
 <h2>Keep texting. Stop double-booking.</h2>
 <p>Free on iPhone. Apple Calendar stays yours.</p>
-<a class="hla-badge" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a>
+<a class="cta" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784">See BookingSolved on the App Store</a>
 </div>
 
 <!--HLA:RELATED:4-->
@@ -185,6 +185,8 @@ function set(value) {
   h.style.left = v + '%';
   c.querySelector('.before').setAttribute('aria-hidden', String(v === 0));
   a.setAttribute('aria-hidden', String(v === 100));
+  c.querySelector('.lbl.b').hidden = v === 0;
+  c.querySelector('.lbl.a').hidden = v === 100;
   r.setAttribute('aria-valuetext', v === 0 ? 'Weekly calendar' : v === 100 ? 'Client messages' : 'Split comparison, ' + v + '% messages');
 }
 document.getElementById('show-messages').addEventListener('click', function () { set(100); });
