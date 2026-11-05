@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'"><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/"><title>Appointment capacity widget | BookingSolved</title>
+<style>*{box-sizing:border-box}body{margin:0;color:#193d44;font:16px/1.45 system-ui,sans-serif;background:#fffaf0}main{max-width:700px;padding:clamp(12px,3vw,24px);margin:auto}h1{font:600 clamp(23px,5vw,32px)/1.08 Georgia,serif;margin:.1em 0 .3em}p{margin:.55em 0}a{color:#125644}label{display:grid;gap:2px;font-weight:650;font-size:.88rem;min-width:0}input{font:inherit;min-width:0;width:100%;min-height:42px;padding:6px;border:1px solid #77918b;border-radius:5px;background:white;color:inherit}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px}.toggle{display:flex;align-items:center;margin:.45rem 0;min-height:36px;gap:8px}.toggle input{width:18px;min-height:18px;height:18px;flex:none}#out{background:#e1f3e4;padding:10px 13px;border-left:4px solid #377856;margin-top:8px}#count{font-size:1.25rem}details{margin-top:6px}summary{cursor:pointer;min-height:32px}ol{margin:.3em 0 .5em;padding-left:1.6em}li{padding:2px}footer{font-size:.86rem;margin-top:12px}p:empty{display:none}:focus-visible{outline:3px solid #a44517;outline-offset:2px}[hidden]{display:none!important}</style></head><body><main>
+<h1>How many appointments fit?</h1><p>Set one same-day work window. Times update as you type.</p>
+<div class="fields"><label>Start<input id="start" type="time" value="09:00"></label><label>End<input id="end" type="time" value="12:00"></label><label>Service (minutes)<input id="duration" type="number" min="1" max="720" step="1" value="30"></label><label>Cleanup (minutes)<input id="buffer" type="number" min="0" max="240" step="1" value="10"></label></div>
+<label class="toggle"><input id="break" type="checkbox">Protect a fixed break</label><div id="breaks" class="fields" hidden><label>Break starts<input id="from" type="time" value="10:00"></label><label>Break ends<input id="to" type="time" value="10:30"></label></div>
+<label class="toggle"><input id="final" type="checkbox">Allow cleanup after the last visit in each work block</label>
+<p id="error" role="status"></p><div id="out" aria-live="polite" hidden><strong id="count"></strong><p id="recap"></p></div>
+<details id="times" hidden><summary>See appointment times</summary><ol id="rows"></ol></details><noscript>This calculator needs JavaScript. The example has four 30-minute visits from 09:00 to 12:00 with ten minutes of cleanup between visits.</noscript>
+<footer>Planning example; check existing bookings and travel separately. <a target="_blank" rel="noopener noreferrer" href="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/">Full calculator</a> · <a target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784">BookingSolved on the App Store</a></footer>
+</main><script>(()=>{'use strict';const $=id=>document.getElementById(id);
+function minutes(v){if(!/^\d{2}:\d{2}$/.test(v))return null;const [h,m]=v.split(':').map(Number);return h<24&&m<60?h*60+m:null}
+function slotsInBlock(start, end, duration, buffer, finalBuffer) {
+  const slots = [];
+  for (let from = start; from + duration + (finalBuffer ? buffer : 0) <= end; from += duration + buffer) {
+    slots.push({start: from, end: from + duration, buffer});
+  }
+  if (slots.length && !finalBuffer) slots[slots.length - 1].buffer = 0;
+  return slots;
+}
+function time(n){return String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0')}
+
+let schedule=[];
+function drawTimes(){
+  $('rows').replaceChildren();
+  if (!$('times').open) return;
+  for(const slot of schedule){const li=document.createElement('li');li.textContent=time(slot.start)+'–'+time(slot.end)+(slot.buffer?' · cleanup until '+time(slot.end+slot.buffer):'');$('rows').append(li);}
+}
+function update(){
+  const useBreak=$('break').checked;
+  $('breaks').hidden=!useBreak;$('out').hidden=true;$('times').hidden=true;schedule=[];$('rows').replaceChildren();
+  const start=minutes($('start').value),end=minutes($('end').value),d=$('duration').valueAsNumber,b=$('buffer').valueAsNumber;
+  if(start===null||end===null||end<=start||!Number.isInteger(d)||d<1||d>720||!Number.isInteger(b)||b<0||b>240){$('error').textContent='End after the start on the same day; use 1–720 service minutes and 0–240 cleanup minutes.';return;}
+  const from=minutes($('from').value),to=minutes($('to').value);
+  if(useBreak&&(from===null||to===null||from<start||to>end||to<=from)){$('error').textContent='Set a positive break inside the work window.';return;}
+  const blocks=useBreak?[[start,from],[to,end]]:[[start,end]];
+  schedule=blocks.flatMap(([s,e])=>slotsInBlock(s,e,d,b,$('final').checked));
+  const spare=end-start-(useBreak?to-from:0)-schedule.reduce((total,slot)=>total+d+slot.buffer,0);
+  $('error').textContent='';$('count').textContent=schedule.length+(schedule.length===1?' appointment fits':' appointments fit');
+  $('recap').textContent=spare+' unused minutes'+(useBreak?' across the two blocks':' at the end')+'.';
+  $('out').hidden=false;$('times').hidden=!schedule.length;drawTimes();
+}
+document.querySelector('main').addEventListener('input',update);$('times').addEventListener('toggle',drawTimes);update();
+})();</script></body></html>
