@@ -255,9 +255,15 @@
       controls[r.field].setCustomValidity(r.error);controls[r.field].setAttribute("aria-invalid","true");
       signal.className="signal warn";signal.textContent=r.error+" Correct the input to calculate.";return;
     }
+    const limits=quoteLimits(r);
+    if(limits.costBalance===0n && r.cost>0){
+      r.discountedPrice=r.cost;
+      r.discountedProfit=0;
+      r.discountedMargin=0;
+      r.marginChange=-r.margin;
+    }
     setText("out-price",money(r.price));setText("out-cost",money(r.cost));setText("out-profit",money(r.profit));setText("out-margin",pct(r.margin));setText("out-markup",pct(r.markup));
     setText("out-discount-price",money(r.discountedPrice));setText("out-discount-profit",money(r.discountedProfit));setText("out-discount-margin",pct(r.discountedMargin));setText("out-margin-change",r.marginChange===null?"Not defined":r.marginChange.toFixed(1)+" points");
-    const limits=quoteLimits(r);
     setText("out-target-price",r.targetPrice===null?"No exact price at zero cost":moneyFromCents(limits.minimumCents));
     setText("out-max-discount",r.price===0?"Not defined":limits.discountTenths===null?"0% — current price is below the minimum":(limits.discountTenths/10).toFixed(1)+"%"+(r.cost===0?" — keep at least one cent":""));
     $("bar-before").style.width=Math.max(0,Math.min(100,r.margin||0))+"%";$("bar-after").style.width=Math.max(0,Math.min(100,r.discountedMargin||0))+"%";
