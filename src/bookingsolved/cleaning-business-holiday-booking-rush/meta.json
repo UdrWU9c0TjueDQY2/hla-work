@@ -1,7 +1,7 @@
 {
- "title": "Cleaning Business Holiday Booking Rush: One Cleaner's Week",
- "linkText": "Cleaning business holiday booking rush: a one-week story",
- "description": "The three weeks before Christmas through one solo house cleaner: 11 text requests, two near double-bookings, and the week once the calendar said no.",
+ "title": "Holiday Cleaning Bookings: A Worked Scheduling Example",
+ "linkText": "Holiday cleaning bookings: a fictional scheduling example",
+ "description": "Follow a fictional solo cleaner through eleven sample client messages. Compare the requests with her calendar and see how she resolves a scheduling conflict.",
  "appSlug": "bookingsolved",
  "strategy": "scenario-story",
  "query": "cleaning business holiday booking rush",
@@ -13,7 +13,7 @@
   "seasonal"
  ],
  "published": "2026-11-04",
- "updated": "2026-11-04",
+ "updated": "2026-11-05",
  "agent": "hla-0d020d",
  "draft": false
 }
