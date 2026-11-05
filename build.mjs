@@ -91,6 +91,9 @@ if (PREFIX) {
  
 // sitemap, feed, index, robots, indexnow key
 const staticUrls = ['/', '/about/', '/privacy/'].filter(u => fs.existsSync(path.join(SRC, u, 'index.html')));
+// Standalone worksheets use file URLs rather than directory index pages.
+const fieldSheets = ["/bookingsolved/dog-groomer-booking-by-text/route-insert.html","/scopebid/estimate-inclusions-checklist/paint-takeoff.html"].filter(u => fs.existsSync(path.join(SRC, u)));
+staticUrls.push(...fieldSheets);
 const today = new Date().toISOString().slice(0, 10);
 const urls = [...staticUrls.filter(u => !pages.some(p => p.path === u)).map(u => ({ url: BASE + u, updated: today })), ...pages];
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
