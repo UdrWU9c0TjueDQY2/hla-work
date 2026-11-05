@@ -96,9 +96,22 @@ const fieldSheets = ["/bookingsolved/dog-groomer-booking-by-text/route-insert.ht
 staticUrls.push(...fieldSheets);
 const today = new Date().toISOString().slice(0, 10);
 const urls = [...staticUrls.filter(u => !pages.some(p => p.path === u)).map(u => ({ url: BASE + u, updated: today })), ...pages];
+function sitemapEntry(page) {
+  const name = page.sitemapImage;
+  let image = '';
+  if (typeof name === 'string' && /^[a-z0-9][a-z0-9._-]*\.(png|webp|jpe?g|svg)$/i.test(name)) {
+    const file = path.join(SRC, page.path, name);
+    if (fs.existsSync(file) && fs.statSync(file).isFile()) {
+      image = '<image:image><image:loc>' + esc(new URL(name, page.url).href) + '</image:loc></image:image>';
+    } else {
+      warn('Missing sitemap image: ' + file);
+    }
+  }
+  return '  <url><loc>' + esc(page.url) + '</loc><lastmod>' + esc(page.updated) + '</lastmod>' + image + '</url>';
+}
 fs.writeFileSync(path.join(DIST, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
-  urls.map(u => `  <url><loc>${esc(u.url)}</loc><lastmod>${esc(u.updated)}</lastmod></url>`).join('\n') + '\n</urlset>\n');
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n` +
+  urls.map(sitemapEntry).join('\n') + '\n</urlset>\n');
 fs.writeFileSync(path.join(DIST, 'feed.xml'),
   `<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">\n<title>${esc(site.name)}</title>\n<link href="${BASE}/"/>\n<id>${BASE}/</id>\n<updated>${today}T00:00:00Z</updated>\n` +
   pages.slice(0, 50).map(p => `<entry><title>${esc(p.title)}</title><link href="${esc(p.url)}"/><id>${esc(p.url)}</id><updated>${esc(p.updated)}T00:00:00Z</updated><summary>${esc(p.description)}</summary></entry>`).join('\n') + '\n</feed>\n');
