@@ -1,4 +1,4 @@
-import {reconcile,amount} from './model.js';
+import {reconcile,amount,validAmount} from './model.js?v=3';
 const form=document.querySelector('form'), fields=[...form.querySelectorAll('input')], output=document.querySelector('#result'), error=document.querySelector('#error');
 function clear(){output.hidden=true;error.textContent='';document.querySelector('#print').disabled=true;}
 form.addEventListener('input',clear);
@@ -10,7 +10,7 @@ document.querySelector('#explain').textContent=r.difference===0?'The calculated 
 const max=Math.max(r.gross,r.deductions,r.additions,Math.abs(r.expected),1);
 for(const key of ['gross','deductions','additions','expected'])document.querySelector('[data-bar="'+key+'"]').style.width=Math.max(0,Math.abs(r[key])/max*100)+'%';
 output.hidden=false;document.querySelector('#print').disabled=false;output.focus();
-}catch(e){error.textContent=e.message; const invalid=fields.find(x=>!/^\d{1,7}(\.\d{1,2})?$/.test(x.value.trim()));invalid?.focus();}});
+}catch(e){error.textContent=e.message; const invalid=fields.find(x=>!validAmount(x.value));invalid?.focus();}});
 document.querySelector('#example').addEventListener('click',()=>{['1500','310','45','1235'].forEach((x,i)=>fields[i].value=x);form.requestSubmit();});
 document.querySelector('#reset').addEventListener('click',()=>{fields.forEach(field=>field.value='');clear();fields[0].focus();});
 document.querySelector('#print').addEventListener('click',()=>window.print());
