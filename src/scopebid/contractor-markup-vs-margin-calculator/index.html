@@ -233,7 +233,8 @@
     const discountTenths=listCents>0n && room>=0n ? Number(1000n*room/listCents) : null;
     // Sign of (discounted price - exact target price), without floating-point ties.
     const balance=p.n*(100n*d.d-d.n)*denominator - 100n*d.d*p.d*numerator;
-    return {minimumCents, discountTenths, balance};
+    const costBalance = p.n*(100n*d.d-d.n)*c.d - 100n*d.d*p.d*c.n;
+    return {minimumCents, discountTenths, balance, costBalance};
   }
   function moneyFromCents(cents){
     const formatter=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,minimumFractionDigits:2,maximumFractionDigits:2});
@@ -263,7 +264,7 @@
     setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));signal.className="signal neutral";
     if(r.price===0){signal.textContent="Enter a customer price above zero to calculate margin."}
     else if(r.discountedPrice===0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
-    else if(r.discountedProfit<0){signal.className="signal warn";signal.textContent="After the discount, the price is "+money(Math.abs(r.discountedProfit))+" below the direct cost entered."}
+    else if(limits.costBalance<0n){signal.className="signal warn";signal.textContent="After the discount, the price is "+money(Math.abs(r.discountedProfit))+" below the direct cost entered."}
     else if(limits.balance<0n){signal.className="signal warn";signal.textContent="The discounted quote is "+pointGap(r.target-r.discountedMargin)+" below your "+r.target.toFixed(1)+"% target."}
     else if(limits.balance===0n){signal.className="signal good";signal.textContent="The discounted quote meets your selected target."}
     else{signal.className="signal good";signal.textContent="The discounted quote remains "+pointGap(r.discountedMargin-r.target)+" above your selected target."}
