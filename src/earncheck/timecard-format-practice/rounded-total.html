@@ -1,0 +1,36 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Why timesheet rows and totals differ | EarnCheck</title><meta name="description" content="Compare rounding each time entry to two decimal hours with adding the original minutes and rounding the total once."><link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/timecard-format-practice/rounded-total.html"><style>
+*{box-sizing:border-box}body{margin:0;background:#f5f4ed;color:#223531;font:17px/1.55 system-ui,sans-serif}main{max-width:840px;padding:24px clamp(16px,5vw,52px) 56px;margin:auto}h1{font:700 clamp(2.5rem,7vw,4.3rem)/1 Georgia,serif;letter-spacing:-.05em;margin:2rem 0 1rem}h2{font-size:1.35rem}a{color:#215b46}.entry,.result{background:white;border:1px solid #b5c6bb;border-radius:12px;padding:clamp(16px,4vw,26px);margin:1rem 0}.entry label{font-weight:700}textarea{display:block;width:100%;margin-top:.45rem;padding:.7rem;border-radius:6px;border:1px solid #758b7b;font:1.05rem/1.55 ui-monospace,monospace;resize:vertical}.result{background:#204438;color:#fff}.result h2{margin-top:0}.compare{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));gap:.6rem}.compare div{background:#eff5ea;color:#203c30;padding:.8rem;border-radius:.5rem}.compare strong{display:block;font-size:1.5rem;font-variant-numeric:tabular-nums}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}th,td{border-bottom:1px solid #7f998a;padding:.35rem;text-align:left}button,.cta{min-height:44px;border:1px solid #215b46;border-radius:5px;padding:.6rem .9rem;background:#215b46;color:white;font:650 1rem system-ui;cursor:pointer}.cta{display:inline-block;text-decoration:none}.fine{font-size:.9rem}a:focus-visible,button:focus-visible,textarea:focus-visible{outline:3px solid #d47836;outline-offset:3px}summary{cursor:pointer;min-height:44px;line-height:44px}[hidden]{display:none!important}
+</style></head><body><main><a href="./">← Timecard format practice</a><h1>Do the rounded rows add up?</h1><p>Add the same entries two ways. See what happens when each row is rounded to two decimal hours before being added, versus rounding the sum of all original minutes.</p>
+<section class="entry"><label for="entries">Durations, one per line (hours:minutes)</label><textarea id="entries" rows="4" maxlength="250" spellcheck="false">7:01
+7:01
+7:01</textarea><p class="fine">Use up to 31 entries of 0:00 through 24:00. For example, 7:01 means seven hours and one minute.</p><button id="example" type="button">Restore example</button></section>
+<section class="result" aria-labelledby="heading"><h2 id="heading">Same minutes, two displays</h2><p id="status" role="status"></p><div id="data"><div class="compare"><div>Round each row, then add<strong id="row-sum"></strong></div><div>Add minutes, then round<strong id="once"></strong></div></div><p id="exact"></p><details><summary>See the individual conversions</summary><table><thead><tr><th>Entry</th><th>Minutes</th><th>Decimal hours</th></tr></thead><tbody id="lines"></tbody></table></details></div></section>
+<p>This compares display arithmetic. Use the original time entries and the documented calculation method when reviewing an actual timesheet.</p>
+<h2>Keep a shift record</h2><p>EarnCheck lets you record shifts and review your expected pay on iPhone. This calculator reads only the durations entered here.</p><a class="cta" href="https://apps.apple.com/us/app/earncheck-shift-pay-tracker/id6798048163">Explore EarnCheck on the App Store</a><p class="fine">Published by Honest Little Apps. Entries stay on this page and clear on reload.</p>
+<script>
+const el=id=>document.getElementById(id);
+const hundredths=minutes=>Math.round(minutes*100/60);
+const fmt=n=>(n/100).toFixed(2);
+function parseRow(line){
+ const match=/^(\d{1,2}):([0-5]\d)$/.exec(line);
+ if(!match)return null;
+ const minutes=Number(match[1])*60+Number(match[2]);
+ return minutes<=1440?minutes:null;
+}
+function render(){
+ const rows=el('entries').value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean);
+ const minutes=rows.map(parseRow);el('lines').replaceChildren();
+ if(!rows.length||rows.length>31||minutes.includes(null)){
+   el('data').hidden=true;const bad=minutes.indexOf(null);
+   el('status').textContent=bad>=0?'Check entry '+(bad+1)+'. Use hours:minutes between 0:00 and 24:00.':'Enter between 1 and 31 durations.';
+   el('row-sum').textContent=el('once').textContent=el('exact').textContent='';return;
+ }
+ const total=minutes.reduce((a,b)=>a+b,0),perRow=minutes.reduce((a,b)=>a+hundredths(b),0);
+ const once=hundredths(total),diff=perRow-once;
+ el('data').hidden=false;el('row-sum').textContent=fmt(perRow)+' h';el('once').textContent=fmt(once)+' h';
+ el('status').textContent=diff===0?'The two methods give the same displayed total.':'The sum of rounded rows is '+fmt(Math.abs(diff))+' h '+(diff>0?'higher':'lower')+' than rounding the total once. That display difference equals '+Math.abs(diff)*36+' seconds.';
+ el('exact').textContent='Original total: '+Math.floor(total/60)+' hours '+total%60+' minutes ('+total+' minutes).';
+ minutes.forEach((m,i)=>{const tr=document.createElement('tr');for(const cell of [rows[i],String(m),fmt(hundredths(m))]){const td=document.createElement('td');td.textContent=cell;tr.append(td);}el('lines').append(tr);});
+}
+el('entries').addEventListener('input',render);el('example').onclick=()=>{el('entries').value=el('entries').defaultValue;render();};render();
+</script></main></body></html>
