@@ -15,7 +15,7 @@
 <label for="break-start">Break starts<input type="time" id="break-start" value="12:00" required></label>
 <label for="break-end">Break ends<input type="time" id="break-end" value="13:00" required></label>
 </div></fieldset></div>
-<label><input type="checkbox" id="finalbuffer">Include a buffer after the last appointment in each work block</label><div class="actions"><button type="submit">Calculate capacity</button><button type="button" id="restore" class="light">Reset example</button></div></form><aside><h3>Start with a window that is actually available.</h3><p>Enter one service length. For a fixed lunch, select “Protect a fixed break” and enter its start and end. The calculator fits whole appointments on each side.</p><p>When cleanup must finish before lunch or closing, include the last buffer in each block. For setup before opening, move the start time forward.</p><p class="note">Same-day, 24-hour clock. Check existing bookings and travel time against your own calendar.</p></aside></div><p id="status" role="status"></p><div class="result" id="result" hidden><div class="stats"><div><strong id="count"></strong><span>appointments fit</span></div><div><strong id="finish"></strong><span>occupied time ends</span></div><div><strong id="spare"></strong><span id="spare-label">unused at the end</span></div></div><div class="bar" aria-hidden="true"><span class="service" id="servicebar"></span><span class="gaps" id="gapbar"></span><span class="reserved" id="breakbar"></span><span class="spare" id="sparebar"></span></div><p class="note" id="legend"></p><p id="break-result" hidden></p><button id="copy" type="button">Copy this plan</button><div class="copy-fallback" id="copy-fallback" hidden><label for="plain-plan">Full plan for manual copying</label><textarea id="plain-plan" readonly spellcheck="false"></textarea></div><h3>Your example start times</h3><ol class="slots" id="slots"></ol><details class="slot-details" id="more-slots" hidden><summary id="more-label"></summary><ol class="slots" id="remaining-slots" start="9"></ol></details><p id="empty" hidden>The appointment and required buffer do not fit. Try a longer window or different durations.</p></div><noscript><p>Enable JavaScript to calculate. The formula and worked example below remain readable without it.</p></noscript></section>
+<label><input type="checkbox" id="finalbuffer">Include a buffer after the last appointment in each work block</label><div class="actions"><button type="submit">Calculate capacity</button><button type="button" id="restore" class="light">Reset example</button></div></form><aside><h3>Start with a window that is actually available.</h3><p>Enter one service length. For a fixed lunch, select “Protect a fixed break” and enter its start and end. The calculator fits whole appointments on each side.</p><p>When cleanup must finish before lunch or closing, include the last buffer in each block. For setup before opening, move the start time forward.</p><p class="note">Same-day, 24-hour clock. Check existing bookings and travel time against your own calendar.</p></aside></div><p id="status" role="status"></p><div class="result" id="result" hidden><div class="stats"><div><strong id="count"></strong><span>appointments fit</span></div><div><strong id="finish"></strong><span>occupied time ends</span></div><div><strong id="spare"></strong><span id="spare-label">unused at the end</span></div></div><div class="bar" aria-hidden="true"><span class="service" id="servicebar"></span><span class="gaps" id="gapbar"></span><span class="reserved" id="breakbar"></span><span class="spare" id="sparebar"></span></div><p class="note" id="legend"></p><p id="break-result" hidden></p><button id="copy" type="button">Copy this plan</button><div class="copy-fallback" id="copy-fallback" hidden><label for="plain-plan">Full plan for manual copying</label><textarea id="plain-plan" readonly spellcheck="false"></textarea></div><h3>Your example start times</h3><ol class="slots" id="slots"></ol><details class="slot-details" id="more-slots" hidden><summary id="more-label"></summary><ol class="slots" id="remaining-slots" start="9"></ol></details><details id="client-options" hidden><summary>Draft a reply with available times</summary><p>Check the date and availability in your calendar, then choose one or two starts to offer. Edit or copy the draft here.</p><label for="offer-one">First start</label><select id="offer-one"></select><label for="offer-two">Alternative start (optional)</label><select id="offer-two"></select><label for="client-message">Client reply</label><textarea id="client-message" rows="3" style="width:100%;max-width:100%;box-sizing:border-box;font:inherit"></textarea></details><p id="empty" hidden>The appointment and required buffer do not fit. Try a longer window or different durations.</p></div><noscript><p>Enable JavaScript to calculate. The formula and worked example below remain readable without it.</p></noscript></section>
 <section><div class="app"><p class="eyebrow">WHEN A REAL CLIENT REQUEST ARRIVES</p><h2>Take the next step<br>with your actual calendar.</h2><p>BookingSolved turns selected client requests into proposed Apple Calendar appointments and editable replies. Service presets include durations and buffers; you review changes before approving them.</p><a class="button" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784?ct=work-buffer-calculator&mt=8">Explore BookingSolved on the App Store ↗</a><p class="note">First three completed actions are free; Pro is an optional auto-renewing subscription for unlimited actions. Check the listing for current details. This browser calculator does not access Calendar, contact clients or sync a plan into the app.</p></div></section>
 <section><h2>One cancellation, three requests</h2><p><a href="waitlist-window.html">Check which waitlist requests fit the opening</a> using each person’s available window, the service length and the cleanup time. The worksheet doesn’t book or contact anyone.</p></section><section id="embed-calculator"><h2>Put the calculator on your own page</h2>
 <p>For service-business guides and appointment-planning resources, this compact version lets readers set hours, cleanup and a fixed break without leaving your page.</p>
@@ -75,6 +75,33 @@ $('more-slots').addEventListener('toggle', () => {
   }
 });
 
+function resetOffer() {
+  $('client-options').open = false;
+  $('client-options').hidden = !schedule.length;
+  $('offer-one').replaceChildren();
+  $('offer-two').replaceChildren();
+  $('client-message').value = '';
+}
+
+function writeOffer() {
+  const first = $('offer-one').value;
+  const second = $('offer-two').value;
+  $('client-message').value = second && second !== first
+    ? 'Would ' + first + ' or ' + second + ' work for your appointment?'
+    : 'Would ' + first + ' work for your appointment?';
+}
+
+$('client-options').addEventListener('toggle', () => {
+  if (!$('client-options').open || !schedule.length || $('offer-one').options.length) return;
+  const starts = schedule.map(slot => time(slot.start));
+  $('offer-one').replaceChildren(...starts.map(t => new Option(t, t)));
+  $('offer-two').replaceChildren(new Option('One time only', ''), ...starts.map(t => new Option(t, t)));
+  if (starts.length > 1) $('offer-two').value = starts[1];
+  writeOffer();
+});
+$('offer-one').addEventListener('change', writeOffer);
+$('offer-two').addEventListener('change', writeOffer);
+
 function clearCopyFallback() {
   $('copy-fallback').hidden = true;
   $('plain-plan').value = '';
@@ -132,6 +159,7 @@ function build(event) {
   $('break-result').hidden = !useBreak;
   $('break-result').textContent = breakLine;
   renderSchedule();
+  resetOffer();
   $('empty').hidden = schedule.length > 0;
   $('result').hidden = false;
   $('status').textContent = schedule.length + (schedule.length === 1 ? ' appointment fits.' : ' appointments fit.');
@@ -154,6 +182,8 @@ function build(event) {
 }
 $('form').addEventListener('input', () => {
   syncBreakFields();
+  schedule = [];
+  resetOffer();
   resultText = '';
   clearCopyFallback();
   $('result').hidden = true;
