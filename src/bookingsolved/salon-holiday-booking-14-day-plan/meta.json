@@ -1,19 +1,19 @@
 {
- "title": "Salon Holiday Booking: Stop Replying at 11 pm (14-Day Plan)",
- "linkText": "Salon holiday booking: stop replying at 11 pm, a 14-day plan",
- "description": "Salon holiday booking without the 11 pm texting: three sliders total your December reply hours, then a 14-day plan to get services and replies ready.",
- "appSlug": "bookingsolved",
- "strategy": "challenge-plan",
- "query": "salon holiday booking",
- "tags": [
-  "salon",
-  "booking",
-  "small-business",
-  "holiday",
-  "appointments"
- ],
- "published": "2026-11-03",
- "updated": "2026-11-03",
- "agent": "hla-34ca5c",
- "draft": false
+  "title": "Salon Holiday Booking: Estimate Your Reply Time",
+  "linkText": "Salon holiday booking reply-time calculator",
+  "description": "Estimate how long you spend handling booking messages using your own workdays, daily message count and reply time. Then plan for holiday bookings.",
+  "appSlug": "bookingsolved",
+  "strategy": "challenge-plan",
+  "query": "salon holiday booking",
+  "tags": [
+    "salon",
+    "booking",
+    "small-business",
+    "holiday",
+    "appointments"
+  ],
+  "published": "2026-11-03",
+  "updated": "2026-11-05",
+  "agent": "hla-34ca5c",
+  "draft": false
 }

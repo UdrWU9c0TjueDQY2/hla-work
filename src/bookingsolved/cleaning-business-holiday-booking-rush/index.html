@@ -73,6 +73,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 .cta{display:inline-block;background:var(--mint);color:var(--navy);text-decoration:none;font:600 1.05rem Oswald,sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:14px 22px;border-radius:999px;margin:8px 0}
 .end{background:var(--card);border-radius:18px;padding:22px 18px;margin:28px 0 18px;text-align:center}.end .hla-badge{display:inline-block;margin-top:8px}
 .limits{font-size:.95rem;color:var(--mute)}
+.compare-shortcuts{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.compare-shortcuts button{font:inherit;color:var(--ink,#eee);background:var(--card);border:1px solid var(--line);padding:10px 14px;min-height:44px;border-radius:8px;cursor:pointer}.compare-shortcuts button:focus-visible,.rng:focus-visible{outline:3px solid var(--mint);outline-offset:2px}.rng{min-height:44px}
 </style>
 </head>
 <body>
@@ -83,12 +84,13 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <p class="upd">Fictional worked example · Holiday cleaning bookings</p>
 <h1>Eleven texts.<span class="l2">One cleaning calendar.</span></h1>
 <p class="sub">Follow Dana, a fictional solo house cleaner. Move the slider to compare eleven sample client messages with the appointments she confirms.</p>
-<div class="badge-row"><a class="hla-badge" href="https://apps.apple.com/app/id6800187784?ct=work-cleaning-business-holiday&mt=8" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a><small>BookingSolved · Free on iPhone</small></div>
+<div class="badge-row"><a class="hla-badge" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a><small>BookingSolved · Free on iPhone</small></div>
 </header>
 
+<div class="compare-shortcuts"><button type="button" id="show-messages">Read all 11 messages</button><button type="button" id="show-calendar">Read the weekly calendar</button></div>
 <div class="cmp" id="cmp">
-<div class="pane before" aria-label="Before: the week as a pile of text messages"><div class="msg"><span class="who">Karen H.</span><span class="when">Mon 15 · 7:12</span><p>Hi Dana! Can you squeeze us in before the 20th? Guests coming. Any day works except Wed.</p></div><div class="msg"><span class="who">Priya</span><span class="when">Mon 15 · 7:40</span><p>Deep clean before the party on Friday pls, same as last year</p></div><div class="msg"><span class="who">Mike (rental)</span><span class="when">Mon 15 · 9:02</span><p>Turnover at the lake house Thursday checkout 11 next guests 4pm</p></div><div class="msg"><span class="who">Karen H.</span><span class="when">Mon 15 · 13:15</span><p>Would Thursday morning work?</p></div><div class="msg"><span class="who">Linda</span><span class="when">Tue 16 · 6:58</span><p>Could you do Tuesday at 2? Oven too if possible</p></div><div class="msg"><span class="who">New: Jess</span><span class="when">Tue 16 · 8:30</span><p>Found you on Nextdoor. Do you have anything before Christmas at all??</p></div><div class="msg"><span class="who">Priya</span><span class="when">Tue 16 · 18:44</span><p>Actually can we move it an hour later? Kids are off school</p></div><div class="msg"><span class="who">Tom &amp; Ali</span><span class="when">Wed 17 · 7:05</span><p>Same as usual Friday morning?</p></div><div class="msg"><span class="who">Mike (rental)</span><span class="when">Wed 17 · 12:20</span><p>Sorry change of plan, checkout is Friday now</p></div><div class="msg"><span class="who">Karen H.</span><span class="when">Wed 17 · 21:10</span><p>Still on for tomorrow morning?</p></div><div class="msg"><span class="who">Linda</span><span class="when">Fri 19 · 6:30</span><p>For next Tuesday, could you come at 3 instead?</p></div></div>
-<div class="after" id="after"><div class="pane" aria-label="After: the same week as a calendar"><div class="day"><b>Mon 15</b><span><em>9:00–12:00</em> Harper regular clean</span><span><em>13:00–16:30</em> open</span></div><div class="day"><b>Tue 16</b><span><em>9:00–12:00</em> Okafor regular</span><span><em>14:00–16:00</em> Linda + oven</span></div><div class="day"><b>Wed 17</b><span><em>9:00–12:30</em> Jess first clean</span><span><em>14:00</em> buffer: supplies run</span></div><div class="day"><b>Thu 18</b><span><em>9:00–12:00</em> Karen H. guest-ready</span><span><em>13:30–17:00</em> Priya deep clean (moved from Fri)</span></div><div class="day"><b>Fri 19</b><span><em>8:00–11:00</em> Tom &amp; Ali regular</span><span><em>11:30–15:30</em> Mike lake house turnover</span></div><div class="day"><b>Sat 20</b><span><em>off</em> calendar says no</span></div></div></div>
+<div class="pane before" aria-label="Before: the week as a pile of text messages"><div class="msg"><span class="who">Karen H.</span><span class="when">Mon 14 · 7:12</span><p>Hi Dana! Can you squeeze us in before the 20th? Guests coming. Any day works except Wed.</p></div><div class="msg"><span class="who">Priya</span><span class="when">Mon 14 · 7:40</span><p>Deep clean before the party on Friday pls, same as last year</p></div><div class="msg"><span class="who">Mike (rental)</span><span class="when">Mon 14 · 9:02</span><p>Turnover at the lake house Thursday checkout 11 next guests 4pm</p></div><div class="msg"><span class="who">Karen H.</span><span class="when">Mon 14 · 13:15</span><p>Would Thursday morning work?</p></div><div class="msg"><span class="who">Linda</span><span class="when">Tue 15 · 6:58</span><p>Could you do Tuesday at 2? Oven too if possible</p></div><div class="msg"><span class="who">New: Jess</span><span class="when">Tue 15 · 8:30</span><p>Found you on Nextdoor. Do you have anything before Christmas at all??</p></div><div class="msg"><span class="who">Priya</span><span class="when">Tue 15 · 18:44</span><p>Actually can we move it an hour later? Kids are off school</p></div><div class="msg"><span class="who">Tom &amp; Ali</span><span class="when">Wed 16 · 7:05</span><p>Same as usual Friday morning?</p></div><div class="msg"><span class="who">Mike (rental)</span><span class="when">Wed 16 · 12:20</span><p>Sorry change of plan, checkout is Friday now</p></div><div class="msg"><span class="who">Karen H.</span><span class="when">Wed 16 · 21:10</span><p>Still on for tomorrow morning?</p></div><div class="msg"><span class="who">Linda</span><span class="when">Fri 18 · 6:30</span><p>For next Tuesday, could you come at 3 instead?</p></div></div>
+<div class="after" id="after"><div class="pane" aria-label="After: the same week as a calendar"><div class="day"><b>Mon 14</b><span><em>9:00–12:00</em> Harper regular clean</span><span><em>13:00–16:30</em> open</span></div><div class="day"><b>Tue 15</b><span><em>9:00–12:00</em> Okafor regular</span><span><em>14:00–16:00</em> Linda + oven</span></div><div class="day"><b>Wed 16</b><span><em>9:00–12:30</em> Jess first clean</span><span><em>14:00</em> buffer: supplies run</span></div><div class="day"><b>Thu 17</b><span><em>9:00–12:00</em> Karen H. guest-ready</span><span><em>13:30–17:00</em> Priya deep clean (moved from Fri)</span></div><div class="day"><b>Fri 18</b><span><em>8:00–11:00</em> Tom &amp; Ali regular</span><span><em>11:30–15:30</em> Mike lake house turnover</span></div><div class="day"><b>Sat 19</b><span><em>off</em> calendar says no</span></div></div></div>
 <span class="lbl b">Before</span><span class="lbl a">After</span>
 <div class="handle" id="handle"></div>
 </div>
@@ -106,11 +108,12 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 </section>
 
 <section data-n="2">
-<h2>Monday 15 December, 7:12 am</h2>
+<h2>Monday, December 14, 2026 at 7:12 am</h2>
 <div class="story">
 <p class="t">Dana’s week is an original fictional example. The conversations and calendar illustrate booking decisions.</p>
 <p>Three people text Dana on Monday. Karen wants the house ready for guests and can do any day except Wednesday. Priya wants a deep clean before a Friday party. Mike needs the lake house cleaned between an 11 a.m. checkout and a 4 p.m. check-in.</p>
 <p>Karen has suggested days without picking a start time. Dana checks her calendar and the 30-minute travel buffer she uses in this example. Karen asks about Thursday morning, and they agree on 9 a.m. Dana reviews the booking before saving it and sends the confirmation herself.</p>
+</div>
 </section>
 
 <section data-n="3">
@@ -144,7 +147,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <li><b>Review what it found.</b> Service, date, time and duration are worked out on the phone. Anything vague, like "next Friday" or "any day except Wednesday", is flagged, not guessed.</li>
 <li><b>Approve and reply.</b> It checks Apple Calendar, prepares the booking, reschedule or cancellation, and writes an editable reply. You approve, you send. Nothing changes in Calendar until you say so.</li>
 </ol>
-<a class="cta" href="https://apps.apple.com/app/id6800187784?ct=work-cleaning-business-holiday&mt=8" rel="noopener">Start on your iPhone</a>
+<a class="cta" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784" rel="noopener">Start on your iPhone</a>
 </section>
 
 <section data-n="7">
@@ -166,7 +169,7 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <div class="end">
 <h2>Keep texting. Stop double-booking.</h2>
 <p>Free on iPhone. Apple Calendar stays yours.</p>
-<a class="hla-badge" href="https://apps.apple.com/app/id6800187784?ct=work-cleaning-business-holiday&mt=8" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a>
+<a class="hla-badge" href="https://apps.apple.com/us/app/bookingsolved-client-booking/id6800187784" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a>
 </div>
 
 <!--HLA:RELATED:4-->
@@ -175,13 +178,24 @@ details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;f
 <script>
 (function(){
 var r=document.getElementById('rng'),a=document.getElementById('after'),h=document.getElementById('handle'),c=document.getElementById('cmp');
-function set(v){a.style.clipPath='inset(0 0 0 '+v+'%)';h.style.left=v+'%';}
+function set(value) {
+  const v = Number(value);
+  r.value = String(v);
+  a.style.clipPath = 'inset(0 0 0 ' + v + '%)';
+  h.style.left = v + '%';
+  c.querySelector('.before').setAttribute('aria-hidden', String(v === 0));
+  a.setAttribute('aria-hidden', String(v === 100));
+  r.setAttribute('aria-valuetext', v === 0 ? 'Weekly calendar' : v === 100 ? 'Client messages' : 'Split comparison, ' + v + '% messages');
+}
+document.getElementById('show-messages').addEventListener('click', function () { set(100); });
+document.getElementById('show-calendar').addEventListener('click', function () { set(0); });
 r.addEventListener('input',function(){set(r.value);});
 function fromX(x){var b=c.getBoundingClientRect();var v=Math.max(0,Math.min(100,(x-b.left)/b.width*100));r.value=v;set(v);}
 var down=false;
 c.addEventListener('pointerdown',function(e){down=true;fromX(e.clientX);});
 window.addEventListener('pointermove',function(e){if(down)fromX(e.clientX);});
 window.addEventListener('pointerup',function(){down=false;});
+window.addEventListener('pointercancel',function(){down=false;});
 set(50);
 })();
 </script>
