@@ -1,0 +1,22 @@
+WEBVTT
+
+1
+00:00:00.000 --> 00:00:03.000
+Enter the customer price before tax: $1,000.
+
+2
+00:00:03.000 --> 00:00:06.000
+Enter $600 for labour and materials. The proposed discount is zero.
+
+3
+00:00:06.000 --> 00:00:10.000
+Subtract $600 in direct costs from $1,000 in price. That leaves $400 before overhead.
+
+4
+00:00:10.000 --> 00:00:15.000
+Divide $400 of gross profit by the $1,000 customer price. Forty cents of each sales dollar remains after direct costs.
+
+5
+00:00:15.000 --> 00:00:20.000
+Divide the same $400 of gross profit by the $600 direct cost. The smaller starting number gives the larger percentage.
+

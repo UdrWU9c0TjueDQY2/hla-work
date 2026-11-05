@@ -46,6 +46,18 @@
     @media(max-width:520px){.topbar{align-items:flex-start;flex-direction:column}.hero h1{font-size:58px}.steps,.boundaries{grid-template-columns:1fr}.step{margin-top:12px}.presets{grid-template-columns:1fr}.row.big{font-size:18px}.lab{padding-left:14px;padding-right:22px}.panel{box-shadow:6px 6px 0 var(--ink)}.compare{font-size:13px}.compare th,.compare td{padding:8px 6px}.app h2,.guide h2,.faq h2{font-size:42px}}
     .input-note{font-size:12px;color:var(--muted)}.share-examples{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 clamp(18px,5vw,64px) 54px;border:2px solid var(--ink);padding:24px;background:var(--paper2);box-shadow:8px 8px 0 var(--blue)}.share-examples h2{font:clamp(30px,4vw,48px)/1 Impact,sans-serif;text-transform:uppercase;margin:8px 0 18px}.share-examples p{font-size:14px}.share-privacy{border-left:4px solid var(--orange);padding-left:12px}.share-controls{min-width:0}.share-controls label{display:block;font-size:14px;font-weight:800;margin-bottom:6px}.share-controls select,.share-controls input{display:block;width:100%;max-width:100%;border:2px solid var(--ink);padding:10px;background:white;margin-bottom:16px;font-size:14px}.share-controls button{display:block;border:2px solid var(--ink);background:var(--lime);padding:12px;font-weight:800;cursor:pointer;margin-bottom:14px}.share-controls a{font-weight:700;font-size:14px}input[aria-invalid="true"]{box-shadow:inset 0 0 0 2px var(--red)}@media(max-width:700px){.share-examples{grid-template-columns:1fr;margin-left:14px;margin-right:22px;padding:18px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fill{transition:none}}
+
+    .margin-demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,350px);align-items:start;gap:clamp(24px,5vw,64px);padding:36px clamp(18px,5vw,64px);border-top:2px solid var(--ink);background:var(--paper2)}
+    .margin-demo h2{font:clamp(32px,4.5vw,54px)/1 Impact,sans-serif;text-transform:uppercase;margin:0 0 18px}
+    .margin-demo-copy{max-width:60ch;min-width:0}
+    .margin-demo p{margin:0 0 16px}
+    .margin-demo-note{font-size:14px;line-height:1.5}
+    .margin-demo details{margin:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .margin-demo summary{padding:12px 0;font-weight:700;cursor:pointer}
+    .margin-demo ol{padding-left:1.5em}
+    .margin-demo li+li{margin-top:.65em}
+    .margin-demo video{display:block;width:100%;max-width:350px;height:auto;border:2px solid var(--ink);background:var(--ink)}
+    @media(max-width:700px){.margin-demo{grid-template-columns:minmax(0,1fr);gap:8px}.margin-demo video{max-width:100%}}
   </style>
 </head>
 <body>
@@ -106,6 +118,30 @@
     <section class="share-examples" aria-labelledby="share-title">
       <div><p class="section-label">Make the math easier to explain</p><h2 id="share-title">Share a worked example.</h2><p>Send a fictional quote to a colleague learning the difference between markup and margin. The link opens the same example, ready to calculate.</p><p class="share-privacy"><strong>Your figures stay out of the link.</strong> Only the example name is shared. These made-up amounts are teaching examples, not trade prices or recommended margins.</p></div>
       <div class="share-controls"><label for="share-example">Choose an example to share</label><select id="share-example"><option value="painter">Painter · $1,200 price / $650 cost</option><option value="cleaner">Cleaner · $480 price / $260 cost</option><option value="landscaper">Landscaper · $2,150 price / $1,250 cost</option><option value="detailer">Detailer · $350 price / $165 cost</option></select><label for="share-url">Example link</label><input id="share-url" type="url" readonly><button type="button" id="copy-example">Copy example link</button><a id="open-example" href="#example=painter">Open painter example</a><p id="share-status" role="status" aria-live="polite"></p><p class="input-note">All shared examples open in CAD. The recipient can change the currency and numbers. No exchange-rate conversion is performed.</p></div>
+    </section>
+
+
+    <section class="margin-demo" aria-labelledby="margin-demo-title" id="margin-demo">
+      <div class="margin-demo-copy">
+        <h2 id="margin-demo-title">How $400 becomes 40% or 66.7%</h2>
+        <p>Follow a $1,000 quote with $600 in direct costs through the calculator. Both percentages start with the same $400 of gross profit.</p>
+        <p class="margin-demo-note" id="margin-demo-note">20 seconds · Silent, with on-screen captions · Fictional Canadian-dollar example</p>
+        <details>
+          <summary>Read the video transcript</summary>
+          <ol>
+            <li>Enter a customer price of $1,000 before tax, $600 for labour and materials, and zero discount.</li>
+            <li>Subtract the $600 cost from the $1,000 price. That leaves $400 gross profit before overhead.</li>
+            <li>For gross margin, divide $400 by the $1,000 customer price. The result is 40%. Forty cents of each sales dollar remains after direct costs.</li>
+            <li>For markup, divide the same $400 by the $600 direct cost. The result rounds to 66.7%. The smaller starting number gives the larger percentage.</li>
+          </ol>
+        </details>
+        <p class="margin-demo-note">The footage shows this browser calculator. ScopeBid’s iPhone and iPad app compares markup and margin when preparing an estimate. <a href="https://apps.apple.com/us/app/scopebid-estimate-invoice/id6796729890">View ScopeBid on the App Store</a>.</p>
+      </div>
+      <video width="720" height="802" controls playsinline preload="none" poster="./markup-margin-poster.webp" aria-labelledby="margin-demo-title" aria-describedby="margin-demo-note">
+        <source src="./markup-margin-demo.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" label="English" src="./markup-margin-captions.vtt">
+        <a href="./markup-margin-demo.mp4">Open the captioned video</a>.
+      </video>
     </section>
 
     <section class="guide">
