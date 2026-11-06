@@ -24,10 +24,9 @@
 <label for="embed-code">HTML embed code</label><textarea id="embed-code" readonly rows="4" style="display:block;width:100%;max-width:100%;font:inherit">&lt;iframe title="Appointment capacity calculator" src="https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/capacity-widget.html" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox" width="100%" height="660" style="display:block;width:100%;border:0"&gt;&lt;/iframe&gt;</textarea><button type="button" id="copy-embed">Copy embed code</button><p id="embed-status" role="status"></p>
 <p>The widget asks for times only. It has no accounts, cookies, tracking scripts or saved entries. Its host may keep ordinary access logs. Attribution and the optional App Store link are visible.</p></section>
 <script>(()=>{const byId=id=>document.getElementById(id);byId('embed-preview').addEventListener('toggle',function(){if(this.open&&!byId('embed-slot').firstElementChild)byId('embed-slot').append(byId('embed-template').content.cloneNode(true));});byId('copy-embed').addEventListener('click',async()=>{const t=byId('embed-code');try{await navigator.clipboard.writeText(t.value);byId('embed-status').textContent='Embed code copied.';}catch{t.focus();t.select();byId('embed-status').textContent='The embed code is selected. Use your device’s Copy command.';}});})();</script><section id="cleanup-demo" aria-labelledby="cleanup-title"><h2 id="cleanup-title">Can a fifth visit fit before noon?</h2>
-<details id="cleanup-example"><summary>Watch the calculator compare two schedules (18 seconds)</summary>
-<p>A silent demonstration of this web calculator. The captions are part of the video.</p>
-<div id="cleanup-player"></div><template id="cleanup-template"><video controls playsinline preload="none" width="512" height="744" style="display:block;width:min(100%,24rem);height:auto" poster="cleanup-buffer-poster.webp" aria-label="Appointment capacity with and without a ten-minute cleanup buffer"><source src="cleanup-buffer.mp4" type="video/mp4"></video></template>
-<p><a href="cleanup-buffer.mp4">Open the MP4</a> · <a href="cleanup-buffer.vtt">Download timed captions</a></p></details>
+<p>Watch two schedules compared in 18 seconds. This silent recording shows the web calculator, with explanations visible in the video. Optional English captions and a written example are also available.</p>
+<video id="cleanup-video" controls playsinline preload="none" tabindex="0" width="512" height="744" style="display:block;width:min(100%,24rem);height:auto" poster="cleanup-buffer-poster.webp" aria-label="Appointment capacity with and without a ten-minute cleanup buffer"><source src="cleanup-buffer.mp4" type="video/mp4"><track kind="captions" src="cleanup-buffer.vtt" srclang="en" label="English"><p>Your browser cannot play this video. <a href="cleanup-buffer.mp4">Open the 18-second MP4</a> or read the example below.</p></video>
+<p><a href="cleanup-buffer.mp4">Open the MP4</a> · <a href="cleanup-buffer.vtt">Download timed captions</a></p>
 <details><summary>Read the example</summary><p>From 9 a.m. to noon, six 30-minute visits fit back to back. Change the buffer to 10 minutes between visits, leaving the box for a final buffer unchecked. Four visits now fit. They start at 9:00, 9:40, 10:20 and 11:00. The last ends at 11:30.</p><p>Those remaining 30 minutes are shorter than the 40 needed for another visit: 10 minutes to clean up after the fourth client and 30 minutes for the fifth. This example assumes an otherwise empty shift.</p></details></section>
 <section><p class="eyebrow">THE ARITHMETIC, IN PLAIN SIGHT</p><h2>Why eight hours is not<br>eight one-hour bookings.</h2><p>From 09:00 to 17:00, you have 480 minutes. Six 60-minute appointments and five 15-minute gaps use 435 minutes, ending at 16:15. A seventh appointment would need 510 minutes with its preceding gap, so it does not fit.</p><div class="formula">Between appointments only:<br>count = floor((window + buffer) ÷ (appointment + buffer))<br><br>Buffer after every appointment:<br>count = floor(window ÷ (appointment + buffer))</div><p class="note">Round down to a whole appointment in each available block. Minutes left before lunch and after the last appointment stay separate.</p>
 <details><summary>See a schedule with lunch protected</summary>
@@ -234,14 +233,6 @@ $('copy').addEventListener('click', async () => {
     $('plain-plan').focus();
     $('plain-plan').select();
     $('status').textContent = 'Use your device’s Copy command to copy the selected plan.';
-  }
-});
-document.getElementById('cleanup-example').addEventListener('toggle', function () {
-  const slot = document.getElementById('cleanup-player');
-  if (this.open && !slot.firstElementChild) {
-    slot.append(document.getElementById('cleanup-template').content.cloneNode(true));
-  } else if (!this.open && slot.firstElementChild) {
-    slot.firstElementChild.pause();
   }
 });
 syncBreakFields();
