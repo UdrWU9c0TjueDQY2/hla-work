@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1320" viewBox="0 0 1000 1320" role="img" aria-labelledby="title desc">
+  <title id="title">Eight months is a tie. Annual first costs less at nine.</title>
+  <desc id="desc">Original illustrative comparison by Honest Little Apps. A fictional service costs CAD12 per month or CAD96 upfront for one year. After six monthly payments, monthly costs CAD72 and annual CAD96, so monthly costs CAD24 less. After eight payments both cost CAD96. After nine payments monthly costs CAD108 and annual CAD96, so annual costs CAD12 less. This assumes monthly payments stop after the chosen months and the annual payment is nonrefundable. These are not MoneyShield purchase prices.</desc>
+  <rect width="1000" height="1320" fill="#f5f1e9"/>
+  <rect width="1000" height="312" fill="#192d25"/>
+  <g font-family="Arial, sans-serif">
+    <text x="48" y="55" font-size="25" font-weight="700" letter-spacing="2" fill="#f0d384">THE UPFRONT PRICE CHECK</text>
+    <text x="48" y="135" font-size="66" font-weight="700" fill="#f5f1e9">Eight months is a tie.</text>
+    <text x="48" y="216" font-size="66" font-weight="700" fill="#f0d384">Annual wins at nine.</text>
+    <text x="48" y="274" font-size="30" fill="#f5f1e9">Fictional service: CAD12/month or CAD96 upfront/year</text>
+
+    <g transform="translate(48 344)">
+      <rect width="904" height="210" rx="16" fill="#ffffff" stroke="#829080" stroke-width="2"/>
+      <text x="30" y="57" font-size="43" font-weight="700" fill="#192d25">After 6 months</text>
+      <text x="30" y="105" font-size="30" fill="#35523f">Monthly costs CAD24 less</text>
+      <text x="30" y="160" font-size="28" fill="#192d25">Monthly</text><text x="168" y="168" font-size="50" font-weight="700" fill="#192d25">72</text>
+      <text x="286" y="160" font-size="28" fill="#192d25">Annual</text><text x="405" y="168" font-size="50" font-weight="700" fill="#192d25">96</text>
+      <rect x="540" y="117" width="213.3333" height="25" rx="4" fill="#355e43"/>
+      <rect x="540" y="156" width="284.4444" height="25" rx="4" fill="#b88b23"/>
+    </g>
+    <g transform="translate(48 580)">
+      <rect width="904" height="210" rx="16" fill="#f2e6c8" stroke="#947327" stroke-width="2"/>
+      <text x="30" y="57" font-size="43" font-weight="700" fill="#192d25">After 8 months</text>
+      <text x="30" y="105" font-size="30" fill="#604e21">Equal cost. Annual is not cheaper yet.</text>
+      <text x="30" y="160" font-size="28" fill="#192d25">Monthly</text><text x="168" y="168" font-size="50" font-weight="700" fill="#192d25">96</text>
+      <text x="286" y="160" font-size="28" fill="#192d25">Annual</text><text x="405" y="168" font-size="50" font-weight="700" fill="#192d25">96</text>
+      <rect x="540" y="117" width="284.4444" height="25" rx="4" fill="#355e43"/>
+      <rect x="540" y="156" width="284.4444" height="25" rx="4" fill="#b88b23"/>
+    </g>
+    <g transform="translate(48 816)">
+      <rect width="904" height="210" rx="16" fill="#ffffff" stroke="#829080" stroke-width="2"/>
+      <text x="30" y="57" font-size="43" font-weight="700" fill="#192d25">After 9 months</text>
+      <text x="30" y="105" font-size="30" fill="#35523f">Annual costs CAD12 less</text>
+      <text x="30" y="160" font-size="28" fill="#192d25">Monthly</text><text x="168" y="168" font-size="50" font-weight="700" fill="#192d25">108</text>
+      <text x="286" y="160" font-size="28" fill="#192d25">Annual</text><text x="405" y="168" font-size="50" font-weight="700" fill="#192d25">96</text>
+      <rect x="540" y="117" width="320" height="25" rx="4" fill="#355e43"/>
+      <rect x="540" y="156" width="284.4444" height="25" rx="4" fill="#b88b23"/>
+    </g>
+    <text x="48" y="1085" font-size="29" fill="#192d25">Monthly payments stop after your chosen months.</text>
+    <text x="48" y="1127" font-size="29" fill="#192d25">Annual is paid in full, with no refund in this example.</text>
+    <text x="48" y="1171" font-size="27" fill="#48564b">Same features; no taxes, fees, offers or price changes.</text>
+    <path d="M48 1200H952" stroke="#829080" stroke-width="2"/>
+    <text x="48" y="1246" font-size="29" font-weight="700" fill="#192d25">HONEST LITTLE APPS</text>
+    <text x="48" y="1288" font-size="25" fill="#48564b">Separate MoneyShield web companion. Not MoneyShield prices.</text>
+  </g>
+</svg>
