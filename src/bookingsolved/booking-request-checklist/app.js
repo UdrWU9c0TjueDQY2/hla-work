@@ -4,11 +4,16 @@ const result = byId('result');
 const draft = byId('draft');
 const copy = byId('copy');
 const copyStatus = byId('copy-status');
+const download = byId('download');
+const downloadStatus = byId('download-status');
 const example = byId('sample-request');
 
 function updateCopy() {
-  copy.disabled = draft.value.trim().length === 0;
+  const empty = draft.value.trim().length === 0;
+  copy.disabled = empty;
+  download.disabled = empty;
   copyStatus.textContent = '';
+  downloadStatus.textContent = '';
 }
 
 function clearResult() {
@@ -80,4 +85,40 @@ copy.addEventListener('click', async () => {
     draft.select();
     copyStatus.textContent = 'Reply selected. Use your device’s Copy command.';
   }
+});
+
+function replyFileText() {
+  return [
+    'BOOKING REQUEST FOLLOW-UP',
+    'Prepared with the Booking Request Checklist by Honest Little Apps',
+    '',
+    'Checklist summary',
+    result.textContent.trim() || 'Review the request details before confirming.',
+    '',
+    'Editable reply',
+    draft.value.trim(),
+    '',
+    'Before sending: review the wording and check the live calendar. This file does not reserve or change an appointment.'
+  ].join('\n');
+}
+
+download.addEventListener('click', () => {
+  if (!draft.value.trim()) return;
+  const text = replyFileText();
+  if (typeof Blob !== 'function' || typeof URL === 'undefined' || typeof URL.createObjectURL !== 'function') {
+    draft.focus();
+    draft.select();
+    downloadStatus.textContent = 'File download is unavailable here. The reply is selected; use your device’s Copy command.';
+    return;
+  }
+  const url = URL.createObjectURL(new Blob([text], { type: 'text/plain;charset=utf-8' }));
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = 'booking-request-follow-up.txt';
+  anchor.hidden = true;
+  document.body.appendChild(anchor);
+  anchor.click();
+  anchor.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+  downloadStatus.textContent = 'Reply file prepared. Check your downloads.';
 });
