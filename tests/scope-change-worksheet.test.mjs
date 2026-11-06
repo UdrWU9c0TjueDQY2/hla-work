@@ -15,5 +15,16 @@ els.added.value='New task';els.added.handlers.input();assert.ok(els.note.value.i
 els.clear.handlers.click();assert.equal(els.copy.disabled,true);assert.equal(els.progress.textContent,'0 of 4 categories filled');
 navigator.clipboard.writeText=async()=>{throw Error('unavailable');};els.example.handlers.click();await els.copy.handlers.click();assert.equal(els.note.selected,true);assert.ok(els.status.textContent.includes('selected'));
 const html=readFileSync(new URL('../src/scopebid/scope-change-worksheet/index.html',import.meta.url),'utf8');assert.ok(html.includes('id6796729890'));assert.ok(html.includes('rel="canonical"'));assert.ok(html.includes('first three quotes'));assert.ok(html.includes('Publisher disclosure'));
-console.log('PASS model, empty guard, example, live edit, copy, copy fallback, clear, metadata and disclosure checks');
+let resolve;
+navigator.clipboard.writeText=()=>new Promise(r=>{resolve=r;});els.example.handlers.click();
+const pendingClear=els.copy.handlers.click();els.clear.handlers.click();resolve();await pendingClear;
+assert.equal(els.copy.disabled,true);assert.equal(els.status.textContent,'');
+els.example.handlers.click();const pendingEdit=els.copy.handlers.click();els.added.value='A later revision';els.added.handlers.input();resolve();await pendingEdit;
+assert.equal(els.status.textContent,'');assert.ok(els.note.value.includes('A later revision'));
+let reject;navigator.clipboard.writeText=()=>new Promise((_resolve,r)=>{reject=r;});els.note.selected=false;
+const pendingFailure=els.copy.handlers.click();els.clear.handlers.click();reject(Error('unavailable'));await pendingFailure;
+assert.equal(els.status.textContent,'');assert.equal(els.note.selected,false);
+navigator.clipboard=undefined;els.example.handlers.click();await els.copy.handlers.click();assert.equal(els.note.selected,true);assert.match(els.status.textContent,/selected/);
+assert.ok(html.includes('app.js?v=2'));
+console.log('PASS model, empty guard, example, edit, copy/fallback, clear, stale success/failure guards, absent Clipboard API, metadata and disclosure.');
 
