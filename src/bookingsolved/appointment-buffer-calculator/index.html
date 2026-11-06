@@ -92,9 +92,9 @@ function writeOffer() {
   const first = $('offer-one').value;
   const second = $('offer-two').value;
   if (!first) return;
-  const date = $('offer-date').value;
+  const date = $('offer-date').valueAsDate;
   const zone = $('offer-zone').value.trim();
-  const day = date ? new Intl.DateTimeFormat('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC'}).format(new Date(date + 'T12:00:00Z')) : '';
+  const day = date ? new Intl.DateTimeFormat('en-US', {weekday:'long', month:'long', day:'numeric', year:'numeric', timeZone:'UTC'}).format(date) : '';
   const options = second && second !== first ? first + ' or ' + second : first;
   suggestedReply = 'Would ' + options + (day ? ' on ' + day : '') + (zone ? ' (' + zone + ')' : '') + ' work for your appointment?';
   if (!replyEdited) $('client-message').value = suggestedReply;
