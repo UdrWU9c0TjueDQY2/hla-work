@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350" role="img" aria-labelledby="title desc">
+<title id="title">The intro price is not the yearly price</title><desc id="desc">Fictional subscription: three monthly bills of 4 units, then nine of 10 units, total 102 in the first twelve bills. The next twelve bills at 10 total 120, an increase of 18. Same currency, unchanged renewal price, no tax or fees.</desc>
+<rect width="1080" height="1350" fill="#f4f0e7"/>
+<rect x="0" y="0" width="1080" height="22" fill="#174d4a"/>
+<g font-family="Arial, sans-serif" fill="#183c3b">
+<text x="76" y="105" font-size="23" letter-spacing="3">HONEST LITTLE APPS / COST CHECK</text>
+<text x="76" y="209" font-size="66" font-weight="700">The intro price isn’t</text>
+<text x="76" y="286" font-size="66" font-weight="700">the yearly price.</text>
+<text x="76" y="353" font-size="29">Count the bills before comparing the offer.</text>
+<rect x="60" y="411" width="960" height="330" rx="24" fill="#fff"/>
+<text x="90" y="467" font-size="24" letter-spacing="2">FIRST 12 BILLS</text>
+<text x="90" y="536" font-size="44" font-weight="700">3 × 4 + 9 × 10 = 102</text>
+<text x="90" y="581" font-size="24">Intro months</text><text x="360" y="581" font-size="24">Regular months</text>
+<rect x="90" y="615" width="62" height="62" rx="8" fill="#e8b662"/><text x="121" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#183c3b">4</text><rect x="164" y="615" width="62" height="62" rx="8" fill="#e8b662"/><text x="195" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#183c3b">4</text><rect x="238" y="615" width="62" height="62" rx="8" fill="#e8b662"/><text x="269" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#183c3b">4</text><rect x="312" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="343" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="386" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="417" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="460" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="491" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="534" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="565" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="608" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="639" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="682" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="713" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="756" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="787" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="830" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="861" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text><rect x="904" y="615" width="62" height="62" rx="8" fill="#174d4a"/><text x="935" y="656" text-anchor="middle" font-size="28" font-weight="700" fill="#fff">10</text>
+<text x="90" y="714" font-size="22">Each square is one monthly bill, in the same currency.</text>
+<rect x="60" y="773" width="960" height="237" rx="24" fill="#174d4a"/>
+<text x="90" y="829" font-size="24" letter-spacing="2" fill="#f4f0e7">NEXT 12 BILLS</text>
+<text x="90" y="904" font-size="54" font-weight="700" fill="#fff">12 × 10 = 120</text>
+<text x="90" y="962" font-size="30" fill="#fff">18 more than the first 12 bills.</text>
+<text x="76" y="1072" font-size="30" font-weight="700">Check three things:</text>
+<text x="76" y="1120" font-size="28">Intro price · number of intro bills · renewal price</text>
+<text x="76" y="1189" font-size="23">Fictional example, not MoneyShield’s pricing.</text>
+<text x="76" y="1225" font-size="23">Assumes unchanged renewal price; excludes tax and fees.</text>
+<text x="76" y="1288" font-size="24" font-weight="700">MoneyShield browser companion · Honest Little Apps</text>
+</g></svg>
