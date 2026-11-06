@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1530" width="720" height="1530" role="img" aria-labelledby="title desc"><title id="title">Shared minutes in two shift records</title><desc id="desc">Three precisely scaled overnight examples share a 22:00 to 10:00 timeline. An overlap counts thirty minutes in both records. Touching records share zero minutes. A one-hour gap is excluded from unique recorded time. All examples assume one time zone and no clock change.</desc><defs><pattern id="hatch" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0 8L8 0" stroke="#a64b15" stroke-width="2"/></pattern></defs><style>text{font-family:Arial,sans-serif;fill:#1c314d}.title{font-size:36px;font-weight:bold}.heading{font-size:28px;font-weight:bold}.body{font-size:23px}.small{font-size:20px}.label{font-size:20px;font-weight:bold}.tick{font-size:19px}</style><rect width="720" height="1530" fill="#f4f6f8"/><text x="32" y="46" class="small">HONEST LITTLE APPS · WORK RECORDS</text><text x="32" y="101" class="title">Where minutes count twice</text><text x="32" y="145" class="body">Compare both entries on the same timeline.</text><text x="32" y="178" class="body">Overnight examples. Morning times follow 22:00.</text>
+<rect x="20" y="210" width="680" height="326" rx="16" fill="white" stroke="#b7c7d7"/><text x="40" y="250" class="heading">Overlap</text>
+<line x1="60" x2="60" y1="268" y2="386" stroke="#cbd6e1"/><text x="60" y="411" text-anchor="middle" class="tick">22:00</text>
+<line x1="260" x2="260" y1="268" y2="386" stroke="#cbd6e1"/><text x="260" y="411" text-anchor="middle" class="tick">02:00</text>
+<line x1="460" x2="460" y1="268" y2="386" stroke="#cbd6e1"/><text x="460" y="411" text-anchor="middle" class="tick">06:00</text>
+<line x1="660" x2="660" y1="268" y2="386" stroke="#cbd6e1"/><text x="660" y="411" text-anchor="middle" class="tick">10:00</text>
+<text x="60" y="285" class="label">A · 22:00–06:00 · 480 min</text><rect x="60" y="293" width="400" height="26" fill="#214a6b"/>
+<text x="60" y="350" class="label">B · 05:30–10:00 · 270 min</text><rect x="435.0" y="358" width="225.0" height="26" fill="#527d98"/>
+<rect x="435.0" y="293" width="25.0" height="91" fill="url(#hatch)" stroke="#a64b15" stroke-width="2"/>
+<text x="40" y="449" class="body">05:30–06:00 appears in both records.</text><text x="40" y="484" class="small">Entry sum 750 − shared 30 = unique 720 min</text>
+<text x="40" y="517" class="small">Count shared minutes once for unique clock time.</text>
+<rect x="20" y="555" width="680" height="326" rx="16" fill="white" stroke="#b7c7d7"/><text x="40" y="595" class="heading">Touching</text>
+<line x1="60" x2="60" y1="613" y2="731" stroke="#cbd6e1"/><text x="60" y="756" text-anchor="middle" class="tick">22:00</text>
+<line x1="260" x2="260" y1="613" y2="731" stroke="#cbd6e1"/><text x="260" y="756" text-anchor="middle" class="tick">02:00</text>
+<line x1="460" x2="460" y1="613" y2="731" stroke="#cbd6e1"/><text x="460" y="756" text-anchor="middle" class="tick">06:00</text>
+<line x1="660" x2="660" y1="613" y2="731" stroke="#cbd6e1"/><text x="660" y="756" text-anchor="middle" class="tick">10:00</text>
+<text x="60" y="630" class="label">A · 22:00–06:00 · 480 min</text><rect x="60" y="638" width="400" height="26" fill="#214a6b"/>
+<text x="60" y="695" class="label">B · 06:00–10:00 · 240 min</text><rect x="460" y="703" width="200" height="26" fill="#527d98"/>
+<text x="40" y="794" class="body">06:00 is an endpoint. No minute is shared.</text><text x="40" y="829" class="small">Entry sum 720 − shared 0 = unique 720 min</text>
+<text x="40" y="862" class="small">Count shared minutes once for unique clock time.</text>
+<rect x="20" y="900" width="680" height="326" rx="16" fill="white" stroke="#b7c7d7"/><text x="40" y="940" class="heading">One-hour gap</text>
+<line x1="60" x2="60" y1="958" y2="1076" stroke="#cbd6e1"/><text x="60" y="1101" text-anchor="middle" class="tick">22:00</text>
+<line x1="260" x2="260" y1="958" y2="1076" stroke="#cbd6e1"/><text x="260" y="1101" text-anchor="middle" class="tick">02:00</text>
+<line x1="460" x2="460" y1="958" y2="1076" stroke="#cbd6e1"/><text x="460" y="1101" text-anchor="middle" class="tick">06:00</text>
+<line x1="660" x2="660" y1="958" y2="1076" stroke="#cbd6e1"/><text x="660" y="1101" text-anchor="middle" class="tick">10:00</text>
+<text x="60" y="975" class="label">A · 22:00–06:00 · 480 min</text><rect x="60" y="983" width="400" height="26" fill="#214a6b"/>
+<text x="60" y="1040" class="label">B · 07:00–10:00 · 180 min</text><rect x="510" y="1048" width="150" height="26" fill="#527d98"/>
+<text x="40" y="1139" class="body">06:00–07:00 belongs to neither record.</text><text x="40" y="1174" class="small">Entry sum 660 − shared 0 = unique 660 min</text>
+<text x="40" y="1207" class="small">22:00–10:00 spans 720 min; the gap removes 60.</text>
+<text x="32" y="1283" class="heading">Use the pattern to review a record</text><text x="32" y="1323" class="body">Check dates and time zones. Confirm what each</text><text x="32" y="1355" class="body">entry represents before correcting your records.</text><text x="32" y="1394" class="small">Examples use one zone, no breaks and no clock change.</text><text x="32" y="1424" class="small">Payable time requires the relevant records and rules.</text><a href="https://apps.apple.com/us/app/earncheck-shift-pay-tracker/id6798048163"><text x="32" y="1463" class="small" text-decoration="underline">Keep confirmed shifts in EarnCheck · App Store ↗</text></a><text x="32" y="1504" class="small">Original sheet © 2026 Honest Little Apps · CC BY 4.0</text></svg>

@@ -1,1 +1,16 @@
-{"title":"Shift Overlap Checker: Compare Two Shifts, Including Overnight","description":"Check whether two shift intervals overlap, touch or have a gap. Enter start and end dates explicitly for overnight shifts.","appSlug":"earncheck","strategy":"interactive-tool","query":"overnight shift overlap checker","tags":["shift-work","time","overlap"],"published":"2026-11-04","updated":"2026-11-04","draft":false}
+{
+  "title": "Shift Overlap Checker: Compare Two Shifts, Including Overnight",
+  "description": "Check whether two shift intervals overlap, touch or have a gap. Enter start and end dates explicitly for overnight shifts.",
+  "appSlug": "earncheck",
+  "strategy": "interactive-tool",
+  "query": "overnight shift overlap checker",
+  "tags": [
+    "shift-work",
+    "time",
+    "overlap"
+  ],
+  "published": "2026-11-04",
+  "updated": "2026-11-06",
+  "draft": false,
+  "sitemapImage": "shared-minutes-timeline.png"
+}
