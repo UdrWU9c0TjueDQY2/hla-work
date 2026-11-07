@@ -1,0 +1,14 @@
+{
+  "title": "27 Timecard Reasoning Challenges",
+  "description": "Solve fictional timecard discrepancies, duration formats and pay calculations, then compare your reasoning with worked answers.",
+  "appSlug": "earncheck",
+  "strategy": "worked-scenario-quiz",
+  "query": "timecard reasoning quiz",
+  "tags": [
+    "worked examples",
+    "mini challenges",
+    "earncheck"
+  ],
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+}
