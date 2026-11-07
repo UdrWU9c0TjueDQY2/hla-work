@@ -1,0 +1,494 @@
+[
+ {
+  "title": "Check the small details | Honest Little Apps",
+  "description": "Four worked examples for everyday admin. Original exercises with copy and print controls.",
+  "appSlug": "portfolio",
+  "strategy": "independent-activity-collection",
+  "query": "check the small details",
+  "tags": [
+   "original activity",
+   "printable",
+   "work"
+  ],
+  "path": "/activities/practical-try-it-cards/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/activities/practical-try-it-cards/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Solo Work Tools: Mini-Challenges with Worked Answers",
+  "description": "Choose a free challenge collection, compare answer choices and read the worked explanation. Original companion activities from Honest Little Apps.",
+  "appSlug": "resources",
+  "strategy": "challenge-collection-index",
+  "query": "solo work tools practice questions",
+  "tags": [
+   "mini challenges"
+  ],
+  "path": "/activities/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/activities/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "27 Booking Desk Decision Challenges",
+  "description": "Resolve fictional appointment conflicts, timing puzzles and unclear booking records with explained choices.",
+  "appSlug": "bookingsolved",
+  "strategy": "worked-scenario-quiz",
+  "query": "appointment scheduling quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "bookingsolved"
+  ],
+  "path": "/bookingsolved/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "27 Timecard Reasoning Challenges",
+  "description": "Solve fictional timecard discrepancies, duration formats and pay calculations, then compare your reasoning with worked answers.",
+  "appSlug": "earncheck",
+  "strategy": "worked-scenario-quiz",
+  "query": "timecard reasoning quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "earncheck"
+  ],
+  "path": "/earncheck/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "27 Subscription Review Challenges",
+  "description": "Practise recurring-cost comparisons, billing-record interpretation and renewal decisions using fictional scenarios.",
+  "appSlug": "moneyshield",
+  "strategy": "worked-scenario-quiz",
+  "query": "subscription review quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "moneyshield"
+  ],
+  "path": "/moneyshield/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "27 Estimate Desk Reasoning Challenges",
+  "description": "Test fictional estimates for missing costs, percentage mistakes, scope ambiguity and payment-record discrepancies.",
+  "appSlug": "scopebid",
+  "strategy": "worked-scenario-quiz",
+  "query": "estimate arithmetic quiz",
+  "tags": [
+   "worked examples",
+   "mini challenges",
+   "scopebid"
+  ],
+  "path": "/scopebid/scenario-challenges/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/scenario-challenges/",
+  "published": "2026-11-06",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Appointment Buffer Calculator: How Many Sessions Fit?",
+  "description": "Plan equal-length appointments around a fixed break. See exact start times, buffers and open minutes, then copy the schedule.",
+  "appSlug": "bookingsolved",
+  "strategy": "interactive-calculator",
+  "query": "appointment buffer time calculator",
+  "tags": [
+   "booking",
+   "appointments",
+   "calculator"
+  ],
+  "path": "/bookingsolved/appointment-buffer-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/appointment-buffer-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Booking Request Checklist: Catch Missing Details Before Scheduling",
+  "description": "Check six details in a client booking request and build a short editable follow-up for what is missing. No client information or message upload required.",
+  "appSlug": "bookingsolved",
+  "strategy": "interactive-tool",
+  "query": "client booking request missing details checklist",
+  "tags": [
+   "client-booking",
+   "checklist",
+   "scheduling"
+  ],
+  "path": "/bookingsolved/booking-request-checklist/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/booking-request-checklist/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Holiday Cleaning Bookings: A Worked Scheduling Example",
+  "description": "Follow a fictional solo cleaner through eleven sample client messages. Compare the requests with her calendar and see how she resolves a scheduling conflict.",
+  "appSlug": "bookingsolved",
+  "strategy": "scenario-story",
+  "query": "cleaning business holiday booking rush",
+  "tags": [
+   "cleaning-business",
+   "holiday",
+   "scheduling",
+   "solo",
+   "seasonal"
+  ],
+  "path": "/bookingsolved/cleaning-business-holiday-booking-rush/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/cleaning-business-holiday-booking-rush/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Dog Grooming Booking Texts: Check 7 Appointment Requests",
+  "description": "Practice with seven dog grooming texts. Spot an unclear time, service or date and draft a follow-up before offering a calendar slot.",
+  "appSlug": "bookingsolved",
+  "strategy": "audience-page",
+  "query": "dog groomer booking by text",
+  "tags": [
+   "dog-grooming",
+   "booking",
+   "text",
+   "solo",
+   "apple-calendar"
+  ],
+  "path": "/bookingsolved/dog-groomer-booking-by-text/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/dog-groomer-booking-by-text/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Weekly Appointment Capacity Calculator: Slots and Buffers",
+  "description": "Calculate bookable appointment slots across separate daily windows. Include service time, buffers and blocked minutes without carrying leftover time into another day.",
+  "appSlug": "bookingsolved",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Weekly Appointment Capacity Calculator: Slots and Buffers",
+  "tags": [
+   "bookingsolved",
+   "capacity",
+   "interactive tool"
+  ],
+  "path": "/bookingsolved/weekly-appointment-capacity-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/weekly-appointment-capacity-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Holiday Temp Job Pay Calculator: Hours, Overtime, Paycheck",
+  "description": "Seasonal shifts to January: type rate and weekly hours, get estimated gross pay with overtime, then check the first paycheck line by line.",
+  "appSlug": "earncheck",
+  "strategy": "free-tool",
+  "query": "holiday temp job pay calculator",
+  "tags": [
+   "seasonal",
+   "pay",
+   "overtime",
+   "calculator",
+   "hourly"
+  ],
+  "path": "/earncheck/holiday-temp-job-pay-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Overnight Shift Hours Calculator with Unpaid Breaks",
+  "description": "Calculate hours worked across midnight, subtract break minutes and get decimal hours. Use the printable field labor log to record work by crop and task.",
+  "appSlug": "earncheck",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Overnight Shift Hours Calculator with Unpaid Breaks",
+  "tags": [
+   "earncheck",
+   "shift",
+   "interactive tool"
+  ],
+  "path": "/earncheck/overnight-shift-hours-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/overnight-shift-hours-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Gross to Net Pay Statement Worksheet",
+  "description": "A visual reconciliation of entered gross, deductions, additions and net amounts. Exact-cent arithmetic; no tax estimates.",
+  "appSlug": "earncheck",
+  "strategy": "interactive-tool",
+  "query": "reconcile gross deductions net pay statement",
+  "tags": [
+   "pay",
+   "payroll",
+   "worksheet"
+  ],
+  "path": "/earncheck/pay-statement-bridge/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/pay-statement-bridge/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Shift Overlap Checker: Compare Two Shifts, Including Overnight",
+  "description": "Check whether two shift intervals overlap, touch or have a gap. Enter start and end dates explicitly for overnight shifts.",
+  "appSlug": "earncheck",
+  "strategy": "interactive-tool",
+  "query": "overnight shift overlap checker",
+  "tags": [
+   "shift-work",
+   "time",
+   "overlap"
+  ],
+  "path": "/earncheck/shift-overlap-checker/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/shift-overlap-checker/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Shift Swap Request Template and Record Checklist",
+  "description": "Separate a requested change, a confirmed schedule and actual work. Neutral templates and a fictional status explorer.",
+  "appSlug": "earncheck",
+  "strategy": "practical-guide",
+  "query": "shift swap request template record checklist",
+  "tags": [
+   "shifts",
+   "records",
+   "planning"
+  ],
+  "path": "/earncheck/shift-swap-record/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/shift-swap-record/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Hours and Minutes vs Decimal Hours: Timecard Practice",
+  "description": "Six interactive cards teach timecard number formats, with exact visual explanations and a minute-to-hour reference.",
+  "appSlug": "earncheck",
+  "strategy": "interactive-practice",
+  "query": "hours minutes decimal timecard practice",
+  "tags": [
+   "pay",
+   "timecard",
+   "decimal-hours"
+  ],
+  "path": "/earncheck/timecard-format-practice/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/timecard-format-practice/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Annual vs Monthly Subscription Calculator",
+  "description": "Compare upfront annual cost against 1–12 monthly payments, with a visual commitment chart, downloadable six/eight/nine-month example and first cheaper month.",
+  "appSlug": "moneyshield",
+  "strategy": "interactive-tool",
+  "query": "annual vs monthly subscription break even calculator",
+  "tags": [
+   "subscriptions",
+   "annual",
+   "cost",
+   "money"
+  ],
+  "path": "/moneyshield/annual-plan-break-even/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/annual-plan-break-even/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Subscription Audit Checklist: Review One Plan | MoneyShield",
+  "description": "Review six subscription facts, identify the billing provider and prepare your next step without entering account details, prices or receipts.",
+  "appSlug": "moneyshield",
+  "strategy": "original_interactive_checklist",
+  "query": "subscription audit checklist",
+  "tags": [
+   "subscription review",
+   "billing provider",
+   "renewal checklist"
+  ],
+  "path": "/moneyshield/subscription-audit-checklist/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/subscription-audit-checklist/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Subscription Cost Calculator: Weekly, Monthly and Yearly",
+  "description": "Convert a recurring subscription price to an annualized estimate and monthly equivalent. Compare weekly, every-two-weeks, four-weekly and calendar-month billing.",
+  "appSlug": "moneyshield",
+  "strategy": "useful interactive tool with worked example and contextual app conversion",
+  "query": "Subscription Cost Calculator: Weekly, Monthly and Yearly",
+  "tags": [
+   "moneyshield",
+   "billing",
+   "interactive tool"
+  ],
+  "path": "/moneyshield/subscription-billing-frequency-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/subscription-billing-frequency-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-06"
+ },
+ {
+  "title": "Subscription Cost Splitter: Equal or Weighted Shares That Add Up",
+  "description": "Split one recurring charge among up to four people. Use equal or agreed weighted shares, with exact-cent totals and an explanation of rounding.",
+  "appSlug": "moneyshield",
+  "strategy": "interactive-tool",
+  "query": "subscription cost split calculator weighted shares cents",
+  "tags": [
+   "subscriptions",
+   "shared-costs",
+   "arithmetic"
+  ],
+  "path": "/moneyshield/subscription-cost-splitter/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/subscription-cost-splitter/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Board Foot Calculator for Lumber Quotes — Quantity, Allowance & Cost",
+  "description": "Calculate board feet for equal-sized lumber pieces, round a chosen allowance to whole boards, and prepare a material note with explicit sizing assumptions.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-tool",
+  "query": "board foot calculator lumber quantity allowance cost",
+  "tags": [
+   "lumber",
+   "board-feet",
+   "estimates",
+   "materials"
+  ],
+  "path": "/scopebid/board-foot-quote-check/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/board-foot-quote-check/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Contractor Markup vs Margin Calculator | Discount Impact",
+  "description": "Check gross margin, markup and discount impact, then share a fictional worked example without including your business figures.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-calculator",
+  "query": "contractor markup vs margin calculator",
+  "tags": [
+   "contractor",
+   "markup",
+   "gross-margin",
+   "discount",
+   "estimating"
+  ],
+  "path": "/scopebid/contractor-markup-vs-margin-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Estimate Inclusions Checklist: Define What the Job Covers",
+  "description": "Review six common scope questions before pricing a job. Mark inclusions, exclusions and client responsibilities, then copy clear discussion notes.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-checklist",
+  "query": "estimate inclusions checklist",
+  "tags": [
+   "scope",
+   "estimates",
+   "contractor"
+  ],
+  "path": "/scopebid/estimate-inclusions-checklist/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/estimate-inclusions-checklist/",
+  "published": "2026-11-04",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Flooring Box Calculator: Coverage, Allowance and Whole-Box Material Cost",
+  "description": "Calculate whole flooring boxes from up to three room areas, your chosen allowance and coverage per box. See purchased coverage and optional materials cost.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-tool",
+  "query": "flooring box calculator with waste allowance",
+  "tags": [],
+  "path": "/scopebid/flooring-box-calculator/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/flooring-box-calculator/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Scope Change Worksheet: Added, Removed & Unresolved Work",
+  "description": "A four-part worksheet to clarify scope changes before revising a quote.",
+  "appSlug": "scopebid",
+  "strategy": "interactive-tool",
+  "query": "scope change worksheet added removed work",
+  "tags": [
+   "scope",
+   "contractor",
+   "quote",
+   "worksheet"
+  ],
+  "path": "/scopebid/scope-change-worksheet/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/scope-change-worksheet/",
+  "published": "2026-11-04",
+  "updated": "2026-11-04"
+ },
+ {
+  "title": "Salon Holiday Booking: Estimate Your Reply Time",
+  "description": "Estimate how long you spend handling booking messages using your own workdays, daily message count and reply time. Then plan for holiday bookings.",
+  "appSlug": "bookingsolved",
+  "strategy": "challenge-plan",
+  "query": "salon holiday booking",
+  "tags": [
+   "salon",
+   "booking",
+   "small-business",
+   "holiday",
+   "appointments"
+  ],
+  "path": "/bookingsolved/salon-holiday-booking-14-day-plan/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/bookingsolved/salon-holiday-booking-14-day-plan/",
+  "published": "2026-11-03",
+  "updated": "2026-11-05"
+ },
+ {
+  "title": "Paycheck Doesn't Match Hours Worked? 14 Plain Answers",
+  "description": "Paycheck doesn't match hours worked? Fourteen plain answers for shift workers: overtime, breaks, overnight shifts, what to say to payroll, who to call.",
+  "appSlug": "earncheck",
+  "strategy": "faq-hub",
+  "query": "paycheck doesn't match hours worked",
+  "tags": [
+   "pay",
+   "overtime",
+   "shift-work",
+   "payroll",
+   "faq"
+  ],
+  "path": "/earncheck/paycheck-doesnt-match-hours-worked/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/paycheck-doesnt-match-hours-worked/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Subscription Trackers That Don't Link Your Bank (2026)",
+  "description": "Eight iPhone subscription trackers compared (4 Nov 2026): which need a bank login, which run on manual entry, and who should pick what.",
+  "appSlug": "moneyshield",
+  "strategy": "honest-comparison",
+  "query": "subscription tracker that doesn't link to your bank",
+  "tags": [
+   "subscriptions",
+   "privacy",
+   "comparison",
+   "money"
+  ],
+  "path": "/moneyshield/subscription-tracker-no-bank-link/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/moneyshield/subscription-tracker-no-bank-link/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ },
+ {
+  "title": "Contractor Estimate App vs Spreadsheet vs Paper: Which?",
+  "description": "Contractor estimate app vs spreadsheet vs paper pad for a one-person trade: a click-through decision chart, a pre-send checklist and where each breaks.",
+  "appSlug": "scopebid",
+  "strategy": "decision-flowchart",
+  "query": "contractor estimate app vs spreadsheet",
+  "tags": [
+   "estimates",
+   "contractor",
+   "invoicing",
+   "solo-business",
+   "comparison"
+  ],
+  "path": "/scopebid/estimate-app-vs-spreadsheet-vs-paper/",
+  "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/estimate-app-vs-spreadsheet-vs-paper/",
+  "published": "2026-11-03",
+  "updated": "2026-11-03"
+ }
+]

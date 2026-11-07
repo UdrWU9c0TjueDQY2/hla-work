@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,follow"><title>Two quotes, one scope | Honest Little Apps</title>
+<style>*{box-sizing:border-box}body{margin:0;background:#f6f3eb;color:#203332;font:16px/1.5 system-ui,sans-serif}main{max-width:52rem;margin:auto;padding:clamp(16px,4vw,38px)}h1{font:700 clamp(2.1rem,7vw,3.8rem)/1.05 Georgia,serif;margin:15px 0}h2{font:700 1.5rem Georgia,serif}h3{margin:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}fieldset{background:white;border:1px solid #8d9c92;margin:14px 0;padding:15px;border-radius:8px;min-width:0}legend{font-weight:700}label{display:block;font-size:.92rem;font-weight:600}input,select,button{width:100%;min-width:0;border:1px solid #88958d;border-radius:4px;min-height:42px;font:inherit;padding:7px;color:#19342f;background:white}button{width:auto;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #a74814;outline-offset:2px}.actions{display:flex;gap:10px;flex-wrap:wrap}.box{background:#e2ede6;padding:16px;border-left:5px solid #376b55}.note{color:#445953}.extra{margin-top:9px}[hidden]{display:none!important}footer{margin:22px 0}a{color:#175e46}@media(max-width:450px){.grid{grid-template-columns:1fr}}@media print{body{background:white;font-size:11pt}main{max-width:none;padding:0}.actions,footer{display:none}fieldset,.box{break-inside:avoid}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}</style>
+<main><h1>Two quotes, one scope</h1><p>Which offer covers the same job? Compare two base quotes against three required tasks. Use one currency and the same tax basis for both quotes. Leave optional upgrades out. Name at least one required task. Unnamed rows are skipped. Enter amounts as numbers such as 4600.00, without commas or currency signs.</p><noscript>Enable JavaScript to use the calculator. Worked example: 4,600 plus 275 removal plus 190 disposal equals 5,065. A 4,950 quote including both is 115 lower if all other terms match.</noscript>
+<div id="lab" hidden><div class="actions"><button id="sample">Load worked example</button><button id="blank">Start a blank sheet</button><button id="print">Print comparison</button></div><fieldset><legend>Quoted amounts</legend><div class="grid"><label>Quote A base amount<input id="baseA" inputmode="decimal"></label><label>Quote B base amount<input id="baseB" inputmode="decimal"></label></div></fieldset>
+<section id="tasks"></section><section class="box" aria-live="polite"><h2>Same-scope comparison</h2><p id="results"></p><p id="gap"></p></section></div><h2>Try this at a trade meeting</h2><p>Load the example. Quote A starts 350 below B. Look at the two excluded items: what happens when the removal and disposal allowances are included? Change one status to “Needs clarification.” Which question would you send before comparing?</p><p class="note">Allowances are estimates entered for comparison. Confirm exclusions, specifications, quantities, terms and actual prices with each bidder before deciding. This worksheet uses only this tab. Print before closing if you want to keep the result.</p><footer>Original worksheet by Honest Little Apps. Educators and trade newsletters may reprint or distribute it with credit. <a href="https://apps.apple.com/us/app/scopebid-estimate-invoice/id6796729890">ScopeBid on the App Store</a></footer></main><script>
+'use strict';
+const $=id=>document.getElementById(id);
+const sides=['A','B'];
+function cell(row,side){return '<div><label>Quote '+side+' coverage<select id="status'+row+side+'"><option value="unknown">Needs clarification</option><option value="in">Included in base</option><option value="out">Excluded from base</option></select></label><label class="extra" hidden id="wrap'+row+side+'">Estimated cost to add<input id="add'+row+side+'" inputmode="decimal"></label></div>'}
+for(let row=0;row<3;row++)$('tasks').insertAdjacentHTML('beforeend','<fieldset><legend>Required task '+(row+1)+'</legend><label>Task name<input maxlength="90" id="name'+row+'"></label><div class="grid">'+sides.map(side=>cell(row,side)).join('')+'</div></fieldset>');
+function cents(raw){if(!/^\d{1,10}(?:\.\d{1,2})?$/.test(raw.trim()))return null;const [whole,frac='']=raw.trim().split('.');return Number(whole)*100+Number(frac.padEnd(2,'0'))}
+function money(c){return (c/100).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
+function calculate(){
+ const totals=sides.map(side=>cents($('base'+side).value));
+ const pending=[];let used=0;
+ sides.forEach((side,i)=>{if(totals[i]===null)pending.push('Enter a valid base amount for '+side+'.')});
+ for(let row=0;row<3;row++){
+  const name=$('name'+row).value.trim();
+  if(name)used++;
+  sides.forEach((side,i)=>{
+   const select=$('status'+row+side),extra=$('add'+row+side);
+   select.disabled=!name;
+   $('wrap'+row+side).hidden=!name||select.value!=='out';
+   extra.disabled=$('wrap'+row+side).hidden;
+   if(!name)return;
+   if(select.value==='unknown'){pending.push('Ask whether '+name+' is included in '+side+'.');totals[i]=null}
+   if(select.value==='out'){const amount=cents(extra.value);if(amount===null){pending.push('Enter an allowance for '+name+' in '+side+'.');totals[i]=null}else if(totals[i]!==null)totals[i]+=amount}
+  });
+ }
+ if(!used)pending.push('Name at least one required task.');
+ $('results').textContent=sides.map((side,i)=>'Quote '+side+': '+(totals[i]===null||!used?'incomplete':money(totals[i]))).join(' · ');
+ if(pending.length){$('gap').textContent=pending.join(' ');return}
+ const delta=totals[0]-totals[1];$('gap').textContent=delta===0?'Both quotes have the same total for the listed scope.':('Quote '+(delta>0?'B':'A')+' is '+money(Math.abs(delta))+' lower for the listed scope.');
+}
+function initialize(example){
+ for(const side of sides)$('base'+side).value=example?(side==='A'?'4600':'4950'):'';
+ for(let row=0;row<3;row++){ $('name'+row).value=example?['Removal','Disposal','Installation'][row]:'';
+ for(const side of sides){$('status'+row+side).value=example?(side==='A'&&row<2?'out':'in'):'unknown';$('add'+row+side).value=example&&side==='A'&&row<2?['275','190'][row]:''}}
+ calculate();
+}
+function snapshot(){return [...document.querySelectorAll('input, select')].map(el=>[el.id,el.value])}
+let previous=null;
+function switchSheet(example){
+ if(previous){for(const [id,value] of previous.values)$(id).value=value; previous=null; $('sample').textContent='Load worked example';$('blank').textContent='Start a blank sheet';$('sample').disabled=false;$('blank').disabled=false;calculate();return}
+ previous={values:snapshot()};initialize(example);$(example?'sample':'blank').textContent='Restore previous sheet';$(example?'blank':'sample').disabled=true;
+}
+$('sample').onclick=()=>switchSheet(true);$('blank').onclick=()=>switchSheet(false);$('print').onclick=()=>window.print();$('lab').addEventListener('input',calculate);$('lab').addEventListener('change',calculate);$('lab').hidden=false;initialize(true);
+</script></html>

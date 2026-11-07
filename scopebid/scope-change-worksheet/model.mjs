@@ -1,0 +1,2 @@
+export const headings=['Added work','Removed work','Unchanged work','Still to confirm'];
+export function buildNote(values){const [job,...parts]=values.map(v=>String(v).trim());const count=parts.filter(Boolean).length;return {count,text:'SCOPE CHANGE — REVIEW DRAFT\n'+(job||'Job not named')+'\n\n'+parts.map((v,i)=>headings[i]+':\n'+(v||'Not recorded')).join('\n\n')+'\n\nPrice, timing and approval must be reviewed separately. This note is not an approved change order.'};}

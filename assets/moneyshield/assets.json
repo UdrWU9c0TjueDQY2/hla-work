@@ -1,0 +1,61 @@
+{
+ "appId": 6787559121,
+ "name": "MoneyShield: Sub Tracker",
+ "url": "https://apps.apple.com/us/app/moneyshield-sub-tracker/id6787559121",
+ "genre": "Finance",
+ "icon": [
+  {
+   "file": "icon-128.webp",
+   "w": 128,
+   "h": 128
+  },
+  {
+   "file": "icon-256.webp",
+   "w": 256,
+   "h": 256
+  },
+  {
+   "file": "icon-512.webp",
+   "w": 512,
+   "h": 512
+  }
+ ],
+ "screens": [
+  [
+   {
+    "file": "screen-1-390.webp",
+    "w": 390,
+    "h": 844
+   },
+   {
+    "file": "screen-1-780.webp",
+    "w": 780,
+    "h": 1688
+   }
+  ],
+  [
+   {
+    "file": "screen-2-390.webp",
+    "w": 390,
+    "h": 844
+   },
+   {
+    "file": "screen-2-780.webp",
+    "w": 780,
+    "h": 1688
+   }
+  ],
+  [
+   {
+    "file": "screen-3-390.webp",
+    "w": 390,
+    "h": 844
+   },
+   {
+    "file": "screen-3-780.webp",
+    "w": 780,
+    "h": 1688
+   }
+  ]
+ ]
+}

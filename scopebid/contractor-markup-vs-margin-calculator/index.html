@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>Contractor Markup vs Margin Calculator | Discount Impact</title>
+  <meta name="description" content="Free contractor markup vs margin calculator. Preview how a discount changes gross margin, find a target-margin price, and learn the formulas before sending a quote.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/">
+  <meta name="apple-itunes-app" content="app-id=6796729890">
+  <meta name="theme-color" content="#17130e">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Markup is not margin. Check the quote before the discount.">
+  <meta property="og:description" content="A free contractor calculator for gross margin, markup, discount impact and target-margin pricing.">
+  <meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/">
+  <meta property="og:site_name" content="Honest Little Apps">
+  <meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/assets/scopebid/icon-512.webp">
+  <meta property="og:image:width" content="512"><meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="ScopeBid app icon">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contractor markup vs margin: share a worked example">
+  <meta name="twitter:description" content="Free quote math with fictional examples, discount impact and a direct link to ScopeBid.">
+  <meta name="twitter:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/assets/scopebid/icon-512.webp">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"Contractor Markup vs Margin Calculator","description":"Calculate gross profit, gross margin, markup, discount impact and a target-margin price for a contractor estimate.","applicationCategory":"BusinessApplication","operatingSystem":"Any modern web browser","isAccessibleForFree":true,"url":"https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/","publisher":{"@type":"Organization","name":"Honest Little Apps"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between markup and gross margin?","acceptedAnswer":{"@type":"Answer","text":"Markup divides gross profit by direct cost. Gross margin divides gross profit by the customer price before tax. The same quote therefore has different markup and margin percentages."}},{"@type":"Question","name":"How does a discount affect contractor gross margin?","acceptedAnswer":{"@type":"Answer","text":"A discount reduces the customer price while direct cost may stay unchanged, so the gross-margin percentage falls faster than the price alone suggests. Preview the discounted price, profit and margin before deciding."}},{"@type":"Question","name":"Does this calculator include sales tax?","acceptedAnswer":{"@type":"Answer","text":"No. Enter the customer price before tax. Sales tax is not revenue or gross profit in this worksheet. You remain responsible for your own tax settings and compliance."}}]}
+  </script>
+  <style>
+    :root{--ink:#17130e;--paper:#f5efe2;--paper2:#fffaf0;--orange:#e65b28;--blue:#173f9b;--lime:#c8f24a;--red:#9c2d25;--green:#176345;--muted:#6c6255;--line:#cfc2ad;--shadow:rgba(23,19,14,.14)}
+    *{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}body{margin:0;background:var(--ink);color:var(--ink);font:17px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}button,input,select{font:inherit}a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:4px solid var(--lime);outline-offset:3px}
+    .shell{max-width:1180px;margin:auto;background:var(--paper);min-height:100vh;box-shadow:0 0 90px #000}
+    .topbar{display:flex;justify-content:space-between;gap:16px;align-items:center;padding:14px clamp(18px,4vw,46px);background:var(--ink);color:#fff;font-size:13px;letter-spacing:.08em;text-transform:uppercase}.topbar a{text-decoration:none;border-bottom:1px solid #8b8275}.topbar b{color:var(--lime)}
+    .hero{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,5vw,70px);padding:clamp(42px,7vw,86px) clamp(18px,5vw,64px) 48px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:260px;height:260px;border:44px solid var(--orange);border-radius:50%;right:-130px;top:-130px;opacity:.8}.kicker{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:0 0 16px}.hero h1{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;font-size:clamp(56px,9vw,112px);line-height:.84;letter-spacing:-.035em;text-transform:uppercase;margin:0;max-width:8ch}.hero h1 span{display:block;color:var(--orange)}.lede{font:clamp(18px,2.2vw,24px)/1.45 Georgia,serif;max-width:54ch;margin:24px 0 0}.stamp{align-self:end;transform:rotate(3deg);border:4px double var(--ink);padding:22px;background:var(--lime);box-shadow:12px 12px 0 var(--blue);position:relative;z-index:1}.stamp b{display:block;font:42px/1 Impact,sans-serif;text-transform:uppercase}.stamp p{margin:10px 0 0;font-weight:700}
+    .lab{display:grid;grid-template-columns:minmax(300px,.86fr) minmax(360px,1.14fr);gap:24px;padding:0 clamp(18px,5vw,64px) 64px}.panel{border:2px solid var(--ink);background:var(--paper2);box-shadow:8px 8px 0 var(--ink)}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--blue);color:white;padding:14px 18px}.panel-head h2{font:700 18px/1.2 inherit;margin:0;text-transform:uppercase}.panel-head span{font-size:12px;color:#dbe4ff}
+    .controls{padding:20px}.control{margin-bottom:18px}.control label{display:flex;justify-content:space-between;gap:10px;font-weight:800;font-size:14px;margin-bottom:7px}.control label small{font-weight:400;color:var(--muted)}.money-input{display:grid;grid-template-columns:auto 1fr;border:2px solid var(--ink);background:white}.money-input span{padding:12px;background:#e3d8c6;border-right:2px solid var(--ink);font-weight:900}.money-input input,.plain-input{width:100%;border:2px solid var(--ink);background:white;padding:12px;color:var(--ink);font-weight:800}.money-input input{border:0}.unit-input{display:grid;grid-template-columns:1fr auto}.unit-input input{border-right:0}.unit-input span{display:grid;place-items:center;background:#e3d8c6;border:2px solid var(--ink);padding:0 13px;font-weight:900}.currency{display:flex;align-items:center;gap:10px;margin-bottom:20px}.currency select{padding:9px;border:2px solid var(--ink);background:white}.presets{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.presets button,.reset{border:2px solid var(--ink);background:var(--paper);padding:10px 8px;font-weight:800;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}.presets button:hover,.presets button[aria-pressed="true"]{background:var(--lime)}.reset{width:100%;margin-top:10px;background:white}
+    .receipt{padding:24px 26px 30px;background:#fff;position:relative}.receipt:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:20px;background:linear-gradient(135deg,transparent 10px,#fff 0) 0 0/20px 20px repeat-x}.receipt-title{text-align:center;border-bottom:2px dashed var(--line);padding-bottom:14px}.receipt-title p{margin:4px 0;font-size:13px;color:var(--muted)}.receipt-title strong{font-size:22px;letter-spacing:.08em}.rows{padding:16px 0;border-bottom:2px dashed var(--line)}.row{display:flex;justify-content:space-between;gap:20px;padding:5px 0}.row strong{text-align:right}.row.big{font-size:21px}.row .orange{color:var(--orange)}.row .blue{color:var(--blue)}
+    .signal{margin:18px 0 8px;padding:13px 15px;border:2px solid currentColor;font-weight:900}.signal.good{color:var(--green);background:#e4f6e9}.signal.warn{color:var(--red);background:#ffe9e2}.signal.neutral{color:var(--blue);background:#e7edff}.bars{margin:18px 0}.bar-label{display:flex;justify-content:space-between;font-size:13px;margin:8px 0 4px}.track{height:18px;background:#ded3c2;border:1px solid var(--ink);overflow:hidden}.fill{height:100%;width:0;transition:width .25s ease}.fill.before{background:var(--blue)}.fill.after{background:var(--orange)}.formula{font-size:13px;color:var(--muted);background:#f2ecdf;padding:12px;border-left:5px solid var(--orange);margin:16px 0 0}.formula code{color:var(--ink);font-weight:800}
+    .guide{background:var(--paper2);border-top:2px solid var(--ink);padding:64px clamp(18px,5vw,64px)}.section-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);font-weight:900}.guide h2,.faq h2,.app h2{font:clamp(40px,6vw,76px)/.95 Impact,sans-serif;text-transform:uppercase;margin:8px 0 26px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step{border:2px solid var(--ink);padding:18px;background:var(--paper);position:relative}.step b{display:grid;place-items:center;width:38px;height:38px;background:var(--orange);border:2px solid var(--ink);margin:-30px 0 14px;box-shadow:3px 3px 0 var(--ink)}.step h3{font-size:17px;margin:0 0 8px}.step p{font-size:14px;margin:0}.compare{width:100%;border-collapse:collapse;margin-top:38px;background:white}.compare th,.compare td{border:1px solid var(--ink);padding:12px;text-align:left}.compare th{background:var(--ink);color:white}.compare td:nth-child(2),.compare td:nth-child(3){font-weight:900}.example{font-size:14px;color:var(--muted);margin-top:12px}
+    .boundaries{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.boundary{padding:18px;border-left:8px solid var(--blue);background:#e8eeff}.boundary.warn{border-color:var(--orange);background:#fff0e8}.boundary h3{margin:0 0 8px}.boundary p{margin:0}
+    .faq{padding:64px clamp(18px,5vw,64px)}details{border-top:2px solid var(--ink);padding:16px 0}details:last-child{border-bottom:2px solid var(--ink)}summary{cursor:pointer;font-weight:900}details p{max-width:75ch}
+    .app{display:grid;grid-template-columns:1fr .9fr;gap:36px;padding:64px clamp(18px,5vw,64px);background:var(--blue);color:white}.app h2{color:var(--lime)}.app p{max-width:60ch}.app-card{background:var(--paper);color:var(--ink);border:3px solid var(--ink);padding:24px;box-shadow:10px 10px 0 var(--orange)}.app-card img{border-radius:24px;display:block}.download{display:inline-block;margin-top:14px;padding:15px 18px;background:var(--ink);color:white;text-decoration:none;font-weight:900;border:2px solid white;box-shadow:5px 5px 0 var(--lime)}.fine{font-size:13px;color:#dce6ff}.app-card .fine{color:var(--muted)}
+    footer{background:var(--ink);color:#d8d1c6;padding:28px clamp(18px,5vw,64px);font-size:13px}footer nav{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:12px}footer a{color:#fff}
+    @media(max-width:850px){.hero,.lab,.app{grid-template-columns:1fr}.hero{padding-top:36px}.stamp{max-width:420px}.steps{grid-template-columns:1fr 1fr}.lab{gap:30px}.receipt{padding-left:18px;padding-right:18px}}
+    @media(max-width:520px){.topbar{align-items:flex-start;flex-direction:column}.hero h1{font-size:58px}.steps,.boundaries{grid-template-columns:1fr}.step{margin-top:12px}.presets{grid-template-columns:1fr}.row.big{font-size:18px}.lab{padding-left:14px;padding-right:22px}.panel{box-shadow:6px 6px 0 var(--ink)}.compare{font-size:13px}.compare th,.compare td{padding:8px 6px}.app h2,.guide h2,.faq h2{font-size:42px}}
+    .input-note{font-size:12px;color:var(--muted)}.share-examples{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:0 clamp(18px,5vw,64px) 54px;border:2px solid var(--ink);padding:24px;background:var(--paper2);box-shadow:8px 8px 0 var(--blue)}.share-examples h2{font:clamp(30px,4vw,48px)/1 Impact,sans-serif;text-transform:uppercase;margin:8px 0 18px}.share-examples p{font-size:14px}.share-privacy{border-left:4px solid var(--orange);padding-left:12px}.share-controls{min-width:0}.share-controls label{display:block;font-size:14px;font-weight:800;margin-bottom:6px}.share-controls select,.share-controls input{display:block;width:100%;max-width:100%;border:2px solid var(--ink);padding:10px;background:white;margin-bottom:16px;font-size:14px}.share-controls button{display:block;border:2px solid var(--ink);background:var(--lime);padding:12px;font-weight:800;cursor:pointer;margin-bottom:14px}.share-controls a{font-weight:700;font-size:14px}input[aria-invalid="true"]{box-shadow:inset 0 0 0 2px var(--red)}@media(max-width:700px){.share-examples{grid-template-columns:1fr;margin-left:14px;margin-right:22px;padding:18px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fill{transition:none}}
+
+    .margin-demo{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,350px);align-items:start;gap:clamp(24px,5vw,64px);padding:36px clamp(18px,5vw,64px);border-top:2px solid var(--ink);background:var(--paper2)}
+    .margin-demo h2{font:clamp(32px,4.5vw,54px)/1 Impact,sans-serif;text-transform:uppercase;margin:0 0 18px}
+    .margin-demo-copy{max-width:60ch;min-width:0}
+    .margin-demo p{margin:0 0 16px}
+    .margin-demo-note{font-size:14px;line-height:1.5}
+    .margin-demo details{margin:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .margin-demo summary{padding:12px 0;font-weight:700;cursor:pointer}
+    .margin-demo ol{padding-left:1.5em}
+    .margin-demo li+li{margin-top:.65em}
+    .margin-demo video{display:block;width:100%;max-width:350px;height:auto;border:2px solid var(--ink);background:var(--ink)}
+    @media(max-width:700px){.margin-demo{grid-template-columns:minmax(0,1fr);gap:8px}.margin-demo video{max-width:100%}}
+  </style>
+<link rel="stylesheet" href="/hla-work/assets/hub-finder/landing-handoff.css">
+<link rel="stylesheet" href="/hla-work/assets/hub-finder/native-proof.css">
+</head>
+<body>
+<div class="shell">
+  <header class="topbar"><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/">Honest Little Apps / Work tools</a><b>Free field calculator · no signup</b></header>
+  <main>
+    <section class="hero">
+      <div><p class="kicker">Contractor quote math · before tax</p><h1>Markup is <span>not margin.</span></h1><p class="lede">A 50% markup does not create a 50% gross margin. Enter one quote, preview the discount, and see the difference before the number reaches a customer.</p></div>
+      <aside class="stamp" aria-label="What this calculator checks"><b>4 checks</b><p>gross profit · gross margin · markup · discount impact</p></aside>
+    </section>
+
+    <section class="lab" aria-labelledby="lab-title">
+      <div class="panel">
+        <div class="panel-head"><h2 id="lab-title">Quote inputs</h2><span>Nothing is saved</span></div>
+        <div class="controls">
+          <div class="currency"><label for="currency"><strong>Currency</strong></label><select id="currency"><option value="CAD">CAD</option><option value="USD">USD</option><option value="GBP">GBP</option><option value="EUR">EUR</option><option value="AUD">AUD</option></select></div>
+          <div class="control"><label for="price"><span>Customer price</span><small>before tax</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="price" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="1200"></div></div>
+          <div class="control"><label for="cost"><span>Direct cost</span><small>labour + materials</small></label><div class="money-input"><span aria-hidden="true">$</span><input id="cost" type="number" min="0" max="1000000000000" step="0.01" inputmode="decimal" value="650"></div></div>
+          <div class="control"><label for="discount"><span>Proposed discount</span><small>optional</small></label><div class="unit-input"><input class="plain-input" id="discount" type="number" min="0" max="100" step="0.1" inputmode="decimal" value="10"><span aria-hidden="true">%</span></div></div>
+          <div class="control"><label for="target"><span>Target gross margin</span><small>your own threshold</small></label><div class="unit-input"><input class="plain-input" id="target" type="number" min="0" max="99.9" step="0.5" inputmode="decimal" value="35"><span aria-hidden="true">%</span></div></div>
+          <p class="input-note">Enter non-negative amounts up to 1 trillion. Discount: 0–100%. Target margin: 0–99.9%. Blank or invalid inputs do not produce a result.</p>
+          <div class="presets" aria-label="Example quote presets"><button type="button" data-preset="painter">Painter example</button><button type="button" data-preset="cleaner">Cleaner example</button><button type="button" data-preset="landscaper">Landscaper example</button><button type="button" data-preset="detailer">Detailer example</button></div>
+          <button class="reset" id="reset" type="button">Reset to the sample quote</button>
+        </div>
+      </div>
+
+      <div class="panel" aria-live="polite" aria-atomic="false">
+        <div class="panel-head"><h2>Quote math receipt</h2><span id="receipt-date">Live calculation</span></div>
+        <div class="receipt" id="results">
+          <div class="receipt-title"><strong>BEFORE DISCOUNT</strong><p>customer price less direct cost</p></div>
+          <div class="rows">
+            <div class="row"><span>Customer price</span><strong id="out-price">—</strong></div>
+            <div class="row"><span>Direct cost</span><strong id="out-cost">—</strong></div>
+            <div class="row big"><span>Gross profit</span><strong class="blue" id="out-profit">—</strong></div>
+            <div class="row"><span>Gross margin</span><strong id="out-margin">—</strong></div>
+            <div class="row"><span>Markup on cost</span><strong id="out-markup">—</strong></div>
+          </div>
+          <div class="rows">
+            <div class="row"><span>Discounted price</span><strong id="out-discount-price">—</strong></div>
+            <div class="row big"><span>Profit after discount</span><strong class="orange" id="out-discount-profit">—</strong></div>
+            <div class="row"><span>Margin after discount</span><strong id="out-discount-margin">—</strong></div>
+            <div class="row"><span>Margin change</span><strong id="out-margin-change">—</strong></div>
+          </div>
+          <div id="signal" class="signal neutral" role="status">Enter a price and direct cost.</div>
+          <div class="bars" aria-label="Gross margin before and after discount">
+            <div class="bar-label"><span>Before discount</span><strong id="bar-before-label">—</strong></div><div class="track"><div class="fill before" id="bar-before"></div></div>
+            <div class="bar-label"><span>After discount</span><strong id="bar-after-label">—</strong></div><div class="track"><div class="fill after" id="bar-after"></div></div>
+          </div>
+          <div class="rows">
+            <div class="row"><span>Minimum price at target</span><strong id="out-target-price">—</strong></div>
+            <div class="row"><span>Maximum discount at target (0.1% steps)</span><strong id="out-max-discount">—</strong></div>
+          </div>
+          <p class="fine">The minimum price rounds up to a whole cent. The discount limit rounds down to a tenth of a percent so the quote stays at or above that minimum.</p>
+          <p class="formula"><code>gross margin = gross profit ÷ customer price</code><br><code>markup = gross profit ÷ direct cost</code></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-examples" aria-labelledby="share-title">
+      <div><p class="section-label">Make the math easier to explain</p><h2 id="share-title">Share a worked example.</h2><p>Send a fictional quote to a colleague learning the difference between markup and margin. The link opens the same example, ready to calculate.</p><p class="share-privacy"><strong>Your figures stay out of the link.</strong> Only the example name is shared. These made-up amounts are teaching examples, not trade prices or recommended margins.</p></div>
+      <div class="share-controls"><label for="share-example">Choose an example to share</label><select id="share-example"><option value="painter">Painter · $1,200 price / $650 cost</option><option value="cleaner">Cleaner · $480 price / $260 cost</option><option value="landscaper">Landscaper · $2,150 price / $1,250 cost</option><option value="detailer">Detailer · $350 price / $165 cost</option></select><label for="share-url">Example link</label><input id="share-url" type="url" readonly><button type="button" id="copy-example">Copy example link</button><a id="open-example" href="#example=painter">Open painter example</a><p id="share-status" role="status" aria-live="polite"></p><p class="input-note">All shared examples open in CAD. The recipient can change the currency and numbers. No exchange-rate conversion is performed.</p></div>
+    </section>
+
+
+    <section class="margin-demo" aria-labelledby="margin-demo-title" id="margin-demo">
+      <div class="margin-demo-copy">
+        <h2 id="margin-demo-title">How $400 becomes 40% or 66.7%</h2>
+        <p>Follow a $1,000 quote with $600 in direct costs through the calculator. Both percentages start with the same $400 of gross profit.</p>
+        <p class="margin-demo-note" id="margin-demo-note">20 seconds · Silent, with on-screen captions · Fictional Canadian-dollar example</p>
+        <details>
+          <summary>Read the video transcript</summary>
+          <ol>
+            <li>Enter a customer price of $1,000 before tax, $600 for labour and materials, and zero discount.</li>
+            <li>Subtract the $600 cost from the $1,000 price. That leaves $400 gross profit before overhead.</li>
+            <li>For gross margin, divide $400 by the $1,000 customer price. The result is 40%. Forty cents of each sales dollar remains after direct costs.</li>
+            <li>For markup, divide the same $400 by the $600 direct cost. The result rounds to 66.7%. The smaller starting number gives the larger percentage.</li>
+          </ol>
+        </details>
+        <p class="margin-demo-note">The footage shows this browser calculator. ScopeBid’s iPhone and iPad app compares markup and margin when preparing an estimate. <a href="https://apps.apple.com/us/app/scopebid-estimate-invoice/id6796729890">View ScopeBid on the App Store</a>.</p>
+<details class="hla-phone-handoff" data-app-id="6796729890"><summary>Open on your iPhone</summary><div class="hla-phone-body"><p>On another device? Scan with your iPhone Camera, then tap the link.</p><img class="hla-phone-qr" src="/hla-work/assets/hub-finder/scopebid.svg" width="196" height="196" loading="lazy" alt="QR code for ScopeBid: Estimate &amp; Invoice on the App Store"><p><a class="hla-phone-link" href="https://apps.apple.com/app/id6796729890">Open ScopeBid: Estimate &amp; Invoice on the App Store</a></p><p class="hla-phone-note">The code opens the App Store. It does not transfer entries or results from this page.</p></div></details>
+
+      </div>
+      <video width="720" height="802" controls playsinline preload="none" poster="./markup-margin-poster.webp" aria-labelledby="margin-demo-title" aria-describedby="margin-demo-note">
+        <source src="./markup-margin-demo.mp4" type="video/mp4">
+        <track kind="captions" srclang="en" label="English" src="./markup-margin-captions.vtt">
+        <a href="./markup-margin-demo.mp4">Open the captioned video</a>.
+      </video>
+    </section>
+
+    <section class="guide">
+      <p class="section-label">How to use the result</p><h2>Price first. Discount second.</h2>
+      <div class="steps">
+        <article class="step"><b>1</b><h3>Define direct cost</h3><p>Include the labour and materials you actually expect the job to consume. Do not mix sales tax into revenue or profit.</p></article>
+        <article class="step"><b>2</b><h3>Read both percentages</h3><p>Margin answers “what share of the customer price remains?” Markup answers “how much was added over direct cost?”</p></article>
+        <article class="step"><b>3</b><h3>Preview the discount</h3><p>Price falls while direct cost usually does not. Compare the new gross margin with the threshold you chose.</p></article>
+        <article class="step"><b>4</b><h3>Check the target price</h3><p>The target-margin price is a mathematical reference, not a recommendation. Your market, overhead and terms still matter.</p></article>
+      </div>
+      <table class="compare">
+        <thead><tr><th>If direct cost is $100</th><th>Customer price</th><th>Markup</th><th>Gross margin</th></tr></thead>
+        <tbody><tr><td>25% markup</td><td>$125</td><td>25%</td><td>20%</td></tr><tr><td>50% markup</td><td>$150</td><td>50%</td><td>33.3%</td></tr><tr><td>100% markup</td><td>$200</td><td>100%</td><td>50%</td></tr></tbody>
+      </table>
+      <p class="example">Why the numbers differ: markup uses the $100 cost as its denominator; margin uses the larger customer price.</p>
+      <div class="boundaries">
+        <article class="boundary"><h3>This calculator does</h3><p>Show estimating arithmetic for one proposed quote. Your entered figures stay in this browser page. They are not saved or included in example links. Refreshing restores the default or the fictional example named in the link.</p></article>
+        <article class="boundary warn"><h3>This calculator does not</h3><p>Set a profitable price, allocate overhead, calculate tax, replace bookkeeping, or confirm that a quote or discount is appropriate.</p></article>
+      </div>
+    </section>
+
+    <section class="faq">
+      <p class="section-label">Plain-language answers</p><h2>Margin questions</h2>
+      <details><summary>What is the difference between markup and gross margin?</summary><p>Gross profit is customer price before tax minus direct cost. Markup divides that profit by direct cost. Gross margin divides it by the customer price. With a $150 price and $100 cost, profit is $50, markup is 50%, and margin is 33.3%.</p></details>
+      <details><summary>Why can a 10% discount cut margin by more than 10%?</summary><p>The discount comes entirely out of the price, while the labour and materials may be unchanged. On the sample $1,200 quote with $650 direct cost, a 10% discount changes price to $1,080 and profit from $550 to $430. Gross margin falls from 45.8% to 39.8%—a drop of 6 percentage points.</p></details>
+      <details><summary>Does the calculator include overhead or take-home pay?</summary><p>No. “Gross profit” here means price before tax minus the direct cost entered. It is not net profit or take-home pay. Rent, insurance, travel, admin time, tools, payment fees and income tax may still need to be covered.</p></details>
+      <details><summary>Does it calculate sales tax or GST/HST?</summary><p>No. Enter the customer price before tax. Sales tax is not treated as gross profit. You set and remain responsible for your own tax rates and compliance.</p></details>
+      <details><summary>Is the target-margin price a recommended quote?</summary><p>No. The minimum price is the first whole-cent amount at or above the chosen gross-margin percentage. With zero direct cost, every positive price has 100% gross margin, so a lower target has no exact solution. It does not know your overhead, local market, minimum charge, scope risk, contract, tax obligations or business goals.</p></details>
+    </section>
+
+    
+<!-- HLA:NATIVE-PROOF:20261106 -->
+<section class="hla-native-proof" id="iphone-preview" aria-labelledby="native-preview-title" data-app-id="6796729890"><p class="hla-native-label">Inside the iPhone app</p><h2 id="native-preview-title">Turn the margin into a quote.</h2><p class="hla-native-intro">After checking markup and margin here, ScopeBid can keep the job details and prepare a customer document.</p><div class="hla-native-grid"><figure class="hla-native-shot"><a class="hla-native-image-link" href="/hla-work/assets/scopebid/screen-2-780.webp" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Profit Guard screenshot (opens a new tab)"><img class="hla-native-image" src="/hla-work/assets/scopebid/screen-2-390.webp" srcset="/hla-work/assets/scopebid/screen-2-390.webp 390w, /hla-work/assets/scopebid/screen-2-780.webp 780w" sizes="(max-width: 600px) 40vw, 240px" width="390" height="844" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="ScopeBid shows customer price, estimated cost, estimated gross profit and gross margin before Send Quote."></a><figcaption class="hla-native-caption"><strong>Profit Guard</strong>Review price, cost and gross margin together before sending.</figcaption></figure><figure class="hla-native-shot"><a class="hla-native-image-link" href="/hla-work/assets/scopebid/screen-4-780.webp" target="_blank" rel="noopener noreferrer" aria-label="Enlarge Customer PDF screenshot (opens a new tab)"><img class="hla-native-image" src="/hla-work/assets/scopebid/screen-4-390.webp" srcset="/hla-work/assets/scopebid/screen-4-390.webp 390w, /hla-work/assets/scopebid/screen-4-780.webp 780w" sizes="(max-width: 600px) 40vw, 240px" width="390" height="844" loading="lazy" decoding="async" referrerpolicy="no-referrer" alt="ScopeBid shows a customer quote PDF with its job name, total and acceptance button."></a><figcaption class="hla-native-caption"><strong>Customer PDF</strong>Prepare the customer-facing PDF. Internal cost and margin stay off the customer document.</figcaption></figure></div><p class="hla-native-note">App Store screenshots. Select a screen for a larger view. Example entries are shown; this webpage does not transfer its inputs into the app.</p></section>
+<!-- /HLA:NATIVE-PROOF -->
+<section class="app">
+      <div><p class="section-label">From practice math to real quotes</p><h2>Run the numbers before send.</h2><p>ScopeBid is an offline estimate and invoice app for independent service professionals. Its current listing says Profit Guard shows gross margin and markup side by side and previews a discount’s effect before a quote is sent. It also supports saved pricing, job costing, change orders, invoices and PDF quotes.</p><p class="fine">This calculator is an original web companion from Honest Little Apps, the publisher of ScopeBid. It is not a ScopeBid screen, does not connect to the app, and does not import or save quote records.</p></div>
+      <aside class="app-card"><img src="https://udrwu9c0tjuedqy2.github.io/hla-work/assets/scopebid/icon-128.webp" width="88" height="88" alt="ScopeBid app icon" loading="lazy"><h3>ScopeBid: Estimate &amp; Invoice</h3><p>Your first three quotes are free with full PDFs. Existing work remains viewable and exportable. ScopeBid Pro is an auto-renewing monthly or annual subscription for unlimited quoting and the full Business Memory, job-costing and invoicing workflow.</p><p class="fine">The Canadian App Store listed Pro at CA$24.99 monthly or CA$199.99 annually on November 4, 2026. Prices and trial eligibility vary by country and can change; check the App Store before subscribing. Requires iOS/iPadOS 18.0 or later.</p><a class="download" href="https://apps.apple.com/us/app/scopebid-estimate-invoice/id6796729890" rel="noopener">View ScopeBid on the App Store ↗</a></aside>
+    </section>
+  </main>
+  <footer><nav aria-label="Related ScopeBid resources"><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/scope-change-worksheet/">Scope change worksheet</a><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/estimate-app-vs-spreadsheet-vs-paper/">Estimate app vs spreadsheet vs paper</a><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/">More work tools</a></nav><p>Published by Honest Little Apps · App facts checked against the current Canadian and US App Store listings on November 4, 2026 · Apple and App Store are trademarks of Apple Inc.</p></footer>
+</div>
+<script>
+(function(){
+  const fields={price:"Customer price",cost:"Direct cost",discount:"Proposed discount",target:"Target gross margin"};
+  function computeQuoteMath(input){
+    const values={};
+    for(const key of Object.keys(fields)){
+      const raw=input[key];
+      if(raw===null||raw===undefined||typeof raw==="boolean"||String(raw).trim()===""||!Number.isFinite(Number(raw))){
+        return {error:fields[key]+" must be a finite number.",field:key};
+      }
+      values[key]=Number(raw);
+      const max=key==="target"?99.9:key==="discount"?100:1000000000000;
+      if(values[key]<0||values[key]>max)return {error:fields[key]+" must be between 0 and "+max.toLocaleString("en-US")+".",field:key};
+    }
+    const {price,cost,discount,target}=values;
+    const profit=price-cost,margin=price>0?profit/price*100:null,markup=cost>0?profit/cost*100:null;
+    const discountedPrice=price*(1-discount/100),discountedProfit=discountedPrice-cost;
+    const discountedMargin=discountedPrice>0?discountedProfit/discountedPrice*100:null;
+    const targetPrice=cost>0?cost/(1-target/100):null;
+    const rawMaxDiscount=price>0&&targetPrice!==null?(1-targetPrice/price)*100:null;
+    const maxDiscount=rawMaxDiscount===null?null:Math.min(100,Math.max(0,rawMaxDiscount));
+    const marginChange=margin===null||discountedMargin===null?null:discountedMargin-margin;
+    return {price,cost,discount,target,profit,margin,markup,discountedPrice,discountedProfit,discountedMargin,targetPrice,rawMaxDiscount,maxDiscount,marginChange};
+  }
+  const $=id=>document.getElementById(id);
+  const controls={price:$("price"),cost:$("cost"),discount:$("discount"),target:$("target"),currency:$("currency")};
+  const presets={painter:{price:1200,cost:650,discount:10,target:35},cleaner:{price:480,cost:260,discount:5,target:35},landscaper:{price:2150,cost:1250,discount:7.5,target:32},detailer:{price:350,cost:165,discount:10,target:40}};
+  const names={painter:"painter",cleaner:"cleaner",landscaper:"landscaper",detailer:"detailer"};
+  const baseUrl="https://udrwu9c0tjuedqy2.github.io/hla-work/scopebid/contractor-markup-vs-margin-calculator/";
+  const outputs=["out-price","out-cost","out-profit","out-margin","out-markup","out-discount-price","out-discount-profit","out-discount-margin","out-margin-change","out-target-price","out-max-discount","bar-before-label","bar-after-label"];
+  function exampleKey(hash){const match=/^#example=(painter|cleaner|landscaper|detailer)$/.exec(hash);return match?match[1]:null}
+  function exampleUrl(key){return baseUrl+"#example="+(Object.hasOwn(presets,key)?key:"painter")}
+  function money(value){return new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,maximumFractionDigits:2}).format(value)}
+  function pct(value){return value===null||!Number.isFinite(value)?"Not defined":value.toFixed(1)+"%"}
+  function setText(id,value){$(id).textContent=value}
+  function clearSelected(){document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed","false"))}
+  // Use exact decimal fractions when rounding a one-sided quote limit.
+  function decimalRatio(value){
+    const [mantissa, exponent="0"] = String(value).toLowerCase().split("e");
+    const [whole, fraction=""] = mantissa.split(".");
+    const places = fraction.length - Number(exponent);
+    return {n:BigInt(whole+fraction)*10n**BigInt(Math.max(0,-places)), d:10n**BigInt(Math.max(0,places))};
+  }
+  function quoteLimits({price, cost, target, discount}){
+    const p=decimalRatio(price), c=decimalRatio(cost), t=decimalRatio(target), d=decimalRatio(discount);
+    const numerator=c.n*100n*t.d, denominator=c.d*(100n*t.d-t.n);
+    const minimumCents=(numerator*100n+denominator-1n)/denominator;
+    const listCents=p.n*100n;
+    const minimumBillableCents = minimumCents>0n ? minimumCents : 1n;
+    const room=listCents-minimumBillableCents*p.d;
+    const discountTenths=listCents>0n && room>=0n ? Number(1000n*room/listCents) : null;
+    // Sign of (discounted price - exact target price), without floating-point ties.
+    const balance=p.n*(100n*d.d-d.n)*denominator - 100n*d.d*p.d*numerator;
+    const costBalance = p.n*(100n*d.d-d.n)*c.d - 100n*d.d*p.d*c.n;
+    return {minimumCents, discountTenths, balance, costBalance};
+  }
+  function moneyFromCents(cents){
+    const formatter=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value,minimumFractionDigits:2,maximumFractionDigits:2});
+    const fraction=Number(cents%100n).toLocaleString(undefined,{minimumIntegerDigits:2,useGrouping:false});
+    return formatter.formatToParts(cents/100n).map(part=>part.type==="fraction"?fraction:part.value).join("");
+  }
+  function pointGap(gap){
+    return gap<0.1 ? "less than 0.1 percentage point" : gap.toFixed(1)+" percentage points";
+  }
+  function render(){
+    Object.keys(fields).forEach(k=>{controls[k].setCustomValidity("");controls[k].removeAttribute("aria-invalid")});
+    const symbol=new Intl.NumberFormat(undefined,{style:"currency",currency:controls.currency.value}).formatToParts(1).find(p=>p.type==="currency").value;
+    document.querySelectorAll(".money-input > span").forEach(el=>el.textContent=symbol);
+    const r=computeQuoteMath({price:controls.price.value,cost:controls.cost.value,discount:controls.discount.value,target:controls.target.value});
+    const signal=$("signal");
+    if(r.error){
+      outputs.forEach(id=>setText(id,"—"));$("bar-before").style.width="0%";$("bar-after").style.width="0%";
+      controls[r.field].setCustomValidity(r.error);controls[r.field].setAttribute("aria-invalid","true");
+      signal.className="signal warn";signal.textContent=r.error+" Correct the input to calculate.";return;
+    }
+    const limits=quoteLimits(r);
+    if(limits.costBalance===0n && r.cost>0){
+      r.discountedPrice=r.cost;
+      r.discountedProfit=0;
+      r.discountedMargin=0;
+      r.marginChange=-r.margin;
+    }
+    setText("out-price",money(r.price));setText("out-cost",money(r.cost));setText("out-profit",money(r.profit));setText("out-margin",pct(r.margin));setText("out-markup",pct(r.markup));
+    setText("out-discount-price",money(r.discountedPrice));setText("out-discount-profit",money(r.discountedProfit));setText("out-discount-margin",pct(r.discountedMargin));setText("out-margin-change",r.marginChange===null?"Not defined":r.marginChange.toFixed(1)+" points");
+    setText("out-target-price",r.targetPrice===null?"No exact price at zero cost":moneyFromCents(limits.minimumCents));
+    setText("out-max-discount",r.price===0?"Not defined":limits.discountTenths===null?"0% — current price is below the minimum":(limits.discountTenths/10).toFixed(1)+"%"+(r.cost===0?" — keep at least one cent":""));
+    $("bar-before").style.width=Math.max(0,Math.min(100,r.margin||0))+"%";$("bar-after").style.width=Math.max(0,Math.min(100,r.discountedMargin||0))+"%";
+    setText("bar-before-label",pct(r.margin));setText("bar-after-label",pct(r.discountedMargin));signal.className="signal neutral";
+    if(r.price===0){signal.textContent="Enter a customer price above zero to calculate margin."}
+    else if(r.discountedPrice===0){signal.className="signal warn";signal.textContent="A 100% discount leaves no customer price, so after-discount gross margin is not defined."}
+    else if(limits.costBalance<0n){signal.className="signal warn";signal.textContent="After the discount, the price is "+money(Math.abs(r.discountedProfit))+" below the direct cost entered."}
+    else if(limits.balance<0n){signal.className="signal warn";signal.textContent="The discounted quote is "+pointGap(r.target-r.discountedMargin)+" below your "+r.target.toFixed(1)+"% target."}
+    else if(limits.balance===0n){signal.className="signal good";signal.textContent="The discounted quote meets your selected target."}
+    else{signal.className="signal good";signal.textContent="The discounted quote remains "+pointGap(r.discountedMargin-r.target)+" above your selected target."}
+  }
+  function updateExampleLink(){
+    const key=$("share-example").value,url=exampleUrl(key);
+    $("share-url").value=url;$("open-example").href=url;
+    $("open-example").textContent="Open "+names[key]+" example";setText("share-status","");
+  }
+  function applyPreset(key,focus){
+    const p=presets[key];Object.keys(p).forEach(k=>controls[k].value=p[k]);controls.currency.value="CAD";
+    document.querySelectorAll("[data-preset]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.preset===key)));
+    $("share-example").value=key;updateExampleLink();render();if(focus)controls.price.focus();
+  }
+  Object.values(controls).forEach(el=>el.addEventListener("input",()=>{clearSelected();render()}));
+  document.querySelectorAll("[data-preset]").forEach(button=>button.addEventListener("click",()=>applyPreset(button.dataset.preset,true)));
+  $("reset").addEventListener("click",()=>{applyPreset("painter",true);clearSelected()});
+  $("share-example").addEventListener("change",updateExampleLink);
+  $("copy-example").addEventListener("click",async()=>{
+    const url=exampleUrl($("share-example").value);
+    try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error("Unavailable");await navigator.clipboard.writeText(url);setText("share-status","Copied the fictional example link. Your entered figures are not included.")}
+    catch(_){$("share-url").focus();$("share-url").select();setText("share-status","Select and copy the example link above. Your entered figures are not included.")}
+  });
+  window.addEventListener("hashchange",()=>{const key=exampleKey(window.location.hash);if(key)applyPreset(key,false)});
+  const initial=exampleKey(window.location.hash);if(initial)applyPreset(initial,false);else{updateExampleLink();render()}
+  window.computeQuoteMath=computeQuoteMath;
+})();
+</script>
+</body>
+</html>
+

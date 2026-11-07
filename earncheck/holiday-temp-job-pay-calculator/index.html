@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Holiday Temp Job Pay Calculator: Hours, Overtime, Paycheck</title>
+<meta name="description" content="Seasonal shifts to January: type rate and weekly hours, get estimated gross pay with overtime, then check the first paycheck line by line.">
+<link rel="canonical" href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Holiday Temp Job Pay Calculator: Hours, Overtime, Paycheck">
+<meta property="og:description" content="Seasonal shifts to January: type rate and weekly hours, get estimated gross pay with overtime, then check the first paycheck line by line.">
+<meta property="og:url" content="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/">
+<meta property="og:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Solo Work Tools">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Holiday Temp Job Pay Calculator: Hours, Overtime, Paycheck">
+<meta name="twitter:description" content="Seasonal shifts to January: type rate and weekly hours, get estimated gross pay with overtime, then check the first paycheck line by line.">
+<meta name="twitter:image" content="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/og.png">
+<link rel="icon" href="/hla-work/favicon.svg" type="image/svg+xml">
+<link rel="alternate" type="application/atom+xml" title="Solo Work Tools" href="/hla-work/feed.xml">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Solo Work Tools", "item": "https://udrwu9c0tjuedqy2.github.io/hla-work/"}, {"@type": "ListItem", "position": 2, "name": "EarnCheck: Shift & Pay Tracker", "item": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/"}, {"@type": "ListItem", "position": 3, "name": "Holiday temp job pay calculator", "item": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is overtime calculated for a seasonal job?","acceptedAnswer":{"@type":"Answer","text":"The U.S. federal preset uses 1.5 times the entered hourly rate after 40 hours in one workweek. The Ontario preset uses 1.5 times that rate after 44 hours. These are simplified models for eligible workers, not eligibility tests. Exemptions, regular-rate adjustments and additional local rules can change the result. This tool does not set or split workweeks."}},{"@type":"Question","name":"Why does my first paycheck look short?","acceptedAnswer":{"@type":"Answer","text":"Possible reasons include pay-period cutoff dates, recorded hours or breaks, rates, premiums and deductions. Compare the same dates and compare gross pay with gross pay. EarnCheck organizes differences for review; a difference alone does not prove an error."}},{"@type":"Question","name":"Do I get holiday pay as a temp?","acceptedAnswer":{"@type":"Answer","text":"Eligibility and amounts depend on the applicable law and employment circumstances. This calculator does not determine holiday-pay entitlement. Its premium inputs only add the amount you enter, and do not model any related overtime regular-rate adjustment."}},{"@type":"Question","name":"Does EarnCheck connect to my employer or bank?","acceptedAnswer":{"@type":"Answer","text":"No. No account, no bank login, no employer login. You confirm shifts and type figures from your pay statement; records stay on the phone unless you export them. It never contacts your employer; it drafts a neutral message you can send yourself if a difference holds up."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"The web calculator is free. EarnCheck's free tier covers one job and the first pay period; saved records stay viewable. Pro adds further pay periods, multiple jobs, advanced overtime and premium rules, plus exports and backup. See the App Store for current prices and trial eligibility. Requires iOS or iPadOS 18 or later."}},{"@type":"Question","name":"Is a difference proof my employer underpaid me?","acceptedAnswer":{"@type":"Answer","text":"No, and the app says so too: a difference is something to review, not proof of an error. Start with the explanations to check first. Your payroll team or local labour authority can confirm what applies to you. This page is not legal advice."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "EarnCheck: Shift & Pay Tracker", "operatingSystem": "iOS", "applicationCategory": "FinanceApplication", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "downloadUrl": "https://apps.apple.com/app/id6798048163", "url": "https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/", "image": "https://udrwu9c0tjuedqy2.github.io/hla-work/assets/earncheck/icon-512.webp", "publisher": {"@type": "Organization", "name": "Honest Little Apps"}}</script>
+<link rel="preload" href="/hla-work/assets/fonts/sora-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="apple-itunes-app" content="app-id=6798048163">
+<style>
+@font-face{font-family:'Sora';font-style:normal;font-weight:700;font-display:swap;src:url(/hla-work/assets/fonts/sora-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:400;font-display:swap;src:url(/hla-work/assets/fonts/work-sans-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Work Sans';font-style:normal;font-weight:600;font-display:swap;src:url(/hla-work/assets/fonts/work-sans-latin-600-normal.woff2) format('woff2')}
+:root{--navy:#0d204c;--warm:#f3efe8;--tan:#ae927a;--ink:#17213a;--mute:#5f6677;--card:#ffffff;--line:#e4ddd2;--ok:#2f8f5b;--rev:#c0533b}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--warm);color:var(--ink);font-family:'Work Sans',system-ui,sans-serif;font-size:18px;line-height:1.6;position:relative}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.45;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.2 0 0 0 0 0.18 0 0 0 0 0.15 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:#1f4d9c}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--tan);outline-offset:3px}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 0;font-size:.9rem}.top a{color:var(--mute);text-decoration:none}
+.hero{margin:0 -20px;padding:12px 20px 26px;background:var(--warm)}
+h1,h2,h3{font-family:Sora,system-ui,sans-serif;font-weight:700;line-height:1.05;letter-spacing:-.02em;margin:0 0 .35em;color:var(--navy)}
+h1{font-size:clamp(2rem,7.4vw,3.2rem)}h1 .l2{display:block;color:var(--tan)}
+h2{font-size:clamp(1.35rem,4.5vw,1.9rem)}h3{font-size:1.15rem}
+.sub{font-size:1.08rem;max-width:42ch;margin:.4em 0 1em;color:#3a4256}
+.badge-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:10px 0 4px}.badge-row small{color:#3a4256}.hla-badge img{display:block}
+.upd{font-size:.85rem;color:var(--mute)}
+/* calculator */
+.tool{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:14px 0;box-shadow:0 6px 24px rgba(13,32,76,.06)}
+.tool h2{margin:0 0 4px;font-size:1.2rem}.tool p{margin:0 0 10px;font-size:.95rem;color:var(--mute)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid label{display:block;font-size:.85rem;color:var(--mute)}.grid input,.grid select{width:100%;margin-top:4px;background:#faf8f4;color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:10px;font:inherit;font-size:1rem}
+.out{margin-top:14px;background:var(--navy);color:#fff;border-radius:14px;padding:14px 16px}.out .big{font:700 clamp(1.8rem,8vw,2.8rem) Sora,sans-serif;line-height:1;color:#ffd9b8;font-variant-numeric:tabular-nums}.out p{margin:6px 0 0;color:#dfe6f5;font-size:.95rem}
+.math{display:grid;grid-template-columns:1fr auto;gap:4px 12px;margin-top:10px;font-size:.92rem;color:#dfe6f5}.math b{color:#fff;text-align:right;font-variant-numeric:tabular-nums}
+/* timeline */
+.tl{position:relative;padding-left:44px;margin-top:8px}.tl:before{content:"";position:absolute;left:15px;top:0;bottom:0;width:2px;background:var(--line)}
+.tl section{position:relative;padding:26px 0 6px}.tl section:before{content:attr(data-n);position:absolute;left:-44px;top:28px;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font:700 .95rem Sora,sans-serif;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px var(--warm)}
+.shots{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0}@media(min-width:620px){.shots{grid-template-columns:repeat(3,1fr)}}
+.shots figure{margin:0;overflow:hidden}.shots img{width:100%;height:auto;border-radius:16px;display:block;border:1px solid var(--line)}.shots figcaption{font-size:.85rem;color:var(--mute);margin-top:6px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:4px 18px;margin:12px 0}.story p{margin:12px 0}.story .t{color:var(--mute);font-size:.85rem}
+ul.plain{padding-left:20px}ul.plain li{margin:6px 0}
+.sorter{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin:12px 0}
+ol.cards{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px;touch-action:none}
+.card{display:flex;align-items:center;gap:10px;background:#faf8f4;border:1px solid var(--line);border-radius:12px;padding:10px 10px 10px 8px;cursor:grab;user-select:none;-webkit-user-select:none}.card.drag{border-color:var(--tan);transform:scale(1.02)}.card b{flex:1}.card .grip{color:var(--mute);letter-spacing:-3px}.card.ok{border-color:var(--ok);background:#e9f5ea}.card.bad{border-color:var(--rev);background:#f9e8e3}
+.mv{display:flex;flex-direction:column;gap:2px}.mv button{background:#e9e3d8;border:0;border-radius:6px;width:34px;height:22px;font-size:.7rem;cursor:pointer}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.btn{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:12px 18px;font:700 1rem Sora,sans-serif;cursor:pointer}.btn.ghost{background:transparent;color:var(--navy);border:1px solid var(--line)}
+#verdict{font-weight:700;color:var(--navy)}
+ol.answer{display:none;padding-left:18px;margin:12px 0 0}ol.answer li{margin:8px 0}.sorter.done ol.answer{display:block}
+details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;font-family:Sora,sans-serif;font-weight:700;font-size:1.05rem;color:var(--navy)}details p{margin:8px 0 0}
+.cta{display:inline-block;background:var(--navy);color:#fff;text-decoration:none;font:700 1.05rem Sora,sans-serif;padding:14px 22px;border-radius:999px;margin:8px 0}
+.end{background:var(--navy);color:#fff;border-radius:18px;padding:22px 18px;margin:28px 0 18px;text-align:center}.end h2{color:#ffd9b8}.end .hla-badge{display:inline-block;margin-top:8px}
+.limits{font-size:.95rem;color:var(--mute)}
+.night-shift-help{margin:16px 0}.night-shift-help summary{cursor:pointer;padding:10px 0;font-weight:700}.night-shift-help video{display:block;max-width:100%;height:auto;margin:12px 0}.night-shift-help a{text-decoration:underline}
+</style>
+
+<!-- hla-public-referrals-v1 --><link rel="stylesheet" href="/hla-work/assets/referrals/public-links.css"><script src="/hla-work/assets/referrals/public-links.js" defer></script>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+<nav class="top"><a href="/hla-work/">Solo Work Tools</a><a href="/hla-work/about/">About</a></nav>
+<p class="upd">Updated November 2026 · For seasonal retail, warehouse and delivery shifts through January</p>
+<h1>Know your hours.<span class="l2">Review your first holiday paycheck.</span></h1>
+<p class="sub">A holiday temp job pay calculator: rate, weekly hours and the overtime rule that applies to you, then a simple gross-pay scenario to compare with your own records.</p>
+<div class="badge-row"><a class="hla-badge" href="https://apps.apple.com/app/id6798048163?ct=work-holiday-temp-job-pay-calc&mt=8" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a><small>EarnCheck · Free first pay period, no account</small></div>
+<div class="tool" id="tool">
+<h2>Estimate the season</h2>
+<p>Gross pay only. Taxes and deductions depend on where you live and are not estimated here.</p>
+<div class="grid">
+<div><label for="rate">Hourly rate</label><input id="rate" type="number" inputmode="decimal" value="17.50" min="0" step="any"></div>
+<div><label for="hrs">Hours per week</label><input id="hrs" type="number" inputmode="decimal" value="44" min="0" max="168" step="any"></div>
+<div><label for="wks">Number of weeks</label><input id="wks" type="number" inputmode="numeric" value="8" min="1" max="52" step="1"></div>
+<div><label for="rule">Overtime rule</label><select id="rule"><option value="40">U.S. federal: over 40 h/week at 1.5x</option><option value="44">Ontario: over 44 h/week at 1.5x</option></select></div>
+<div><label for="prem">Premium hours per week (optional)</label><input id="prem" type="number" inputmode="decimal" value="0" min="0" max="168" step="any"></div>
+<div><label for="premr">Premium extra per hour</label><input id="premr" type="number" inputmode="decimal" value="0" min="0" step="any"></div>
+</div>
+<details class="night-shift-help" id="hours-from-shifts">
+<summary>Worked overnight? Turn one shift into weekly hours</summary>
+<p>From 10 pm to 6 am is eight hours. Subtract a 30-minute unpaid break and the shift contributes 7 hours 30 minutes, or <strong>7.5 hours</strong>. If three such shifts fit wholly inside the same workweek and there are no other shifts, enter <strong>22.5</strong> in Hours per week.</p>
+<video controls playsinline preload="none" width="216" height="384" aria-label="13-second walkthrough of the overnight shift calculator">
+<source src="../overnight-shift-hours-calculator/overnight-shift.mp4" type="video/mp4">
+<track kind="captions" srclang="en" label="English" src="../overnight-shift-hours-calculator/overnight-shift.vtt" default>
+</video>
+<p>Try different start times or breaks in the <a href="../overnight-shift-hours-calculator/#shift-video">overnight shift calculator and transcript</a>. Count only the part of each shift inside the workweek you are estimating.</p>
+</details>
+<div class="out" role="status" aria-live="polite"><div class="big" id="total">—</div><p id="totalp"></p><div class="math" id="math"></div></div>
+<p class="limits">A simplified estimate that repeats one identical workweek. Enter paid hours for that workweek after any genuinely unpaid breaks. This tool has no workweek-start selector and does not split shifts. It uses the entered hourly rate for overtime; premiums and bonuses can affect the legally required regular rate, which it does not calculate. Check eligibility and exceptions before using a preset. Sources: <a href="https://www.dol.gov/agencies/whd/fact-sheets/23-flsa-overtime-pay" rel="noopener">U.S. Department of Labor</a>, <a href="https://www.ontario.ca/document/your-guide-employment-standards-act-0/overtime-pay" rel="noopener">Ontario Employment Standards Act</a>. Not legal advice.</p>
+</div>
+<noscript><p>This calculator needs JavaScript. The worked example below remains available.</p></noscript>
+</header>
+
+<div class="tl">
+<section data-n="1">
+<h2>What the check looks like</h2>
+<div class="shots">
+<figure><img class="" src="/hla-work/assets/earncheck/screen-1-390.webp" srcset="/hla-work/assets/earncheck/screen-1-390.webp 390w, /hla-work/assets/earncheck/screen-1-780.webp 780w" sizes="(max-width:480px) 70vw, 300px" width="390" height="844" alt="EarnCheck Payday screen comparing expected gross with the statement and showing a difference to review, line by line" loading="lazy" decoding="async"><figcaption>Expected vs statement, line by line: Match or Difference to Review.</figcaption></figure>
+<figure><img class="" src="/hla-work/assets/earncheck/screen-2-390.webp" srcset="/hla-work/assets/earncheck/screen-2-390.webp 390w, /hla-work/assets/earncheck/screen-2-780.webp 780w" sizes="(max-width:480px) 70vw, 300px" width="390" height="844" alt="EarnCheck Today screen asking whether the shift went as planned with a one-tap Yes" loading="lazy" decoding="async"><figcaption>One tap confirms a shift. Scheduled is not counted until confirmed.</figcaption></figure>
+<figure><img class="" src="/hla-work/assets/earncheck/screen-4-390.webp" srcset="/hla-work/assets/earncheck/screen-4-390.webp 390w, /hla-work/assets/earncheck/screen-4-780.webp 780w" sizes="(max-width:480px) 70vw, 300px" width="390" height="844" alt="EarnCheck calendar showing confirmed shifts and estimated amounts by day" loading="lazy" decoding="async"><figcaption>Hours and estimated amounts, by day.</figcaption></figure>
+</div>
+</section>
+
+<section data-n="2">
+<h2>A worked example you can check</h2>
+<div class="story">
+<p class="t">Fictional arithmetic example, not a customer result or determination of pay owed.</p>
+<p>At 17.50 per hour for 44 hours in one workweek, the simplified 40-hour preset gives 700.00 regular pay plus 105.00 overtime: 805.00 for the week. Eight identical weeks total 6,440.00, before deductions.</p>
+<p>The 44-hour preset gives 770.00 for that same 44-hour week: 6,160.00 over eight identical weeks. These are different assumptions, not a choice of which amount an employer may pay. Eligibility, exceptions and local rules determine which calculation applies.</p>
+<p>Before comparing an estimate with a statement, match the pay-period dates and the employer's defined workweek. Review shift times, break records, rates and premiums separately. EarnCheck can help organize those records; a difference remains something to investigate.</p>
+</div>
+</section>
+
+<section data-n="3">
+<h2>Who it is not for</h2>
+<ul class="plain">
+<li>Pay arrangements that need a different calculation, including salaries, multiple rates, piece rates or exemptions. This simple tool models one hourly rate; a salary alone does not establish an overtime exemption.</li>
+<li>Anyone who wants net pay. Taxes and deductions are deliberately out of scope, in the app and on this page.</li>
+<li>Tipped work where tips are most of the money. EarnCheck estimates gross from hours and rules; it does not track tips.</li>
+<li>Anyone looking for legal advice. A difference is something to review. Your payroll team or local labour authority confirms what applies.</li>
+</ul>
+</section>
+
+<section data-n="4">
+<h2>Honest limits</h2>
+<p class="limits">The calculator uses one hourly rate, a weekly threshold and the same hours in each week. It does not model daily overtime, double time, holiday-pay entitlements, regular-rate adjustments, averaging agreements or other exceptions. A contract cannot waive statutory overtime rights that apply under the U.S. FLSA or Ontario ESA; see the official sources above. Confirm the rules for your situation with payroll or the relevant labour authority. Honest Little Apps publishes this tool and EarnCheck.</p>
+<a class="cta" href="https://apps.apple.com/app/id6798048163?ct=work-holiday-temp-job-pay-calc&mt=8" rel="noopener">Keep your shift record in EarnCheck</a>
+</section>
+
+<section data-n="5">
+<h2>Put the pay stub in order</h2>
+<div class="sorter" id="sorter">
+<p class="limits" style="margin:0">Arrange the calculation from hours to net pay. Actual pay-statement layouts vary. Drag, or use the arrows.</p>
+<ol class="cards" id="cards"><li class="card" data-i="6"><span class="grip" aria-hidden="true">⋮⋮</span><b>Net pay</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="3"><span class="grip" aria-hidden="true">⋮⋮</span><b>Premiums</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="1"><span class="grip" aria-hidden="true">⋮⋮</span><b>Regular pay</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="0"><span class="grip" aria-hidden="true">⋮⋮</span><b>Hours worked</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="5"><span class="grip" aria-hidden="true">⋮⋮</span><b>Deductions</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="2"><span class="grip" aria-hidden="true">⋮⋮</span><b>Overtime pay</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li><li class="card" data-i="4"><span class="grip" aria-hidden="true">⋮⋮</span><b>Gross pay</b><span class="mv"><button type="button" class="up" aria-label="Move up">▲</button><button type="button" class="dn" aria-label="Move down">▼</button></span></li></ol>
+<div class="row"><button type="button" class="btn" id="check">Check my order</button><button type="button" class="btn ghost" id="reveal">Show me</button><span id="verdict" aria-live="polite"></span></div>
+<ol class="answer" id="answer"><li><b>Hours worked</b> Confirmed shifts, minus unpaid breaks. Everything starts here, which is why an independent record matters.</li><li><b>Regular pay</b> Hours up to the overtime threshold, times your rate.</li><li><b>Overtime pay</b> Hours over the threshold, times 1.5 under the U.S. federal rule or Ontario&#x27;s 44-hour rule. Eligibility, exemptions and additional local rules can change this simplified calculation.</li><li><b>Premiums</b> Extra amounts entered for the scenario. Required holiday pay and the effect of premiums on the overtime regular rate need a separate check.</li><li><b>Gross pay</b> Regular plus overtime plus premiums. This is the number EarnCheck estimates and compares.</li><li><b>Deductions</b> Tax, pension and the rest. Kept separate on purpose: a deduction is not missing pay.</li><li><b>Net pay</b> What lands in the account. Last on the stub, first thing you look at, least useful for spotting an hours error.</li></ol>
+</div>
+</section>
+
+<section data-n="6">
+<h2>Questions seasonal workers ask</h2>
+<details><summary>How is overtime calculated for a seasonal job?</summary><p>The U.S. federal preset uses 1.5 times the entered hourly rate after 40 hours in one workweek. The Ontario preset uses 1.5 times that rate after 44 hours. These are simplified models for eligible workers, not eligibility tests. Exemptions, regular-rate adjustments and additional local rules can change the result. This tool does not set or split workweeks.</p></details><details><summary>Why does my first paycheck look short?</summary><p>Possible reasons include pay-period cutoff dates, recorded hours or breaks, rates, premiums and deductions. Compare the same dates and compare gross pay with gross pay. EarnCheck organizes differences for review; a difference alone does not prove an error.</p></details><details><summary>Do I get holiday pay as a temp?</summary><p>Eligibility and amounts depend on the applicable law and employment circumstances. This calculator does not determine holiday-pay entitlement. Its premium inputs only add the amount you enter, and do not model any related overtime regular-rate adjustment.</p></details><details><summary>Does EarnCheck connect to my employer or bank?</summary><p>No. No account, no bank login, no employer login. You confirm shifts and type figures from your pay statement; records stay on the phone unless you export them. It never contacts your employer; it drafts a neutral message you can send yourself if a difference holds up.</p></details><details><summary>Is it free?</summary><p>The web calculator is free. EarnCheck's free tier covers one job and the first pay period; saved records stay viewable. Pro adds further pay periods, multiple jobs, advanced overtime and premium rules, plus exports and backup. See the App Store for current prices and trial eligibility. Requires iOS or iPadOS 18 or later.</p></details><details><summary>Is a difference proof my employer underpaid me?</summary><p>No, and the app says so too: a difference is something to review, not proof of an error. Start with the explanations to check first. Your payroll team or local labour authority can confirm what applies to you. This page is not legal advice.</p></details>
+</section>
+</div>
+
+<div class="end">
+<h2>Yours alone. Always private.</h2>
+<p>No account, no bank login, no employer login. Records stay on your phone.</p>
+<a class="hla-badge" href="https://apps.apple.com/app/id6798048163?ct=work-holiday-temp-job-pay-calc&mt=8" rel="noopener" aria-label="Download on the App Store"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/white/en-us?size=250x83&releaseDate=1276560000" alt="Download on the App Store" width="150" height="50" loading="eager" decoding="async"></a>
+</div>
+
+<ul class="hla-links"><li><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/paycheck-doesnt-match-hours-worked/">Paycheck doesn't match hours worked? 14 answers</a><span>Paycheck doesn't match hours worked? Fourteen plain answers for shift workers: overtime, breaks, overnight shifts, what to say to payroll, who to call.</span></li><li><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/pay-statement-bridge/">Gross to Net Pay Statement Worksheet</a><span>A visual reconciliation of entered gross, deductions, additions and net amounts. Exact-cent arithmetic; no tax estimates.</span></li><li><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/timecard-format-practice/">Hours and Minutes vs Decimal Hours: Timecard Practice</a><span>Six interactive cards teach timecard number formats, with exact visual explanations and a minute-to-hour reference.</span></li><li><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/scenario-challenges/">27 Timecard Reasoning Challenges</a><span>Solve fictional timecard discrepancies, duration formats and pay calculations, then compare your reasoning with worked answers.</span></li></ul>
+</div>
+<section class="hla-guide-referral" aria-label="Share this resource" data-share-title="Holiday Temp Job Pay Calculator: Hours, Overtime, Paycheck" data-public-url="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/"><h2>Useful for someone else?</h2><p>Share the public guide. Your entries and results are not included.</p><a href="https://udrwu9c0tjuedqy2.github.io/hla-work/earncheck/holiday-temp-job-pay-calculator/">Open the public guide link</a></section><footer class="hla-footer"><p><strong>Honest Little Apps</strong> makes small iPhone apps and publishes these companion resources. No cookies, no email capture. <a href="/hla-work/about/">About</a> · <a href="/hla-work/privacy/">Privacy</a> · <a href="/hla-work/">Solo Work Tools</a></p><p>Apple, the Apple logo, iPhone and App Store are trademarks of Apple Inc. · © 2026 Honest Little Apps</p></footer>
+<script>
+(function(){
+var $=function(id){return document.getElementById(id);};
+function money(n){return n.toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2});}
+function calc(){
+ var ids=['rate','hrs','wks','prem','premr'];
+ var values=ids.map(function(id){return $(id).value.trim();});
+ var nums=values.map(Number);
+ var r=nums[0],h=nums[1],w=nums[2],ph=nums[3],pr=nums[4],th=Number($('rule').value);
+ var error='';
+ if(values.some(function(v){return v==='';})||nums.some(function(n){return !Number.isFinite(n)||n<0;}))error='Enter a non-negative number in every field. Use 0 for optional premiums.';
+ else if(h>168)error='Hours per week cannot exceed 168.';
+ else if(!Number.isInteger(w)||w<1||w>52)error='Enter a whole number of weeks from 1 to 52.';
+ else if(ph>h)error='Premium hours must be part of the entered weekly hours.';
+ else if(th!==40&&th!==44)error='Choose one of the listed weekly presets.';
+ var reg=Math.min(h,th),ot=Math.max(0,h-th),regpay=reg*r,otpay=ot*r*1.5,prem=ph*pr,week=regpay+otpay+prem,total=week*w;
+ if(!error&&!Number.isFinite(total))error='These numbers are too large. Enter smaller values.';
+ if(error){$('total').textContent='Check your entries';$('totalp').textContent=error;$('math').textContent='';return;}
+ $('total').textContent=money(total);$('totalp').textContent='Scenario for '+w+' identical weeks at '+h+' h/week. Per week: '+money(week)+'. Gross estimate, before deductions.';
+ $('math').innerHTML='<span>Regular '+reg+' h x '+money(r)+'</span><b>'+money(regpay)+'</b><span>Overtime '+ot+' h x '+money(r*1.5)+'</span><b>'+money(otpay)+'</b><span>Added premiums '+ph+' h x '+money(pr)+'</span><b>'+money(prem)+'</b>';
+}
+['rate','hrs','wks','rule','prem','premr'].forEach(function(i){$(i).addEventListener('input',calc);$(i).addEventListener('change',calc);});calc();
+var list=$('cards'),sorter=$('sorter'),verdict=$('verdict');
+function items(){return [].slice.call(list.children);}
+function clear(){items().forEach(function(c){c.classList.remove('ok','bad');});verdict.textContent='';}
+list.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var li=b.closest('.card'),up=b.classList.contains('up'),s=up?li.previousElementSibling:li.nextElementSibling;if(!s)return;up?list.insertBefore(li,s):list.insertBefore(s,li);clear();});
+var drag=null;
+list.addEventListener('pointerdown',function(e){if(e.target.closest('button'))return;var li=e.target.closest('.card');if(!li)return;drag=li;li.classList.add('drag');li.setPointerCapture(e.pointerId);e.preventDefault();});
+list.addEventListener('pointermove',function(e){if(!drag)return;var y=e.clientY;items().forEach(function(o){if(o===drag)return;var r=o.getBoundingClientRect(),mid=r.top+r.height/2,di=items().indexOf(drag),oi=items().indexOf(o);if(oi<di&&y<mid)list.insertBefore(drag,o);else if(oi>di&&y>mid)list.insertBefore(drag,o.nextSibling);});});
+function end(){if(drag){drag.classList.remove('drag');drag=null;clear();}}
+list.addEventListener('pointerup',end);list.addEventListener('pointercancel',end);
+$('check').addEventListener('click',function(){var n=0;items().forEach(function(c,i){var ok=+c.getAttribute('data-i')===i;c.classList.toggle('ok',ok);c.classList.toggle('bad',!ok);if(ok)n++;});verdict.textContent=n===7?'All seven. Gross before net, always.':n+' of 7 in place';if(n===7)sorter.classList.add('done');});
+$('reveal').addEventListener('click',function(){items().sort(function(a,b){return a.getAttribute('data-i')-b.getAttribute('data-i');}).forEach(function(c){list.appendChild(c);c.classList.add('ok');c.classList.remove('bad');});verdict.textContent='In order, with what each line means.';sorter.classList.add('done');});
+})();
+</script>
+</body>
+</html>

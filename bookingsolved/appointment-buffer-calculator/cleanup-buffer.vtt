@@ -1,0 +1,17 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:03.000
+A 9–12 shift fits six 30-minute visits
+when there’s no cleanup gap.
+
+00:00:03.000 --> 00:00:07.500
+Keep the same shift. Set the buffer to
+10 minutes between visits.
+
+00:00:07.500 --> 00:00:12.250
+Calculate again. Four visits fit, and
+the last one ends at 11:30.
+
+00:00:12.250 --> 00:00:18.000
+Thirty minutes remain. A fifth visit
+would need 40: 10 to clean, 30 to work.
